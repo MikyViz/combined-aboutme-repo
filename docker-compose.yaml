@@ -1,0 +1,16 @@
+version: '1'
+services:
+  aboutmefe:
+    build: ./aboutme
+    container_name: aboutmefe
+    ports:
+      - 3000:3000
+    volumes:
+      - ./aboutme:/app/aboutme
+  aboutmebe:
+    build: ./aboutmebe
+    container_name: aboutmebe
+    ports:
+      - 8081:8081
+    volumes:
+      - ./aboutmebe:/app/aboutmebe
