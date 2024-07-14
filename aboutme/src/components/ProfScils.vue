@@ -89,6 +89,8 @@ const Mobile = ref([{ name: 'Flutter', img: 'https://th.bing.com/th/id/R.599374c
 ]);
 const General = ref([
     { name: 'GitHub', img: 'https://th.bing.com/th/id/OIP.mtsk3fQ_BRemFidhkel3dAHaEK?rs=1&pid=ImgDetMain' },
-    { name: 'Docker', img: 'https://seekvectorlogo.com/wp-content/uploads/2018/12/docker-vector-logo.png' }]);
+    { name: 'Docker', img: 'https://seekvectorlogo.com/wp-content/uploads/2018/12/docker-vector-logo.png' },
+    { name: 'Postman', img: 'https://mms.businesswire.com/media/20210806005076/en/761650/23/postman-logo-vert-2018.jpg' }
+]);
 
 </script>
