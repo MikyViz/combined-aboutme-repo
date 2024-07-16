@@ -55,6 +55,10 @@ const routs = ref([]);
     title: "Professional skills",
     value: "/about",
   },
+  {
+    title: "My projects",
+    value: "/projects",
+  },
   // {
   //   title: 'Contact me',
   //   value: '/about',
