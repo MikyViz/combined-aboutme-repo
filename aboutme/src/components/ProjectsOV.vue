@@ -52,19 +52,21 @@
 import { ref, onMounted } from "vue";
 
 // Импорт всех изображений из указанной папки
-const imgFiles = import.meta.glob('../assets/projects/**/*.{png,jpg,jpeg}');
+const imgFiles = import.meta.glob('../assets/projects/**/*.{png,jpg,jpeg,gif}');
 
 const frontend = ref([
   {
     name: "BallonsCalc",
     git: "https://github.com/MikyViz/ballonsCalc",
     about: `BallonsCalc, it's application  that help to calculate how many ballons and helium you have to buy for your ballons style, how many it will cost, and witch price you will ask for your ballons working.`,
-    // imgs: [
-    //   "../assets/ballonscalc/2024-07-14-162649.png",
-    //   "../assets/ballonscalc/2024-07-14-223921.png",
-    //   "../assets/ballonscalc/2024-07-14-224116.png",
-    // ],
     folder: "ballonscalc",
+    imgs: [],
+  },
+  {
+    name: "AboutMe",
+    git: "https://github.com/MikyViz/combined-aboutme-repo/tree/master/aboutme",
+    about: `Code of this site📝`,
+    folder: "aboutme",
     imgs: [],
   },
 ]);
