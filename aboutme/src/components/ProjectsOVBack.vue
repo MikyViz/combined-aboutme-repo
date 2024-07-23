@@ -18,8 +18,10 @@
         >
           <v-card class="my-card">
             <v-card-title>{{ backendItem.name }}</v-card-title>
-            <v-subheader>git: {{ backendItem.git }}</v-subheader>
-            <v-subheader>about: {{ backendItem.about }}</v-subheader>
+            <v-subheader><b>git:</b> <a target="_blank" rel="noopener noreferrer" :href=" backendItem.git">{{ backendItem.git }}</a></v-subheader>
+            <br>
+            <br>
+            <v-subheader><b>about:</b> {{ backendItem.about }}</v-subheader>
           </v-card>
         </v-col>
       </v-row>
