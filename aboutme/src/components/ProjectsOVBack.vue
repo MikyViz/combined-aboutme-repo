@@ -1,26 +1,29 @@
 <template>
   <v-container>
     <h2 class="text-center">Let's overview my projects!</h2>
-
-    <v-container
-    src="https://th.bing.com/th/id/OIG2.suTSjQHKdZTvDKkqeAsu?pid=ImgGn"
-    >
-      <!-- <v-img
-              class="bg-grey-lighten-2"
-              max-height="425"
-              src="https://th.bing.com/th/id/OIG2.suTSjQHKdZTvDKkqeAsu?pid=ImgGn"
-              cover
-            ></v-img> -->
-
-      <h2>BackEnd</h2>
-      <v-container v-for="(backendItem, index) in backend" :key="index">
-        <v-card height = '300' width="450">
-          <v-card-title>{{ backendItem.name }}</v-card-title>
-          <v-text>git: {{ backendItem.git }}</v-text>
-          <v-text>about: {{ backendItem.about }}</v-text>
-        </v-card>
-      </v-container>
-    </v-container>
+    <v-img
+      src="https://th.bing.com/th/id/OIG2.suTSjQHKdZTvDKkqeAsu?pid=ImgGn"
+      aspect-ratio="2"
+      class="my-6 hero"
+    ></v-img>
+    <div class="container">
+      <h2>BackEnd & DB behind the scenes</h2>
+      <v-row class="my-4">
+        <v-col
+          v-for="(backendItem, index) in backend"
+          :key="index"
+          cols="12"
+          sm="6"
+          md="4"
+        >
+          <v-card class="my-card">
+            <v-card-title>{{ backendItem.name }}</v-card-title>
+            <v-subheader>git: {{ backendItem.git }}</v-subheader>
+            <v-subheader>about: {{ backendItem.about }}</v-subheader>
+          </v-card>
+        </v-col>
+      </v-row>
+    </div>
   </v-container>
 </template>
 <script setup>
@@ -41,3 +44,21 @@ const backend = ref([
   },
 ]);
 </script>
+<style scoped>
+.my-card {
+  width: 100%;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.5
+  );
+  padding: 20px; 
+}
+.hero.v-image {
+  max-width: 100%;
+  margin: auto;
+  width: 100%;
+}
+
+</style>
