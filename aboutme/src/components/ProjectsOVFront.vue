@@ -5,7 +5,7 @@
       <h3>FrontEnd</h3>
       <v-container v-for="(frontendItem, index) in frontend" :key="index">
         <h3>{{ frontendItem.name }}</h3>
-        <h3>{{ frontendItem.git }}</h3>
+        <h3><a target="_blank" :href='frontendItem.git'>{{ frontendItem.git }}</a></h3>
         <v-carousel show-arrows="hover" hide-delimiters>
           <v-carousel-item
             v-for="(projectImg, index) in frontendItem.imgs"
@@ -26,12 +26,12 @@
 
     <!-- <v-container>
       <h3>BackEnd</h3>
-      <v-container v-for="(FrontendItem, index) in Frontend" :key="index">
-        <h3>{{ FrontendItem.name }}</h3>
-        <h3>{{ FrontendItem.git }}</h3>
+      <v-container v-for="(backendItem, index) in backend" :key="index">
+        <h3>{{ backendItem.name }}</h3>
+        <h3>{{ backendItem.git }}</h3>
         <v-carousel show-arrows="hover" hide-delimiters>
           <v-carousel-item
-            v-for="(projectImg, index) in FrontendItem.imgs"
+            v-for="(projectImg, index) in backendItem.imgs"
             :key="index"
           >
             <v-card>
@@ -42,7 +42,7 @@
           </v-carousel-item>
         </v-carousel>
         <div>
-          <p>{{ FrontendItem.about }}</p>
+          <p>{{ backendItem.about }}</p>
         </div>
       </v-container>
     </v-container> -->
@@ -70,24 +70,9 @@ const frontend = ref([
     imgs: [],
   },
 ]);
-const backend = ref([
-  // {
-  //   name: "JavaScript",
-  //   img: "https://networksynapse.net/wp-content/uploads/2020/11/js-1232x616.png",
-  // },
-  // {
-  //   name: "Node.js",
-  //   img: "https://apipilot.com/wp-content/uploads/2023/01/4.png",
-  // },
-  // {
-  //   name: "Sequelize DB",
-  //   img: "https://th.bing.com/th/id/OIP.dcQcS2jeF7zNTNWygTlYoAHaIk?rs=1&pid=ImgDetMain",
-  // },
-  // {
-  //   name: "MySQL",
-  //   img: "https://th.bing.com/th/id/OIP.lIIc_svaWdGdEJuEk7TBlgHaHa?rs=1&pid=ImgDetMain",
-  // },
-]);
+// const backend = ref([
+ 
+// ]);
 
 const loadImages = async () => {
   for (const proj of frontend.value) {
@@ -101,16 +86,16 @@ const loadImages = async () => {
     proj.imgs = loadedImgs;
   }
 
-  for (const proj of backend.value) {
-    const loadedImgs = [];
-    for (const path in imgFiles) {
-      if (path.includes(proj.folder)) {
-        const module = await imgFiles[path]();
-        loadedImgs.push(module);
-      }
-    }
-    proj.imgs = loadedImgs;
-  }
+  // for (const proj of backend.value) {
+  //   const loadedImgs = [];
+  //   for (const path in imgFiles) {
+  //     if (path.includes(proj.folder)) {
+  //       const module = await imgFiles[path]();
+  //       loadedImgs.push(module);
+  //     }
+  //   }
+  //   proj.imgs = loadedImgs;
+  // }
 };
 
 
