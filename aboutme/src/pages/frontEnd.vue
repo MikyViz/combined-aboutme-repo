@@ -1,7 +1,7 @@
 <template>
   <!-- Rout from ../components/ProfScils.vue -->
   <!-- <HelloWorld /> -->
-  <ProjectsOV />
+  <ProjectsOVFront />
 </template>
 
 <script setup>

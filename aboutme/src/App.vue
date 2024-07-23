@@ -29,6 +29,18 @@
             @click="navigateTo(rout.value)"
           >
             <v-list-item-title>{{ rout.title }}</v-list-item-title>
+            <!-- 👇submenu -->
+            <v-container v-if="Array.isArray(rout.value) && secondaryNav">
+              <v-list-item
+                v-for="secondaryRout in rout.value"
+                :key="secondaryRout"
+                @click="navigateTo(secondaryRout)"
+              >
+                <v-list-item-title>{{
+                  secondaryRout.slice(1)
+                }}</v-list-item-title>
+              </v-list-item>
+            </v-container>
           </v-list-item>
         </v-list>
       </v-navigation-drawer>
@@ -42,11 +54,10 @@ import { ref, watch } from "vue";
 import { useTheme } from "vuetify";
 import router from "./router";
 
-let drawer = ref(null);
-drawer.value = false;
-let group = ref(null);
+const drawer = ref(false);
+const secondaryNav = ref(false);
 const routs = ref([]);
-(routs.value = [
+routs.value = [
   {
     title: "Nice to meet you",
     value: "/",
@@ -57,19 +68,21 @@ const routs = ref([]);
   },
   {
     title: "My projects",
-    value: "/projects",
+    value: ["/frontEnd", "/backEnd"],
   },
   // {
   //   title: 'Contact me',
   //   value: '/about',
   // },
-]),
-  watch(
-    () => group,
-    () => {
-      drawer.value = false;
-    }
-  );
+]
+
+watch(
+  () => drawer.value,
+  () => {
+    secondaryNav.value = false;
+  }
+);
+
 const theme = useTheme();
 
 function toggleTheme() {
@@ -77,7 +90,13 @@ function toggleTheme() {
 }
 
 function navigateTo(value) {
-  router.push(value);
+  if (typeof value !== 'object') {
+    router.push(value).catch(err => {
+      console.error('Navigation error:', err);
+    });
+  } else {
+    secondaryNav.value = !secondaryNav.value;
+  }
 }
 </script>
 
