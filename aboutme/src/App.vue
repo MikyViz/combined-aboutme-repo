@@ -12,10 +12,18 @@
           <v-btn icon="mdi-magnify" variant="text"></v-btn>
           <v-btn icon="mdi-filter" variant="text"></v-btn>
         </template>
-        <v-btn @click="toggleTheme"
+        <!-- <v-btn @click="toggleTheme"
           ><v-icon>mdi-theme-light-dark</v-icon></v-btn
-        >
-        <v-btn icon="mdi-dots-vertical" variant="text"></v-btn>
+        > -->
+
+        <v-select
+          chips
+          label="Theme"
+          :items="['💡', '🌚', '🖍️', '💩']"
+          variant="underlined"
+          v-model="currentThemeIcon"
+          @update:model-value="toggleTheme"
+        ></v-select>
       </v-app-bar>
       <v-navigation-drawer
         v-model="drawer"
@@ -53,6 +61,11 @@
 import { ref, watch } from "vue";
 import { useTheme } from "vuetify";
 import router from "./router";
+import JSConfetti2 from 'js-confetti'
+// import { useThemeStore } from "./stores/theme";
+
+const simchalesConfetti = new JSConfetti2() //🎉
+simchalesConfetti.addConfetti() //🎉
 
 const drawer = ref(false);
 const secondaryNav = ref(false);
@@ -74,7 +87,7 @@ routs.value = [
   //   title: 'Contact me',
   //   value: '/about',
   // },
-]
+];
 
 watch(
   () => drawer.value,
@@ -85,14 +98,47 @@ watch(
 
 const theme = useTheme();
 
+const currentThemeIcon = ref("🌚");
+const selectedTheme = ref("dark");
+
 function toggleTheme() {
-  theme.global.name.value = theme.global.current.value.dark ? "light" : "dark";
+  console.log('2pizza');
+  switch (currentThemeIcon.value) {
+    case "💡":
+      selectedTheme.value = "light";
+      break;
+    case "🌚":
+      selectedTheme.value = "dark";
+      break;
+    case "🖍️":
+      selectedTheme.value = "green";
+      break;
+    case "💩":
+      selectedTheme.value = "brown";
+      break;
+
+    default:
+      selectedTheme.value = "dark";
+
+      break;
+  }
+  console.log("Toggle Theme called");
+  console.log("Current Theme Icon:", currentThemeIcon.value);
+  console.log("Current Theme:", selectedTheme.value);
+  theme.global.name.value = selectedTheme.value;
+  simchalesConfetti.addConfetti({
+  emojis: [currentThemeIcon.value], // Replace with your desired symbols or emojis
+  confettiRadius: 6,
+  confettiNumber: 100,
+})
+  // theme.global.current.value = selectedTheme.value;
+
 }
 
 function navigateTo(value) {
-  if (typeof value !== 'object') {
-    router.push(value).catch(err => {
-      console.error('Navigation error:', err);
+  if (typeof value !== "object") {
+    router.push(value).catch((err) => {
+      console.error("Navigation error:", err);
     });
   } else {
     secondaryNav.value = !secondaryNav.value;
@@ -100,4 +146,8 @@ function navigateTo(value) {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.pa-4 {
+  padding: 16px;
+}
+</style>

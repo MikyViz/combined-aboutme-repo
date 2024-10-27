@@ -33,6 +33,9 @@ export default defineConfig({
       },
     }),
   ],
+  optimizeDeps: {
+    exclude: ['vue-colorful']
+  },
   define: { 'process.env': {} },
   resolve: {
     alias: {
