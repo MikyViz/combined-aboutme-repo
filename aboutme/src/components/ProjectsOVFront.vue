@@ -63,6 +63,13 @@ const frontend = ref([
     imgs: [],
   },
   {
+    name: "moneySale",
+    git: "https://github.com/MikyViz/ExchangeRateApp",
+    about: `An application for calculating the value of currency, designed not only for purely practical use, but also for educational and entertaining purposes.`,
+    folder: "moneySale",
+    imgs: [],
+  },
+  {
     name: "AboutMe",
     git: "https://github.com/MikyViz/combined-aboutme-repo/tree/master/aboutme",
     about: `Code of this site📝`,

@@ -28,7 +28,7 @@ export default createVuetify({
           success: '#00E676',
           background: '#2B521E',
           surface: '#1E244F',
-          text: '#1E244F'
+          text: '#1E244F',
         },
       },
       brown: { 
@@ -41,7 +41,7 @@ export default createVuetify({
           success: '#00E676',
           background: brown.darken4,
           surface: '#1E244F',
-          text: '#1E244F'
+          text: '#1E244F',
         },
       },
     },

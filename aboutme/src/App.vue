@@ -122,18 +122,18 @@ function toggleTheme() {
 
       break;
   }
-  console.log("Toggle Theme called");
-  console.log("Current Theme Icon:", currentThemeIcon.value);
-  console.log("Current Theme:", selectedTheme.value);
+  
   theme.global.name.value = selectedTheme.value;
   simchalesConfetti.addConfetti({
   emojis: [currentThemeIcon.value], // Replace with your desired symbols or emojis
   confettiRadius: 6,
   confettiNumber: 100,
-})
+});
+}
+
   // theme.global.current.value = selectedTheme.value;
 
-}
+
 
 function navigateTo(value) {
   if (typeof value !== "object") {
