@@ -70,9 +70,11 @@ import { ref } from 'vue';
 
 const JavaScript = ref([
     { name: 'JavaScript', img: 'https://networksynapse.net/wp-content/uploads/2020/11/js-1232x616.png' },
-    { name: 'Vue.js', img: 'https://blog.adroitguru.com/storage/30/conversions/vuejs_logo-cover.jpg' }]);
+    { name: 'Vue.js', img: 'https://blog.adroitguru.com/storage/30/conversions/vuejs_logo-cover.jpg' },
+    { name: 'react.js', img: 'https://pluspng.com/img-png/react-logo-png-react-js-logo-history-design-history-and-evolution-5500x3094.png' },
+]);
 const Frontend = ref([
-    { name: 'HTML', img: 'https://www.clipartkey.com/mpngs/m/210-2104705_html-logo-png-transparent-background.png' },
+    { name: 'HTML', img: 'https://clipartcraft.com/images/html5-logo-png-transparent-5.png' },
     { name: 'CSS', img: "https://logodownload.org/wp-content/uploads/2017/04/css-3-logo.png" },
     { name: 'Sass/SCSS', img: "https://th.bing.com/th/id/R.09fa297368663ab9063c785331427a40?rik=0q3Gm%2fWut4VIjw&pid=ImgRaw&r=0" },
     { name: 'Vuetify', img: 'https://i.pinimg.com/originals/54/eb/37/54eb3761225655f0bf633c88edf95d88.png' },
@@ -90,7 +92,9 @@ const Mobile = ref([{ name: 'Flutter', img: 'https://th.bing.com/th/id/R.599374c
 const General = ref([
     { name: 'GitHub', img: 'https://th.bing.com/th/id/OIP.mtsk3fQ_BRemFidhkel3dAHaEK?rs=1&pid=ImgDetMain' },
     { name: 'Docker', img: 'https://seekvectorlogo.com/wp-content/uploads/2018/12/docker-vector-logo.png' },
-    { name: 'Postman', img: 'https://mms.businesswire.com/media/20210806005076/en/761650/23/postman-logo-vert-2018.jpg' }
+    { name: 'Postman', img: 'https://mms.businesswire.com/media/20210806005076/en/761650/23/postman-logo-vert-2018.jpg' },
+    { name: 'nix', img: 'https://nixos.org/logo/nixos-logo-only-hires.png' },
+    { name: 'idx', img: 'https://assets.techrepublic.com/uploads/2023/08/tr081123-project_idx-logo_hero-770x213.jpg' },
 ]);
 
 </script>
