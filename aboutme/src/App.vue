@@ -8,10 +8,10 @@
         ></v-app-bar-nav-icon>
         <v-toolbar-title>About Miky Vizenovsky 🫎</v-toolbar-title>
         <v-spacer></v-spacer>
-        <template v-if="$vuetify.display.mdAndUp">
+        <!-- <template v-if="$vuetify.display.mdAndUp">
           <v-btn icon="mdi-magnify" variant="text"></v-btn>
           <v-btn icon="mdi-filter" variant="text"></v-btn>
-        </template>
+        </template> -->
         <!-- <v-btn @click="toggleTheme"
           ><v-icon>mdi-theme-light-dark</v-icon></v-btn
         > -->
@@ -19,10 +19,11 @@
         <v-select
           chips
           label="Theme"
-          :items="['💡', '🌚', '🖍️', '💩']"
+          :items="['🧸', '🌚', '🖍️', '💩']"
           variant="underlined"
           v-model="currentThemeIcon"
           @update:model-value="toggleTheme"
+          class="theme-select"
         ></v-select>
       </v-app-bar>
       <v-navigation-drawer
@@ -83,10 +84,10 @@ routs.value = [
     title: "My projects",
     value: ["/frontEnd", "/backEnd"],
   },
-  // {
-  //   title: 'Contact me',
-  //   value: '/about',
-  // },
+  {
+    title: 'Contact me',
+    value: '/contactMe',
+  },
 ];
 
 watch(
@@ -104,7 +105,7 @@ const selectedTheme = ref("dark");
 function toggleTheme() {
   console.log('2pizza');
   switch (currentThemeIcon.value) {
-    case "💡":
+    case "🧸":
       selectedTheme.value = "light";
       break;
     case "🌚":
@@ -149,5 +150,9 @@ function navigateTo(value) {
 <style scoped>
 .pa-4 {
   padding: 16px;
+}
+
+.theme-select {
+  max-width: 150px;
 }
 </style>

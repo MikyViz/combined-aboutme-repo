@@ -44,6 +44,19 @@ export default createVuetify({
           text: '#1E244F',
         },
       },
+      light: { 
+        dark: false,
+        colors: { 
+          primary: '#D7CCC8', // beige primary color
+          secondary: '#A1887F', // lighter brown secondary color
+          accent: '#FFC107', // light amber accent color
+          error: '#FF5722', // red color for errors
+          success: '#8BC34A', // light green color for success
+          background: '#F5F5DC', // light beige background color
+          surface: '#FAF3E0', // even lighter beige for surface
+          text: '#5D4037', // dark brown text color
+        },
+      }
     },
     defaultTheme: 'dark',
   },
