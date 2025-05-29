@@ -11,8 +11,7 @@
         
         <!-- Переключатель языка -->
         <LanguageSwitcher class="mr-2" />
-        
-        <v-menu>
+          <v-menu>
           <template v-slot:activator="{ props }">
             <v-btn 
               v-bind="props"
@@ -34,16 +33,6 @@
             </v-list-item>
           </v-list>
         </v-menu>
-
-        <v-select
-          chips
-          label="Theme"
-          :items="['🧸', '🌚', '🖍️', '💩', '🌈']"
-          variant="underlined"
-          v-model="currentThemeIcon"
-          @update:model-value="toggleTheme"
-          class="theme-select"
-        ></v-select>
       </v-app-bar>
       <v-navigation-drawer
         v-model="drawer"
@@ -132,7 +121,6 @@ watch(
 );
 
 const theme = useTheme();
-const currentThemeIcon = ref("🌚");
 const selectedTheme = ref("dark");
 
 const themeOptions = [
@@ -158,12 +146,8 @@ const themeIcon = computed(() => {
 function selectTheme(themeName) {
   selectedTheme.value = themeName;
   theme.global.name.value = themeName;
-  
-  // Update the icon in the dropdown
+    // Находим выбранную тему в списке опций
   const themeOption = themeOptions.find(option => option.value === themeName);
-  if (themeOption) {
-    currentThemeIcon.value = themeOption.icon;
-  }
   
   // Add confetti with the selected theme icon
   simchalesConfetti.addConfetti({
@@ -173,36 +157,7 @@ function selectTheme(themeName) {
   });
 }
 
-function toggleTheme() {
-  console.log('2pizza');
-  switch (currentThemeIcon.value) {
-    case "🧸":
-      selectedTheme.value = "light";
-      break;
-    case "🌚":
-      selectedTheme.value = "dark";
-      break;
-    case "🖍️":
-      selectedTheme.value = "green";
-      break;
-    case "💩":
-      selectedTheme.value = "brown";
-      break;
-    case "🌈":
-      selectedTheme.value = "neon";
-      break;
-    default:
-      selectedTheme.value = "dark";
-      break;
-  }
-  
-  theme.global.name.value = selectedTheme.value;
-  simchalesConfetti.addConfetti({
-    emojis: [currentThemeIcon.value],
-    confettiRadius: 6,
-    confettiNumber: 100,
-  });
-}
+// Функция для переключения темы удалена, так как теперь используется только selectTheme
 
 function navigateTo(value) {
   if (typeof value !== "object") {
@@ -220,7 +175,5 @@ function navigateTo(value) {
   padding: 16px;
 }
 
-.theme-select {
-  max-width: 150px;
-}
+/* Стиль для селектора темы удален */
 </style>

@@ -45,8 +45,15 @@ const messages = {
       backend: 'Backend Development',
       mobile: 'Mobile Development',
       general: 'General Tools & Platforms'
-    },
-    timeline: {
+    },    timeline: {
+      periods: {
+        year2010: '2010',
+        year2023Start: '2023 - early',
+        year2023Middle: '2023 - middle',
+        year2023End: '2023 - end',
+        year2024: '2024',
+        year2024Future: '2024 - future'
+      },
       start: {
         title: 'Beginning of the journey',
         subtitle: 'First steps in programming',
@@ -144,8 +151,15 @@ const messages = {
       backend: 'Backend разработка',
       mobile: 'Мобильная разработка',
       general: 'Общие инструменты и платформы'
-    },
-    timeline: {
+    },    timeline: {
+      periods: {
+        year2010: '2010',
+        year2023Start: '2023 - начало',
+        year2023Middle: '2023 - середина',
+        year2023End: '2023 - конец',
+        year2024: '2024',
+        year2024Future: '2024 - будущее'
+      },
       start: {
         title: 'Начало пути',
         subtitle: 'Первые шаги в программировании',
@@ -222,8 +236,8 @@ const messages = {
       subtitle2: '!בואו נבלה ביחד'
     },
     homepage: {
-      aboutMeTitle: 'אז, מי אנ?י',
-      aboutMeText: 'FullStack שמי מיכאל דוד ויצנובסקי, ואני מפתח .<br />👉PROG למדתי את המקצוע המעניין הזה במכון   <a href="https://www.prog.co.il/" target="_blank">https://www.prog.co.il/</a><br />והיה לי הכבוד להשתתף בשיעורים של המתכנתים המגניבים ביותר בישראל - ישראל דהן ורחמים חניה.',
+      aboutMeTitle: '?אז, מי אני',
+      aboutMeText: '.FullStack שמי מיכאל דוד ויצנובסקי, ואני מפתח <br />PROG👇 למדתי את המקצוע המעניין הזה במכון   <a href="https://www.prog.co.il/" target="_blank">https://www.prog.co.il/</a><br />והיה לי הכבוד להשתתף בשיעורים של המתכנתים המגניבים ביותר בישראל - ישראל דהן ורחמים חניה',
       moosebroTitle: 'MOOSEBRO',
       moosebroText: 'בתעשיית הפיתוח ובפרויקטים מסחריים, אני ידוע גם בכינוי "MOOSEBRO"'
     },navigation: {
@@ -243,8 +257,15 @@ const messages = {
       backend: 'פיתוח Backend',
       mobile: 'פיתוח מובייל',
       general: 'כלים כלליים ופלטפורמות'
-    },
-    timeline: {
+    },    timeline: {
+      periods: {
+        year2010: '2010',
+        year2023Start: '2023 - התחלה',
+        year2023Middle: '2023 - אמצע',
+        year2023End: '2023 - סוף',
+        year2024: '2024',
+        year2024Future: '2024 - עתיד'
+      },
       start: {
         title: 'תחילת הדרך',
         subtitle: 'צעדים ראשונים בתכנות',

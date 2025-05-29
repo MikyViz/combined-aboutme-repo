@@ -8,12 +8,11 @@
         :dot-color="item.color"
         :icon="item.icon"
         size="large"
-      >
-        <template v-slot:opposite>
+      >        <template v-slot:opposite>
           <div :class="['text-'+item.color, 'font-weight-bold']">
-            {{ item.year }}
+            {{ $t(`timeline.periods.${item.yearKey}`) }}
           </div>
-        </template>        <v-card 
+        </template><v-card 
           elevation="5" 
           class="timeline-card v-motion"
           v-motion
@@ -45,41 +44,41 @@ const i18n = useI18n();
 const hover = ref(null);
 
 const timelineItems = [  {
-    year: '2010',
+    yearKey: 'year2010',
     color: 'indigo',
     icon: 'mdi-school',
     key: 'start',
     link: null
   },  {
-    year: '2023 - начало',
+    yearKey: 'year2023Start',
     color: 'blue',
     icon: 'mdi-code-tags',
     key: 'basics',
     link: null
   },
   {
-    year: '2023 - середина',
+    yearKey: 'year2023Middle',
     color: 'green',
     icon: 'mdi-vuejs',
     key: 'frontend',
     link: null
   },
   {
-    year: '2023 - конец',
+    yearKey: 'year2023End',
     color: 'purple',
     icon: 'mdi-database',
     key: 'backend',
     link: null
   },
   {
-    year: '2024',
+    yearKey: 'year2024',
     color: 'red',
     icon: 'mdi-rocket-launch',
     key: 'fullstack',
     link: null
   },
   {
-    year: '2024',
+    yearKey: 'year2024Future',
     color: 'amber-darken-2',
     icon: 'mdi-star',
     key: 'growth',

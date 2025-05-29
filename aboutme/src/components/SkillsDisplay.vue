@@ -31,9 +31,11 @@ const hoveredSkill = ref(null);
 const skills = ref([
   { name: 'JavaScript', level: 90 },
   { name: 'Vue.js', level: 85 },
+  { name: 'React.js', level: 83 },
   { name: 'HTML/CSS', level: 95 },
   { name: 'Node.js', level: 80 },
   { name: 'Vuetify', level: 85 },
+  { name: 'MySQL', level: 82 },
   { name: 'Docker', level: 75 },
 ]);
 
