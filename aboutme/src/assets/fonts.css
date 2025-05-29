@@ -1,0 +1,69 @@
+/* Настройки шрифтов для многоязычного сайта */
+
+/* Основной шрифт для всего сайта */
+:root {
+  --font-primary: 'Inter', 'Noto Sans', sans-serif;
+  --font-heading: 'Rubik', 'Noto Sans', sans-serif;
+  --font-display: 'Rubik', 'Inter', sans-serif;
+}
+
+/* Общие стили для всего приложения */
+body, .v-application {
+  font-family: var(--font-primary) !important;
+}
+
+/* Стили для заголовков */
+h1, h2, h3, h4, h5, h6,
+.text-h1, .text-h2, .text-h3, .text-h4, .text-h5, .text-h6 {
+  font-family: var(--font-heading) !important;
+  font-weight: 600;
+}
+
+/* Специальные стили для главной страницы */
+.welcome-title {
+  font-family: var(--font-display) !important;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.welcome-subtitle {
+  font-family: var(--font-display) !important;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+}
+
+/* Поддержка RTL для иврита */
+[dir="rtl"] .welcome-title,
+[dir="rtl"] .welcome-subtitle {
+  text-align: right;
+}
+
+/* Адаптивные размеры шрифтов */
+@media (max-width: 600px) {
+  .welcome-title {
+    font-size: 2.5rem !important;
+  }
+  .welcome-subtitle {
+    font-size: 1.25rem !important;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 960px) {
+  .welcome-title {
+    font-size: 3.5rem !important;
+  }
+  .welcome-subtitle {
+    font-size: 1.5rem !important;
+  }
+}
+
+@media (min-width: 961px) {
+  .welcome-title {
+    font-size: 4.5rem !important;
+  }
+  .welcome-subtitle {
+    font-size: 2rem !important;
+  }
+}

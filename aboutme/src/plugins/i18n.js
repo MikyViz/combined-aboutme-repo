@@ -1,0 +1,349 @@
+import { createI18n } from 'vue-i18n';
+
+const messages = {
+  en: {
+    welcome: {
+      title: 'Welcome to my portfolio!',
+      subtitle: 'I\'m a FullStack Developer',
+      description: 'Creating modern and responsive web applications',
+      greeting: 'Hi there!!!',
+      subtitle1: 'Always glad to see you, on my site!',
+      subtitle2: 'Let\'s hang out!'
+    },
+    homepage: {
+      aboutMeTitle: 'So, who am I?',
+      aboutMeText: 'My name is Michael David Vizenovsky, and I am a FullStack developer.<br />I learned this interesting profession in the PROG institute 👉 <a href="https://www.prog.co.il/" target="_blank">https://www.prog.co.il/</a><br />And I had the honor of attending the classes of the coolest programmers in Israel - Israel Dahan and Rahamim Hania.',
+      moosebroTitle: 'MOOSEBRO',
+      moosebroText: 'In the development industry and in commercial projects, I am also known as "MOOSEBRO"'
+    },    footer: {
+      title: 'Miky Vizenovsky',
+      description: 'FullStack Developer with experience in creating modern, responsive web applications.',
+      navigation: 'Navigation',
+      home: 'Home',
+      about: 'About',
+      frontendProjects: 'Frontend projects',
+      backendProjects: 'Backend projects',
+      contacts: 'Contacts',
+      techStack: 'Technology stack',
+      rights: 'All rights reserved.',
+      madeWith: 'Made with',
+      and: 'and'
+    },    navigation: {
+      home: 'Nice to meet you',
+      about: 'Professional skills',
+      frontendProjects: 'Frontend Projects',
+      backendProjects: 'Backend Projects',
+      projects: 'My projects',
+      contact: 'Contact me'
+    },    about: {
+      title: 'About me',
+      skills: 'My skills',
+      experience: 'My experience'
+    },    skills: {
+      javascript: 'JavaScript & Frameworks',
+      frontend: 'Frontend Technologies',
+      backend: 'Backend Development',
+      mobile: 'Mobile Development',
+      general: 'General Tools & Platforms'
+    },    timeline: {
+      periods: {
+        year2010: '2010',
+        year2023Start: '2023 - early',
+        year2023Middle: '2023 - middle',
+        year2023End: '2023 - end',
+        year2024: '2024',
+        year2024Future: '2024 - future'
+      },
+      start: {
+        title: 'Beginning of the journey',
+        subtitle: 'First steps in programming',
+        text: 'Wrote my first program in C# and decided to connect my career with IT.'
+      },
+      basics: {
+        title: 'Web Development Basics',
+        subtitle: 'HTML, CSS, JavaScript',
+        text: 'Started my web development journey, mastering fundamental technologies and creating first projects.'
+      },
+      frontend: {
+        title: 'Frontend Frameworks',
+        subtitle: 'Vue.js and React.js',
+        text: 'Dived into modern frameworks, started building dynamic SPA applications.'
+      },
+      backend: {
+        title: 'Backend Development',
+        subtitle: 'Node.js and databases',
+        text: 'Expanded skills to server-side development, learned API and database work.'
+      },
+      fullstack: {
+        title: 'Full Stack Developer',
+        subtitle: 'From idea to production',
+        text: 'Combined all knowledge in creating complete web applications of full cycle.'
+      },
+      growth: {
+        title: 'Growth and Development',
+        subtitle: 'New horizons',
+        text: 'Continue learning new technologies and developing as a programmer.'
+      },
+      moreDetails: 'More details'
+    },
+    contact: {
+      title: 'Let\'s Connect!',
+      name: 'Name',
+      email: 'Email',
+      subject: 'Subject',
+      message: 'Message',
+      send: 'Send',
+      success: 'Thank you! Your message has been sent successfully.',
+      error: 'An error occurred. Please try again.',
+      contactMe: 'Or contact me via:',
+      validation: {
+        nameRequired: 'Name is required',
+        nameTooLong: 'Name must be less than 50 characters',
+        emailRequired: 'Email is required',
+        emailInvalid: 'Email must be valid',
+        subjectRequired: 'Subject is required',
+        subjectTooLong: 'Subject must be less than 100 characters',
+        messageRequired: 'Message is required',
+        messageTooShort: 'Message must be at least 10 characters'
+      }
+    },    footer: {
+      title: 'Miky Vizenovsky',
+      description: 'FullStack Developer with experience in creating modern, responsive web applications.',
+      navigation: 'Navigation',
+      home: 'Home',
+      about: 'About',
+      frontendProjects: 'Frontend projects',
+      backendProjects: 'Backend projects',
+      contacts: 'Contacts',
+      techStack: 'Technology stack',
+      rights: 'All rights reserved.',
+      madeWith: 'Made with',
+      and: 'and'
+    }
+  },  ru: {
+    welcome: {
+      title: 'Добро пожаловать в мое портфолио!',
+      subtitle: 'Я FullStack разработчик',
+      description: 'Создаю современные и отзывчивые веб-приложения',
+      greeting: 'Здарова!!!',
+      subtitle1: 'Всегда рад видеть вас на моем сайте!',
+      subtitle2: 'Давайте общаться!'
+    },
+    homepage: {
+      aboutMeTitle: 'Итак, кто я?',
+      aboutMeText: 'Меня зовут Михаил Давид Виценовский, и я FullStack разработчик.<br />Я изучил эту интересную профессию в институте PROG 👉 <a href="https://www.prog.co.il/" target="_blank">https://www.prog.co.il/</a><br />И мне выпала честь посещать занятия самых крутых программистов Израиля - Исраэля Даана и Рахамима Хании.',
+      moosebroTitle: 'MOOSEBRO',
+      moosebroText: 'В индустрии разработки и в коммерческих проектах меня также знают как "MOOSEBRO"'
+    },navigation: {
+      home: 'Приятно познакомиться',
+      about: 'Профессиональные навыки',
+      frontendProjects: 'Frontend проекты',
+      backendProjects: 'Backend проекты',
+      projects: 'Мои проекты',
+      contact: 'Связаться со мной'
+    },    about: {
+      title: 'Обо мне',
+      skills: 'Мои навыки',
+      experience: 'Мой опыт'
+    },    skills: {
+      javascript: 'JavaScript и фреймворки',
+      frontend: 'Frontend технологии',
+      backend: 'Backend разработка',
+      mobile: 'Мобильная разработка',
+      general: 'Общие инструменты и платформы'
+    },    timeline: {
+      periods: {
+        year2010: '2010',
+        year2023Start: '2023 - начало',
+        year2023Middle: '2023 - середина',
+        year2023End: '2023 - конец',
+        year2024: '2024',
+        year2024Future: '2024 - будущее'
+      },
+      start: {
+        title: 'Начало пути',
+        subtitle: 'Первые шаги в программировании',
+        text: 'Написал свою первую программу на C# и решил связать свою карьеру с IT.'
+      },
+      basics: {
+        title: 'Основы веб-разработки',
+        subtitle: 'HTML, CSS, JavaScript',
+        text: 'Начал путь в веб-разработке, освоив фундаментальные технологии и создав первые проекты.'
+      },
+      frontend: {
+        title: 'Frontend фреймворки',
+        subtitle: 'Vue.js и React.js',
+        text: 'Погрузился в современные фреймворки, начал создавать динамические SPA-приложения.'
+      },
+      backend: {
+        title: 'Бэкенд разработка',
+        subtitle: 'Node.js и базы данных',
+        text: 'Расширил навыки на серверную разработку, изучил работу с API и базами данных.'
+      },
+      fullstack: {
+        title: 'Полный стек разработчик',
+        subtitle: 'От идеи до продакшена',
+        text: 'Объединил все знания в создании полноценных веб-приложений полного цикла.'
+      },
+      growth: {
+        title: 'Рост и развитие',
+        subtitle: 'Новые горизонты',
+        text: 'Продолжаю изучать новые технологии и развиваться как разработчик.'
+      },
+      moreDetails: 'Подробнее'
+    },
+    contact: {
+      title: 'Давайте будем на связи!',
+      name: 'Имя',
+      email: 'Email',
+      subject: 'Тема',
+      message: 'Сообщение',
+      send: 'Отправить',
+      success: 'Спасибо! Ваше сообщение успешно отправлено.',
+      error: 'Произошла ошибка. Пожалуйста, попробуйте еще раз.',
+      contactMe: 'Или свяжитесь со мной через:',
+      validation: {
+        nameRequired: 'Имя обязательно',
+        nameTooLong: 'Имя должно быть меньше 50 символов',
+        emailRequired: 'Email обязателен',
+        emailInvalid: 'Email должен быть корректным',
+        subjectRequired: 'Тема обязательна',
+        subjectTooLong: 'Тема должна быть меньше 100 символов',
+        messageRequired: 'Сообщение обязательно',
+        messageTooShort: 'Сообщение должно содержать не менее 10 символов'
+      }
+    },    footer: {
+      title: 'Михаель Давид Виценовский',
+      description: 'FullStack разработчик с опытом создания современных, отзывчивых веб-приложений.',
+      navigation: 'Навигация',
+      home: 'Главная',
+      about: 'О себе',
+      frontendProjects: 'Frontend проекты',
+      backendProjects: 'Backend проекты',
+      contacts: 'Контакты',
+      techStack: 'Технологический стек',
+      rights: 'Все права защищены.',
+      madeWith: 'Сделано с',
+      and: 'и'
+    }
+  },  he: {
+    welcome: {
+      title: '!ברוך הבא לתיק העבודות שלי',
+      subtitle: 'אני מפתח FullStack',
+      description: 'יוצר יישומי אינטרנט מודרניים ותגובתיים',
+      greeting: '!!!היי שם',
+      subtitle1: '!תמיד שמח לראות אותך באתר שלי',
+      subtitle2: '!בואו נבלה ביחד'
+    },
+    homepage: {
+      aboutMeTitle: '?אז, מי אני',
+      aboutMeText: '.FullStack שמי מיכאל דוד ויצנובסקי, ואני מפתח <br />PROG👇 למדתי את המקצוע המעניין הזה במכון   <a href="https://www.prog.co.il/" target="_blank">https://www.prog.co.il/</a><br />והיה לי הכבוד להשתתף בשיעורים של המתכנתים המגניבים ביותר בישראל - ישראל דהן ורחמים חניה',
+      moosebroTitle: 'MOOSEBRO',
+      moosebroText: 'בתעשיית הפיתוח ובפרויקטים מסחריים, אני ידוע גם בכינוי "MOOSEBRO"'
+    },navigation: {
+      home: 'נעים להכיר',
+      about: 'כישורים מקצועיים',
+      frontendProjects: 'פרויקטים Frontend',
+      backendProjects: 'פרויקטים Backend',
+      projects: 'הפרויקטים שלי',
+      contact: 'צור קשר'
+    },    about: {
+      title: 'אודותיי',
+      skills: 'הכישורים שלי',
+      experience: 'הניסיון שלי'
+    },    skills: {
+      javascript: 'JavaScript ופריימוורקים',
+      frontend: 'טכנולוגיות Frontend',
+      backend: 'פיתוח Backend',
+      mobile: 'פיתוח מובייל',
+      general: 'כלים כלליים ופלטפורמות'
+    },    timeline: {
+      periods: {
+        year2010: '2010',
+        year2023Start: '2023 - התחלה',
+        year2023Middle: '2023 - אמצע',
+        year2023End: '2023 - סוף',
+        year2024: '2024',
+        year2024Future: '2024 - עתיד'
+      },
+      start: {
+        title: 'תחילת הדרך',
+        subtitle: 'צעדים ראשונים בתכנות',
+        text: 'כתבתי את התוכנית הראשונה שלי ב-C# והחלטתי לקשר את הקריירה שלי עם IT.'
+      },
+      basics: {
+        title: 'יסודות פיתוח אתרים',
+        subtitle: 'HTML, CSS, JavaScript',
+        text: 'התחלתי את הדרך בפיתוח אתרים, שלטתי בטכנולוגיות הבסיסיות ויצרתי פרויקטים ראשונים.'
+      },
+      frontend: {
+        title: 'Frontend פריימוורקים',
+        subtitle: 'Vue.js ו-React.js',
+        text: 'צללתי לתוך הפריימוורקים המודרניים, התחלתי לבנות יישומי SPA דינמיים.'
+      },
+      backend: {
+        title: 'פיתוח Backend',
+        subtitle: 'Node.js ומסדי נתונים',
+        text: 'הרחבתי כישורים לפיתוח צד שרת, למדתי עבודה עם API ומסדי נתונים.'
+      },
+      fullstack: {
+        title: 'מפתח Full Stack',
+        subtitle: 'מרעיון לייצור',
+        text: 'איחדתי את כל הידע ביצירת יישומי אינטרנט מלאים במחזור מלא.'
+      },
+      growth: {
+        title: 'צמיחה והתפתחות',
+        subtitle: 'אופקים חדשים',
+        text: 'ממשיך ללמוד טכנולוגיות חדשות ולהתפתח כמפתח.'
+      },
+      moreDetails: 'פרטים נוספים'
+    },
+    contact: {
+      title: 'בואו נתחבר!',
+      name: 'שם',
+      email: 'אימייל',
+      subject: 'נושא',
+      message: 'הודעה',
+      send: 'שלח',
+      success: 'תודה! ההודעה שלך נשלחה בהצלחה.',
+      error: 'אירעה שגיאה. אנא נסה שוב.',
+      contactMe: 'או צור איתי קשר דרך:',
+      validation: {
+        nameRequired: 'יש להזין שם',
+        nameTooLong: 'השם חייב להיות פחות מ-50 תווים',
+        emailRequired: 'יש להזין אימייל',
+        emailInvalid: 'יש להזין אימייל תקין',
+        subjectRequired: 'יש להזין נושא',
+        subjectTooLong: 'הנושא חייב להיות פחות מ-100 תווים',
+        messageRequired: 'יש להזין הודעה',
+        messageTooShort: 'ההודעה חייבת להכיל לפחות 10 תווים'
+      }
+    },    footer: {
+      title: 'מיכאל דוד ויצנובסקי',
+      description: ' עם ניסיון ביצירת יישומי אינטרנט מודרניים ותגובתיים.מפתח FullStack',
+      navigation: 'ניווט',
+      home: 'דף הבית',
+      about: 'אודותיי',
+      frontendProjects: 'פרויקטים Frontend',
+      backendProjects: 'פרויקטים Backend',
+      contacts: 'צור קשר',
+      techStack: 'סט טכנולוגי',
+      rights: 'כל הזכויות שמורות.',
+      madeWith: 'נוצר עם',
+      and: 'ו'
+    }
+  }
+};
+
+// Получаем сохраненный язык или используем язык браузера, или английский язык по умолчанию
+const savedLocale = localStorage.getItem('userLocale');
+const browserLocale = navigator.language.split('-')[0]; // 'en-US' -> 'en'
+const defaultLocale = savedLocale || 
+                      (messages[browserLocale] ? browserLocale : 'en');
+
+export default createI18n({
+  legacy: false, // Vue 3 Composition API
+  locale: defaultLocale,
+  fallbackLocale: 'en',
+  messages
+});

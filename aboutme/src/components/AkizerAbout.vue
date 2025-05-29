@@ -17,32 +17,24 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { computed } from "vue";
+import { useI18n } from 'vue-i18n';
 import diplomeImg from "../assets/diplome.jpg";
 import moosebroImg from "../assets/MOOSEBRO.jpg";
 import HtmlRenderer from "./HtmlRenderer.vue";
 
-const cards = ref([
+const i18n = useI18n();
+
+const cards = computed(() => [
   {
-    title: "So, who am I?",
-    text: `
-      My name is Michael David Vizenovsky, and I am a FullStack
-      developer.<br />I learned this interesting profession in the PROG
-      institute 👉
-      <a href="https://www.prog.co.il/" target="_blank"
-        >https://www.prog.co.il/</a
-      >
-      <br />And I had the honor of attending the classes of the coolest
-      programmers in Israel - Israel Dahan and Rahamim Hania.
-    `,
+    title: i18n.t('homepage.aboutMeTitle'),
+    text: i18n.t('homepage.aboutMeText'),
     image: diplomeImg,
     color: "indigo",
   },
   {
-    title: "MOOSEBRO",
-    text: `
-      In the development industry and in commercial projects, I am also known as "MOOSEBRO"
-    `,
+    title: i18n.t('homepage.moosebroTitle'),
+    text: i18n.t('homepage.moosebroText'),
     image: moosebroImg,
     color: "indigo",
   },
