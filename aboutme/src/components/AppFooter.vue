@@ -1,79 +1,93 @@
 <template>
-  <v-footer height="40" app>
-    <a
-      v-for="item in items"
-      :key="item.title"
-      :href="item.href"
-      :title="item.title"
-      class="d-inline-block mx-2 social-link"
-      rel="noopener noreferrer"
-      target="_blank"
-    >
-      <v-icon
-        :icon="item.icon"
-        :size="item.icon === '$vuetify' ? 24 : 16"
-      />
-    </a>
+  <v-footer class="mt-8 pt-6 footer-background">
+    <v-container>
+      <v-row>        <!-- Информация о сайте -->
+        <v-col cols="12" md="4" class="text-center text-md-left">
+          <div class="text-h5 font-weight-bold mb-4">{{ $t('footer.title') }}</div>
+          <div class="mb-4">{{ $t('footer.description') }}</div>
+          <div>
+            <v-btn icon variant="text" color="primary" class="mr-2" href="mailto:vizenovsky@gmail.com">
+              <v-icon>mdi-email</v-icon>
+            </v-btn>
+            <v-btn icon variant="text" color="primary" class="mr-2" href="tel:+972583278593">
+              <v-icon>mdi-phone</v-icon>
+            </v-btn>
+            <v-btn icon variant="text" color="primary" class="mr-2" href="https://www.linkedin.com/in/mikyviz" target="_blank">
+              <v-icon>mdi-linkedin</v-icon>
+            </v-btn>
+            <v-btn icon variant="text" color="primary" class="mr-2" href="https://github.com" target="_blank">
+              <v-icon>mdi-github</v-icon>
+            </v-btn>
+          </div>
+        </v-col>        <!-- Навигация -->
+        <v-col cols="12" md="4" class="text-center">
+          <div class="text-h6 font-weight-medium mb-4">{{ $t('footer.navigation') }}</div>
+          <div class="d-flex flex-column">
+            <v-btn variant="text" class="mb-1" to="/">{{ $t('footer.home') }}</v-btn>
+            <v-btn variant="text" class="mb-1" to="/about">{{ $t('footer.about') }}</v-btn>
+            <v-btn variant="text" class="mb-1" to="/frontEnd">{{ $t('footer.frontendProjects') }}</v-btn>
+            <v-btn variant="text" class="mb-1" to="/backEnd">{{ $t('footer.backendProjects') }}</v-btn>
+            <v-btn variant="text" class="mb-1" to="/contactMe">{{ $t('footer.contacts') }}</v-btn>
+          </div>
+        </v-col>        <!-- Технологии -->
+        <v-col cols="12" md="4" class="text-center text-md-right">
+          <div class="text-h6 font-weight-medium mb-4">{{ $t('footer.techStack') }}</div>
+          <v-chip-group>
+            <v-chip color="primary" variant="outlined" class="ma-1">Vue.js</v-chip>
+            <v-chip color="primary" variant="outlined" class="ma-1">React.js</v-chip>
+            <v-chip color="primary" variant="outlined" class="ma-1">Vuetify</v-chip>
+            <v-chip color="primary" variant="outlined" class="ma-1">JavaScript</v-chip>
+            <v-chip color="primary" variant="outlined" class="ma-1">HTML5</v-chip>
+            <v-chip color="primary" variant="outlined" class="ma-1">CSS3</v-chip>
+            <v-chip color="primary" variant="outlined" class="ma-1">Node.js</v-chip>
+          </v-chip-group>
+        </v-col>
+      </v-row>
 
-    <div
-      class="text-caption text-disabled"
-      style="position: absolute; right: 16px;"
-    >
-      &copy; 2016-{{ (new Date()).getFullYear() }} <span class="d-none d-sm-inline-block">Vuetify, LLC</span>
-      —
-      <a
-        class="text-decoration-none on-surface"
-        href="https://vuetifyjs.com/about/licensing/"
-        rel="noopener noreferrer"
-        target="_blank"
-      >
-        MIT License
-      </a>
-    </div>
+      <v-divider class="my-4"></v-divider>
+      
+      <!-- Нижняя часть футера -->      <div class="d-flex flex-column flex-md-row justify-space-between align-center">
+        <div class="text-body-2 text-medium-emphasis">
+          &copy; {{ (new Date()).getFullYear() }} Miky Vizenovsky. {{ $t('footer.rights') }}
+        </div>
+        <div class="text-body-2 text-medium-emphasis mt-2 mt-md-0">
+          {{ $t('footer.madeWith') }} <v-icon color="red" size="small">mdi-heart</v-icon> {{ $t('footer.and') }} <v-icon color="primary" size="small">mdi-vuejs</v-icon>
+        </div>
+      </div>
+    </v-container>
   </v-footer>
 </template>
 
 <script setup>
-  const items = [
-    {
-      title: 'Vuetify Documentation',
-      icon: `$vuetify`,
-      href: 'https://vuetifyjs.com/',
-    },
-    {
-      title: 'Vuetify Support',
-      icon: 'mdi-shield-star-outline',
-      href: 'https://support.vuetifyjs.com/',
-    },
-    {
-      title: 'Vuetify X',
-      icon: `svg:M2.04875 3.00002L9.77052 13.3248L1.99998 21.7192H3.74882L10.5519 14.3697L16.0486 21.7192H22L13.8437 10.8137L21.0765 3.00002H19.3277L13.0624 9.76874L8.0001 3.00002H2.04875ZM4.62054 4.28821H7.35461L19.4278 20.4308H16.6937L4.62054 4.28821Z`,
-      href: 'https://x.com/vuetifyjs',
-    },
-    {
-      title: 'Vuetify GitHub',
-      icon: `mdi-github`,
-      href: 'https://github.com/vuetifyjs/vuetify',
-    },
-    {
-      title: 'Vuetify Discord',
-      icon: `mdi-discord`,
-      href: 'https://community.vuetifyjs.com/',
-    },
-    {
-      title: 'Vuetify Reddit',
-      icon: `mdi-reddit`,
-      href: 'https://reddit.com/r/vuetifyjs',
-    },
-  ]
+import { useI18n } from 'vue-i18n';
+
+const i18n = useI18n();
 </script>
 
-<style scoped lang="sass">
-  .social-link :deep(.v-icon)
-    color: rgba(var(--v-theme-on-background), var(--v-disabled-opacity))
-    text-decoration: none
-    transition: .2s ease-in-out
+<style scoped>
+.footer-background {
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.05);
+}
 
-    &:hover
-      color: rgba(25, 118, 210, 1)
+.v-btn {
+  text-transform: none;
+}
+
+.v-chip {
+  transition: all 0.3s ease;
+}
+
+.v-chip:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Анимация социальных иконок */
+.v-btn.v-btn--icon {
+  transition: transform 0.3s ease;
+}
+
+.v-btn.v-btn--icon:hover {
+  transform: scale(1.2);
+}
 </style>

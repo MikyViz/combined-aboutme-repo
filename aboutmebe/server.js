@@ -5,11 +5,12 @@ import path from 'path';
 import {syncModels}  from "./dataBase/index.js";
 import UserRouter from "./routers/userRouter.js";
 import ReviewRouter from "./routers/reviewRouter.js";
+import ContactRouter from "./routers/contactRouter.js";
 import {fileURLToPath} from 'url';
 
 dotenv.config();
-// const port = parseInt(process.env.PORT) || process.argv[3] || 8081;
-const port = process.env.PORT;
+const port = parseInt(process.env.PORT) || process.argv[3] || 8081;
+// const port = process.env.PORT;
 const app = express();
 syncModels();
 
@@ -33,6 +34,7 @@ app.get('/', (req, res) => {
 
 app.use('/users', UserRouter);
 app.use('/review', ReviewRouter);
+app.use('/contact', ContactRouter);
 
 app.use('/imgs', express.static(path.join(__dirname, 'imgs')));
 

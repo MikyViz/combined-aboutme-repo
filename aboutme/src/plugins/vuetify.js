@@ -56,7 +56,20 @@ export default createVuetify({
           surface: '#FAF3E0', // even lighter beige for surface
           text: '#5D4037', // dark brown text color
         },
-      }
+      },
+      neon: { 
+        dark: true,
+        colors: { 
+          primary: '#00FFFF', 
+          secondary: '#FF00FF', 
+          accent: '#FFFF00', 
+          error: '#FF5252', 
+          success: '#00E676',
+          background: '#121212',
+          surface: '#1E1E1E',
+          text: '#FFFFFF',
+        },
+      },
     },
     defaultTheme: 'dark',
   },
