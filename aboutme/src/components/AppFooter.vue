@@ -2,9 +2,8 @@
   <v-footer class="mt-8 pt-6 footer-background">
     <v-container>
       <v-row>        <!-- Информация о сайте -->
-        <v-col cols="12" md="4" class="text-center text-md-left">
-          <div class="text-h5 font-weight-bold mb-4">{{ $t('footer.title') }}</div>
-          <div class="mb-4">{{ $t('footer.description') }}</div>
+        <v-col cols="12" md="4" class="text-center text-md-left">          <div class="text-h5 font-weight-bold mb-4">{{ t('footer.title') }}</div>
+          <div class="mb-4">{{ t('footer.description') }}</div>
           <div>
             <v-btn icon variant="text" color="primary" class="mr-2" href="mailto:vizenovsky@gmail.com">
               <v-icon>mdi-email</v-icon>
@@ -21,17 +20,17 @@
           </div>
         </v-col>        <!-- Навигация -->
         <v-col cols="12" md="4" class="text-center">
-          <div class="text-h6 font-weight-medium mb-4">{{ $t('footer.navigation') }}</div>
+          <div class="text-h6 font-weight-medium mb-4">{{ t('footer.navigation') }}</div>
           <div class="d-flex flex-column">
-            <v-btn variant="text" class="mb-1" to="/">{{ $t('footer.home') }}</v-btn>
-            <v-btn variant="text" class="mb-1" to="/about">{{ $t('footer.about') }}</v-btn>
-            <v-btn variant="text" class="mb-1" to="/frontEnd">{{ $t('footer.frontendProjects') }}</v-btn>
-            <v-btn variant="text" class="mb-1" to="/backEnd">{{ $t('footer.backendProjects') }}</v-btn>
-            <v-btn variant="text" class="mb-1" to="/contactMe">{{ $t('footer.contacts') }}</v-btn>
+            <v-btn variant="text" class="mb-1" to="/">{{ t('footer.home') }}</v-btn>
+            <v-btn variant="text" class="mb-1" to="/about">{{ t('footer.about') }}</v-btn>
+            <v-btn variant="text" class="mb-1" to="/frontEnd">{{ t('footer.frontendProjects') }}</v-btn>
+            <v-btn variant="text" class="mb-1" to="/backEnd">{{ t('footer.backendProjects') }}</v-btn>
+            <v-btn variant="text" class="mb-1" to="/contactMe">{{ t('footer.contacts') }}</v-btn>
           </div>
         </v-col>        <!-- Технологии -->
         <v-col cols="12" md="4" class="text-center text-md-right">
-          <div class="text-h6 font-weight-medium mb-4">{{ $t('footer.techStack') }}</div>
+          <div class="text-h6 font-weight-medium mb-4">{{ t('footer.techStack') }}</div>
           <v-chip-group>
             <v-chip color="primary" variant="outlined" class="ma-1">Vue.js</v-chip>
             <v-chip color="primary" variant="outlined" class="ma-1">React.js</v-chip>
@@ -48,10 +47,10 @@
       
       <!-- Нижняя часть футера -->      <div class="d-flex flex-column flex-md-row justify-space-between align-center">
         <div class="text-body-2 text-medium-emphasis">
-          &copy; {{ (new Date()).getFullYear() }} Miky Vizenovsky. {{ $t('footer.rights') }}
+          &copy; {{ (new Date()).getFullYear() }} Miky Vizenovsky. {{ t('footer.rights') }}
         </div>
         <div class="text-body-2 text-medium-emphasis mt-2 mt-md-0">
-          {{ $t('footer.madeWith') }} <v-icon color="red" size="small">mdi-heart</v-icon> {{ $t('footer.and') }} <v-icon color="primary" size="small">mdi-vuejs</v-icon>
+          {{ t('footer.madeWith') }} <v-icon color="red" size="small">mdi-heart</v-icon> {{ t('footer.and') }} <v-icon color="primary" size="small">mdi-vuejs</v-icon>
         </div>
       </div>
     </v-container>
@@ -59,9 +58,7 @@
 </template>
 
 <script setup>
-import { useI18n } from 'vue-i18n';
-
-const i18n = useI18n();
+import { t } from '@/translations';
 </script>
 
 <style scoped>

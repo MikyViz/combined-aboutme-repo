@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <h3>{{ $t('about.skills') }}</h3>
+    <h3>{{ t('about.skills') }}</h3>
     <v-row>
       <v-col v-for="(skill, index) in skills" :key="index" cols="12" md="4" sm="6">
         <v-card 
@@ -24,9 +24,7 @@
 
 <script setup>
 import { ref } from 'vue';
-import { useI18n } from 'vue-i18n';
-
-const i18n = useI18n();
+import { t } from '@/translations';
 const hoveredSkill = ref(null);
 const skills = ref([
   { name: 'JavaScript', level: 90 },

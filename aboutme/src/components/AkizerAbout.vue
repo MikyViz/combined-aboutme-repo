@@ -18,23 +18,20 @@
 
 <script setup>
 import { computed } from "vue";
-import { useI18n } from 'vue-i18n';
+import { t } from '@/translations';
 import diplomeImg from "../assets/diplome.jpg";
 import moosebroImg from "../assets/MOOSEBRO.jpg";
 import HtmlRenderer from "./HtmlRenderer.vue";
 
-const i18n = useI18n();
-
 const cards = computed(() => [
   {
-    title: i18n.t('homepage.aboutMeTitle'),
-    text: i18n.t('homepage.aboutMeText'),
+    title: t('homepage.aboutMeTitle'),
+    text: t('homepage.aboutMeText'),
     image: diplomeImg,
     color: "indigo",
-  },
-  {
-    title: i18n.t('homepage.moosebroTitle'),
-    text: i18n.t('homepage.moosebroText'),
+  },  {
+    title: t('homepage.moosebroTitle'),
+    text: t('homepage.moosebroText'),
     image: moosebroImg,
     color: "indigo",
   },

@@ -49,11 +49,10 @@
             <!-- 👇submenu -->
             <v-container v-if="Array.isArray(rout.value) && secondaryNav">              <v-list-item
                 v-for="(secondaryRout, index) in rout.value"
-                :key="secondaryRout"
-                @click="navigateTo(secondaryRout)"
+                :key="secondaryRout"                @click="navigateTo(secondaryRout)"
               >
                 <v-list-item-title>{{
-                  index === 0 ? $t('navigation.frontendProjects') : $t('navigation.backendProjects')
+                  index === 0 ? t('navigation.frontendProjects') : t('navigation.backendProjects')
                 }}</v-list-item-title>
               </v-list-item>
             </v-container>
@@ -75,30 +74,29 @@ import router from "./router";
 import JSConfetti2 from 'js-confetti';
 import AppFooter from '@/components/AppFooter.vue';
 import LanguageSwitcher from '@/components/LanguageSwitcher.vue';
-import { useI18n } from 'vue-i18n';
+import { t, currentLocale } from '@/translations';
 // import { useThemeStore } from "./stores/theme";
 
 const simchalesConfetti = new JSConfetti2() //🎉
 simchalesConfetti.addConfetti() //🎉
 
-const i18n = useI18n();
 const drawer = ref(false);
 const secondaryNav = ref(false);
 const routs = computed(() => [
   {
-    title: i18n.t('navigation.home'),
+    title: t('navigation.home'),
     value: "/",
   },
   {
-    title: i18n.t('navigation.about'),
+    title: t('navigation.about'),
     value: "/about",
   },
   {
-    title: i18n.t('navigation.projects'),
+    title: t('navigation.projects'),
     value: ["/frontEnd", "/backEnd"],
   },
   {
-    title: i18n.t('navigation.contact'),
+    title: t('navigation.contact'),
     value: '/contactMe',
   },
 ]);
@@ -112,10 +110,9 @@ watch(
 
 // Отслеживаем изменения языка
 watch(
-  () => i18n.locale.value,
+  () => currentLocale.value,
   (newLocale) => {
     console.log('Language changed to:', newLocale);
-    localStorage.setItem('userLocale', newLocale);
     document.querySelector('html').setAttribute('lang', newLocale);
   }
 );

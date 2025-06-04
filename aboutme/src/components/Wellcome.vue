@@ -1,7 +1,6 @@
 <template>  <v-container>
     <v-row>
-      <v-col cols="8">
-        <h1 class="welcome-title text-right" :class="titleColorClass">{{ $t('welcome.greeting') }}</h1>
+      <v-col cols="8">        <h1 class="welcome-title text-right" :class="titleColorClass">{{ t('welcome.greeting') }}</h1>
       </v-col>
       </v-row>
       <v-row class= "d-flex justify-center">
@@ -12,19 +11,18 @@
         cover></v-img>
       </v-avatar>
       <v-col cols="10">
-        <h2 class="welcome-subtitle text-center" :class="subtitleColorClass">{{ $t('welcome.subtitle1') }}</h2>
-        <h2 class="welcome-subtitle text-md-right text-lg-left text-sm-center" :class="subtitleColorClass">{{ $t('welcome.subtitle2') }}</h2>
+        <h2 class="welcome-subtitle text-center" :class="subtitleColorClass">{{ t('welcome.subtitle1') }}</h2>
+        <h2 class="welcome-subtitle text-md-right text-lg-left text-sm-center" :class="subtitleColorClass">{{ t('welcome.subtitle2') }}</h2>
       </v-col>
   </v-row>
 </v-container>
 </template>
 
 <script setup>
-import { useI18n } from 'vue-i18n';
+import { t } from '@/translations';
 import { computed } from 'vue';
 import { useTheme } from 'vuetify';
 
-const i18n = useI18n();
 const theme = useTheme();
 
 // Динамические цвета в зависимости от темы

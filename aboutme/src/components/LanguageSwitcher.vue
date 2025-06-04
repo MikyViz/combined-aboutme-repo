@@ -31,35 +31,12 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue';
-import { useI18n } from 'vue-i18n';
-
-const i18n = useI18n();
-
-const availableLocales = [
-  { code: 'en', name: 'English', icon: 'mdi-flag-uk' },
-  { code: 'ru', name: 'Русский', icon: 'mdi-flag-russia' },
-  { code: 'he', name: 'עברית', icon: 'mdi-flag-israel' }
-];
-
-const currentLocale = computed(() => i18n.locale.value);
-
-const getCurrentLocale = computed(() => {
-  return availableLocales.find(locale => locale.code === currentLocale.value) || availableLocales[0];
-});
+import { availableLocales, currentLocale, setLocale, getCurrentLocale } from '@/translations';
 
 const changeLocale = (locale) => {
   console.log('Changing locale to:', locale);
-  i18n.locale.value = locale;
-  document.querySelector('html').setAttribute('lang', locale);
-  localStorage.setItem('userLocale', locale);
+  setLocale(locale);
 };
-
-// Загружаем язык из localStorage при создании компонента
-const savedLocale = localStorage.getItem('userLocale');
-if (savedLocale) {
-  i18n.locale.value = savedLocale;
-}
 </script>
 
 <style scoped>

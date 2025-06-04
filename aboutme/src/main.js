@@ -15,7 +15,6 @@ import './assets/fonts.css'
 import App from './App.vue'
 import router from './router'
 import vuetify from './plugins/vuetify'
-import i18n from './plugins/i18n'
 import emailjs from '@emailjs/browser'
 
 // Composables
@@ -28,7 +27,7 @@ import { inject } from '@vercel/analytics'
 import { createHead } from '@vueuse/head'
 
 // Инициализация EmailJS
-console.log('Инициализация EmailJS с ключом:', import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
+// console.log('Инициализация EmailJS с ключом:', import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
 emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
 
 const app = createApp(App)
@@ -48,6 +47,5 @@ app.use(createPinia())
 app.use(head)
 app.use(router)
 app.use(vuetify)
-app.use(i18n)
 
 app.mount('#app')

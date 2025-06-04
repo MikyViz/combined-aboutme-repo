@@ -1,5 +1,5 @@
 <template>    <v-container>
-        <h3 class="section-title mb-4">{{ $t('skills.javascript') }}</h3>
+        <h3 class="section-title mb-4">{{ t('skills.javascript') }}</h3>
         <v-carousel show-arrows="hover" hide-delimiters>
             <v-carousel-item v-for="(JavaScriptItem, index) in JavaScript" :key="index">
                 <v-card class="skill-card">
@@ -12,7 +12,7 @@
         </v-carousel>
     </v-container>
     <v-container>
-        <h3 class="section-title mb-4">{{ $t('skills.frontend') }}</h3>
+        <h3 class="section-title mb-4">{{ t('skills.frontend') }}</h3>
         <v-carousel show-arrows="hover" hide-delimiters>
             <v-carousel-item v-for="(FrontendItem, index) in Frontend" :key="index">
                 <v-card class="skill-card">
@@ -25,7 +25,7 @@
         </v-carousel>
     </v-container>
     <v-container>
-        <h3 class="section-title mb-4">{{ $t('skills.backend') }}</h3>
+        <h3 class="section-title mb-4">{{ t('skills.backend') }}</h3>
         <v-carousel show-arrows="hover" hide-delimiters>
             <v-carousel-item v-for="(BackendItem, index) in Backend" :key="index">
                 <v-card class="skill-card">
@@ -38,7 +38,7 @@
         </v-carousel>
     </v-container>
     <v-container>
-        <h3 class="section-title mb-4">{{ $t('skills.mobile') }}</h3>
+        <h3 class="section-title mb-4">{{ t('skills.mobile') }}</h3>
         <v-carousel show-arrows="hover" hide-delimiters>
             <v-carousel-item v-for="(MobileItem, index) in Mobile" :key="index">
                 <v-card class="skill-card">
@@ -51,7 +51,7 @@
         </v-carousel>
     </v-container>
     <v-container>
-        <h3 class="section-title mb-4">{{ $t('skills.general') }}</h3>
+        <h3 class="section-title mb-4">{{ t('skills.general') }}</h3>
         <v-carousel show-arrows="hover" hide-delimiters>
             <v-carousel-item v-for="(GeneralItem, index) in General" :key="index">
                 <v-card class="skill-card">
@@ -66,9 +66,7 @@
 </template>
 <script setup>
 import { ref } from 'vue';
-import { useI18n } from 'vue-i18n';
-
-const i18n = useI18n();
+import { t } from '@/translations';
 
 const JavaScript = ref([
     { name: 'JavaScript', img: 'https://www.freepnglogos.com/uploads/javascript-png/javascript-vector-logo-yellow-png-transparent-javascript-vector-12.png' },

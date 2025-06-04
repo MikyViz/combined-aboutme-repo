@@ -1,8 +1,7 @@
 <template>
   <v-container>
-    <v-card class="mx-auto contact-form-card" max-width="800">
-      <v-card-title class="text-h4 text-center">
-        {{ $t('contact.title') }}
+    <v-card class="mx-auto contact-form-card" max-width="800">      <v-card-title class="text-h4 text-center">
+        {{ t('contact.title') }}
       </v-card-title>
       
       <v-form ref="form" v-model="valid" @submit.prevent="submitForm">
@@ -13,7 +12,7 @@
             variant="tonal"
             closable
             class="mb-4"          >
-            {{ $t('contact.success') }}
+            {{ t('contact.success') }}
           </v-alert>
           
           <v-alert
@@ -22,7 +21,7 @@
             variant="tonal"
             closable
             class="mb-4"          >
-            {{ $t('contact.error') }}
+            {{ t('contact.error') }}
           </v-alert>
           
           <v-row>
@@ -30,7 +29,7 @@
               <v-text-field
                 v-model="name"
                 :rules="nameRules"
-                :label="$t('contact.name')"
+                :label="t('contact.name')"
                 required
                 variant="outlined"
                 prepend-inner-icon="mdi-account"
@@ -41,7 +40,7 @@
             <v-col cols="12" md="6">              <v-text-field
                 v-model="email"
                 :rules="emailRules"
-                :label="$t('contact.email')"
+                :label="t('contact.email')"
                 required
                 variant="outlined"
                 prepend-inner-icon="mdi-email"
@@ -54,7 +53,7 @@
             <v-col cols="12">              <v-text-field
                 v-model="subject"
                 :rules="subjectRules"
-                :label="$t('contact.subject')"
+                :label="t('contact.subject')"
                 required
                 variant="outlined"
                 prepend-inner-icon="mdi-text-subject"
@@ -67,7 +66,7 @@
             <v-col cols="12">              <v-textarea
                 v-model="message"
                 :rules="messageRules"
-                :label="$t('contact.message')"
+                :label="t('contact.message')"
                 required
                 variant="outlined"
                 prepend-inner-icon="mdi-message-text"
@@ -87,14 +86,14 @@
             :loading="loading"
             :disabled="!valid || loading"
             class="px-8"          >
-            {{ $t('contact.send') }}
+            {{ t('contact.send') }}
             <v-icon class="ml-2">mdi-send</v-icon>
           </v-btn>
         </v-card-actions>
       </v-form>
       
       <v-card-text class="text-center mt-4">
-        <div class="text-body-1 mb-4">{{ $t('contact.contactMe') }}</div>
+        <div class="text-body-1 mb-4">{{ t('contact.contactMe') }}</div>
         <v-row justify="center">
           <v-col cols="auto">
             <v-btn icon color="blue" href="https://linkedin.com/in/mikyviz" target="_blank">
@@ -119,10 +118,9 @@
 
 <script setup>
 import { ref, computed, onMounted } from 'vue';
-import { useI18n } from 'vue-i18n';
+import { t } from '@/translations';
 import emailjs from '@emailjs/browser';
 
-const i18n = useI18n();
 const form = ref(null);
 const valid = ref(true);
 const loading = ref(false);
@@ -139,23 +137,23 @@ const message = ref('');
 
 // Validation rules
 const nameRules = computed(() => [
-  v => !!v || i18n.t('contact.validation.nameRequired'),
-  v => v.length <= 50 || i18n.t('contact.validation.nameTooLong')
+  v => !!v || t('contact.validation.nameRequired'),
+  v => v.length <= 50 || t('contact.validation.nameTooLong')
 ]);
 
 const emailRules = computed(() => [
-  v => !!v || i18n.t('contact.validation.emailRequired'),
-  v => /.+@.+\..+/.test(v) || i18n.t('contact.validation.emailInvalid')
+  v => !!v || t('contact.validation.emailRequired'),
+  v => /.+@.+\..+/.test(v) || t('contact.validation.emailInvalid')
 ]);
 
 const subjectRules = computed(() => [
-  v => !!v || i18n.t('contact.validation.subjectRequired'),
-  v => v.length <= 100 || i18n.t('contact.validation.subjectTooLong')
+  v => !!v || t('contact.validation.subjectRequired'),
+  v => v.length <= 100 || t('contact.validation.subjectTooLong')
 ]);
 
 const messageRules = computed(() => [
-  v => !!v || i18n.t('contact.validation.messageRequired'),
-  v => v.length >= 10 || i18n.t('contact.validation.messageTooShort')
+  v => !!v || t('contact.validation.messageRequired'),
+  v => v.length >= 10 || t('contact.validation.messageTooShort')
 ]);
 
 // Функция отправки формы
