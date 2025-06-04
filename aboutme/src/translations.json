@@ -4,9 +4,9 @@
       "title": "Welcome to my portfolio!",
       "subtitle": "I'm a FullStack Developer",
       "description": "Creating modern and responsive web applications",
-      "greeting": "Hi there!!!",
+      "greeting": "Hi bro!!!",
       "subtitle1": "Always glad to see you, on my site!",
-      "subtitle2": "Let's hang out!"
+      "subtitle2": "Let's hang out)"
     },
     "homepage": {
       "aboutMeTitle": "So, who am I?",
@@ -90,7 +90,7 @@
       "moreDetails": "More details"
     },
     "contact": {
-      "title": "Let's Connect!",
+      "title": "Wont to stay in touch?...🤙",
       "name": "Name",
       "email": "Email",
       "subject": "Subject",
@@ -116,13 +116,13 @@
       "title": "Добро пожаловать в мое портфолио!",
       "subtitle": "Я FullStack разработчик",
       "description": "Создаю современные и отзывчивые веб-приложения",
-      "greeting": "Здарова!!!",
-      "subtitle1": "Всегда рад видеть вас на моем сайте!",
-      "subtitle2": "Давайте общаться!"
+      "greeting": "Здарова, бро!!!",
+      "subtitle1": "Всегда рад видеть тебя на моем сайте!",
+      "subtitle2": "Молодец, что зашел)"
     },
     "homepage": {
       "aboutMeTitle": "Итак, кто я?",
-      "aboutMeText": "Меня зовут Михаил Давид Виценовский, и я FullStack разработчик.<br />Я изучил эту интересную профессию в институте PROG 👉 <a href=\"https://www.prog.co.il/\" target=\"_blank\">https://www.prog.co.il/</a><br />И мне выпала честь посещать занятия самых крутых программистов Израиля - Исраэля Даана и Рахамима Хании.",
+      "aboutMeText": "Меня зовут Михаэль Давид Виценовский, и я FullStack разработчик.<br />Я изучил эту интересную профессию в институте PROG 👉 <a href=\"https://www.prog.co.il/\" target=\"_blank\">https://www.prog.co.il/</a><br />И мне выпала честь посещать занятия самых крутых программистов Израиля - Исраэля Даана и Рахамима Хании.",
       "moosebroTitle": "MOOSEBRO",
       "moosebroText": "В индустрии разработки и в коммерческих проектах меня также знают как \"MOOSEBRO\""
     },
@@ -188,7 +188,7 @@
       "moreDetails": "Подробнее"
     },
     "contact": {
-      "title": "Давайте будем на связи!",
+      "title": "Есть, что сказать?...🤙",
       "name": "Имя",
       "email": "Email",
       "subject": "Тема",
@@ -226,11 +226,11 @@
   "he": {
     "welcome": {
       "title": "!ברוך הבא לתיק העבודות שלי",
-      "subtitle": "אני מפתח FullStack",
+      "subtitle": "FullStack אני מפתח ",
       "description": "יוצר יישומי אינטרנט מודרניים ותגובתיים",
-      "greeting": "!!!היי שם",
+      "greeting": "!!!היי ברו",
       "subtitle1": "!תמיד שמח לראות אותך באתר שלי",
-      "subtitle2": "!בואו נבלה ביחד"
+      "subtitle2": "(:כל הכבוד שנכנסת "
     },
     "homepage": {
       "aboutMeTitle": "?אז, מי אני",
