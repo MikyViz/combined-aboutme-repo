@@ -27,8 +27,17 @@ import { inject } from '@vercel/analytics'
 import { createHead } from '@vueuse/head'
 
 // Инициализация EmailJS
-// console.log('Инициализация EmailJS с ключом:', import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
-emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
+const emailjsPublicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+if (emailjsPublicKey) {
+  try {
+    emailjs.init(emailjsPublicKey);
+    console.log('EmailJS initialized successfully');
+  } catch (error) {
+    console.error('Failed to initialize EmailJS:', error);
+  }
+} else {
+  console.warn('EmailJS public key not found. Contact form may not work properly.');
+}
 
 const app = createApp(App)
 const head = createHead()

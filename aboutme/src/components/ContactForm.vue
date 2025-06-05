@@ -162,24 +162,31 @@ const submitForm = async () => {
   
   loading.value = true;
   formStatus.value = null;
-  
-  try {    const templateParams = {
+    try {    const templateParams = {
       name: name.value,           // Changed from from_name to name to match template {{name}}
       from_email: email.value,    // Keep this as is if template uses {{from_email}}
       title: subject.value,       // Changed from subject to title to match template {{title}}
       message: message.value      // Keep this as is if template uses {{message}}
     };
     
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+    
     // Отладочная информация - проверяем значения переменных окружения
-    console.log('SERVICE_ID:', import.meta.env.VITE_EMAILJS_SERVICE_ID);
-    console.log('TEMPLATE_ID:', import.meta.env.VITE_EMAILJS_TEMPLATE_ID);
-    console.log('PUBLIC_KEY:', import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
+    console.log('EmailJS Config:', { serviceId, templateId, publicKey: publicKey ? '✓ Present' : '✗ Missing' });
+    
+    // Проверка наличия необходимых переменных
+    if (!serviceId || !templateId || !publicKey) {
+      console.error('Missing required EmailJS configuration variables');
+      throw new Error('Email configuration error - please contact site administrator');
+    }
     
     await emailjs.send(
-      import.meta.env.VITE_EMAILJS_SERVICE_ID,
-      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+      serviceId,
+      templateId,
       templateParams,
-      import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      publicKey
     );
     
     formStatus.value = 'success';
