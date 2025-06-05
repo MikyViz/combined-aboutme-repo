@@ -120,14 +120,12 @@
 import { ref, computed, onMounted } from 'vue';
 import { t } from '@/translations';
 import emailjs from '@emailjs/browser';
+import { emailjsConfig } from '@/config/emailjs';
 
 const form = ref(null);
 const valid = ref(true);
 const loading = ref(false);
 const formStatus = ref(null); // 'success', 'error', null
-
-// Инициализация EmailJS (лучше делать в main.js, но можно оставить для надёжности)
-emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
 
 // Form fields
 const name = ref('');
@@ -162,35 +160,43 @@ const submitForm = async () => {
   
   loading.value = true;
   formStatus.value = null;
-    try {    const templateParams = {
+  try {    const templateParams = {
       name: name.value,           // Changed from from_name to name to match template {{name}}
       from_email: email.value,    // Keep this as is if template uses {{from_email}}
       title: subject.value,       // Changed from subject to title to match template {{title}}
       message: message.value      // Keep this as is if template uses {{message}}
     };
     
-    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
-    
-    // Отладочная информация - проверяем значения переменных окружения
-    console.log('EmailJS Config:', { serviceId, templateId, publicKey: publicKey ? '✓ Present' : '✗ Missing' });
+    // Используем жестко закодированные значения
+    const { serviceId, templateId, publicKey } = emailjsConfig;
+      // Улучшена отладочная информация без вывода значений в консоль
+    console.log('Using EmailJS Config:', { 
+      serviceId: serviceId ? '✓ Present' : '✗ Missing', 
+      templateId: templateId ? '✓ Present' : '✗ Missing',
+      publicKey: publicKey ? '✓ Present' : '✗ Missing' 
+    });
     
     // Проверка наличия необходимых переменных
     if (!serviceId || !templateId || !publicKey) {
-      console.error('Missing required EmailJS configuration variables');
+      console.error('Missing required EmailJS configuration values in config file');
       throw new Error('Email configuration error - please contact site administrator');
     }
-    
-    await emailjs.send(
+      const result = await emailjs.send(
       serviceId,
       templateId,
       templateParams,
       publicKey
     );
     
-    formStatus.value = 'success';
-    resetForm();
+    // Проверяем наличие успешного ответа от EmailJS
+    if (result && result.status === 200) {
+      console.log('Email successfully sent!', result.text);
+      formStatus.value = 'success';
+      resetForm();
+    } else {
+      console.warn('EmailJS returned unexpected response:', result);
+      throw new Error('Failed to send email - please try again');
+    }
   } catch (error) {
     console.error('Ошибка при отправке:', error);
     formStatus.value = 'error';

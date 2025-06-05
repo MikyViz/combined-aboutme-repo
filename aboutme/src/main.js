@@ -26,17 +26,16 @@ import { inject } from '@vercel/analytics'
 // SEO
 import { createHead } from '@vueuse/head'
 
-// Инициализация EmailJS
-const emailjsPublicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
-if (emailjsPublicKey) {
-  try {
-    emailjs.init(emailjsPublicKey);
-    console.log('EmailJS initialized successfully');
-  } catch (error) {
-    console.error('Failed to initialize EmailJS:', error);
-  }
-} else {
-  console.warn('EmailJS public key not found. Contact form may not work properly.');
+// EmailJS конфигурация
+import { emailjsConfig } from './config/emailjs'
+
+// Инициализация EmailJS с жестко закодированными значениями из конфиг файла
+try {
+  emailjs.init(emailjsConfig.publicKey);
+  console.log('EmailJS initialized successfully with config:', 
+    { serviceId: '✓', templateId: '✓', publicKey: '✓' });
+} catch (error) {
+  console.error('Failed to initialize EmailJS:', error);
 }
 
 const app = createApp(App)

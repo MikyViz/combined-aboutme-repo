@@ -1,11 +1,11 @@
 {
   "name": "AboutMe",
-  "version": "0.0.0",
-  "scripts": {
+  "version": "0.0.0",  "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "lint": "eslint . --fix --ignore-path .gitignore"
+    "lint": "eslint . --fix --ignore-path .gitignore",
+    "validate-config": "node src/config/validate-emailjs-config.js"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
@@ -18,7 +18,6 @@
     "pinia": "^2.2.4",
     "roboto-fontface": "*",
     "vue": "^3.4.0",
-    "vue-i18n": "^12.0.0-alpha.2",
     "vuetify": "^3.5.0"
   },
   "devDependencies": {

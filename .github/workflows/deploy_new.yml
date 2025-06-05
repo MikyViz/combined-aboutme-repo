@@ -1,3 +1,4 @@
+# Temporary workflow file for editing
 name: Deploy to GitHub Pages
 
 on:
@@ -25,7 +26,7 @@ jobs:
         
       - name: Build project
         working-directory: ./aboutme
-        # We use hardcoded EmailJS config values, so we don't need environment variables
+        # We're using hardcoded EmailJS config values, so we don't need environment variables
         run: npm run build
         
       - name: Deploy to GitHub Pages
