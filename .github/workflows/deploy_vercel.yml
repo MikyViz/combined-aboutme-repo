@@ -1,9 +1,9 @@
-# Temporary workflow file for editing
+# Deploy workflow file for Vercel
 name: Deploy to Vercel
 
 on:
   push:
-    branches: [ main, master ]  # включает обе ветки, чтобы точно сработало
+    branches: [ main, master ]  # includes both branches to ensure it triggers
 
 jobs:
   build-and-deploy:
@@ -17,9 +17,6 @@ jobs:
         with:
           node-version: '18'
           
-      - name: Navigate to aboutme directory
-        run: cd aboutme
-        
       - name: Install dependencies
         working-directory: ./aboutme
         run: npm ci
@@ -32,7 +29,7 @@ jobs:
       - name: Deploy to Vercel
         uses: amondnet/vercel-action@v20
         with:
-          zeit-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
           working-directory: ./aboutme
