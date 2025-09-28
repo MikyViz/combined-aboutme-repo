@@ -1,24 +1,22 @@
-<template>
-  <v-app>
-    <v-main>
-      <v-app-bar color="indigo" prominent="true">
+<template>  <v-app :class="{ 'family-guy-gradient-light': !theme.global.current.value.dark, 'family-guy-gradient-dark': theme.global.current.value.dark, 'family-guy-pattern': true }">
+    <v-main>      <v-app-bar color="primary" prominent="true" class="family-guy-nav">
         <v-app-bar-nav-icon
           variant="text"
           @click.stop="drawer = !drawer"
+          class="family-guy-icon"
         ></v-app-bar-nav-icon>
-        <v-toolbar-title>About Miky Vizenovsky 🫎</v-toolbar-title>
+        <v-toolbar-title class="family-guy-title">🏠 Griffin Family Style - Miky Vizenovsky</v-toolbar-title>
         <v-spacer></v-spacer>
         
         <!-- Переключатель языка -->
         <LanguageSwitcher class="mr-2" />
           <v-menu>
-          <template v-slot:activator="{ props }">
-            <v-btn 
+          <template v-slot:activator="{ props }">            <v-btn 
               v-bind="props"
               icon
-              class="ml-3"
+              class="ml-3 family-guy-btn family-guy-bounce"
             >
-              <v-icon>{{ themeIcon }}</v-icon>
+              <v-icon class="family-guy-icon">{{ themeIcon }}</v-icon>
             </v-btn>
           </template>
           <v-list>
@@ -118,14 +116,11 @@ watch(
 );
 
 const theme = useTheme();
-const selectedTheme = ref("dark");
+const selectedTheme = ref("light");
 
 const themeOptions = [
-  { name: "Light", value: "light", icon: "🧸" },
-  { name: "Dark", value: "dark", icon: "🌚" },
-  { name: "Green", value: "green", icon: "🖍️" },
-  { name: "Brown", value: "brown", icon: "💩" },
-  { name: "Neon", value: "neon", icon: "🌈" }
+  { name: "Light (Quahog Day)", value: "light", icon: "☀️" },
+  { name: "Dark (Quahog Night)", value: "dark", icon: "🌙" }
 ];
 
 const themeIcon = computed(() => {
@@ -133,9 +128,6 @@ const themeIcon = computed(() => {
   switch(current) {
     case 'light': return 'mdi-weather-sunny';
     case 'dark': return 'mdi-weather-night';
-    case 'green': return 'mdi-pine-tree';
-    case 'brown': return 'mdi-earth';
-    case 'neon': return 'mdi-neon-lamp';
     default: return 'mdi-theme-light-dark';
   }
 });

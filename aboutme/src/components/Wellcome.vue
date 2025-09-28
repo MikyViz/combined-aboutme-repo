@@ -1,21 +1,37 @@
-<template>  <v-container>
+<template>  
+  <v-container class="family-guy-pattern">
     <v-row>
-      <v-col cols="8">        <h1 class="welcome-title text-right" :class="titleColorClass">{{ t('welcome.greeting') }}</h1>
+      <v-col cols="8">        
+        <h1 class="welcome-title family-guy-title text-right family-guy-bounce" :class="titleColorClass">
+          {{ t('welcome.greeting') }} 🍺
+        </h1>
       </v-col>
-      </v-row>
-      <v-row class= "d-flex justify-center">
-        <v-avatar
-        size="150">
-        <v-img height="100%"
-        src="../assets/me.jpeg"
-        cover></v-img>
+    </v-row>
+    <v-row class="d-flex justify-center">
+      <v-avatar
+        size="150"
+        class="family-guy-image mb-4">
+        <v-img 
+          height="100%"
+          src="../assets/me.jpeg"
+          cover
+        />
       </v-avatar>
       <v-col cols="10">
-        <h2 class="welcome-subtitle text-center" :class="subtitleColorClass">{{ t('welcome.subtitle1') }}</h2>
-        <h2 class="welcome-subtitle text-md-right text-lg-left text-sm-center" :class="subtitleColorClass">{{ t('welcome.subtitle2') }}</h2>
+        <h2 class="welcome-subtitle family-guy-text text-center" :class="subtitleColorClass">
+          {{ t('welcome.subtitle1') }} 📺
+        </h2>
+        <h2 class="welcome-subtitle family-guy-text text-md-right text-lg-left text-sm-center" :class="subtitleColorClass">
+          {{ t('welcome.subtitle2') }} 🎬
+        </h2>
+        <div class="text-center mt-4">
+          <p class="family-guy-text text-h6" :class="subtitleColorClass">
+            "Holy crap! This is better than that time I met Peter Griffin!" 😄
+          </p>
+        </div>
       </v-col>
-  </v-row>
-</v-container>
+    </v-row>
+  </v-container>
 </template>
 
 <script setup>
@@ -36,13 +52,15 @@ const subtitleColorClass = computed(() => {
 </script>
 
 <style scoped>
-/* Дополнительные стили для анимации */
+/* Family Guy стили для приветствия */
 .welcome-title {
   animation: fadeInUp 0.8s ease-out;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
 }
 
 .welcome-subtitle {
   animation: fadeInUp 0.8s ease-out 0.2s both;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 @keyframes fadeInUp {
@@ -56,13 +74,26 @@ const subtitleColorClass = computed(() => {
   }
 }
 
-/* Эффект при наведении */
+/* Family Guy стиль при наведении */
 .welcome-title:hover {
-  transform: scale(1.02);
+  transform: scale(1.05) rotate(1deg);
   transition: transform 0.3s ease;
 }
 
-/* Резервные стили на случай если CSS переменные не загрузились */
+/* Стили аватара в стиле Family Guy */
+.v-avatar {
+  border: 4px solid;
+  border-color: rgb(var(--v-theme-primary));
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease-in-out;
+}
+
+.v-avatar:hover {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* Медиа запросы для отзывчивости */
 h1 {
   font-size: 2.5rem;
 }

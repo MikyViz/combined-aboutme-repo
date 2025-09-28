@@ -12,66 +12,53 @@ import { aliases, mdi } from 'vuetify/iconsets/mdi'
 
 // Composables
 import { createVuetify } from 'vuetify'
-import { brown, green } from 'vuetify/util/colors'
 
 // https://vuetifyjs.com/en/introduction/why-vuetify/#feature-guides
 export default createVuetify({
   theme: {
     themes: {
-      green: { 
-        dark: true,
-        colors: { 
-          primary: '#1E244F', 
-          secondary: '#1E244F', 
-          accent: '#CDDC39', 
-          error: '#FF5722', 
-          success: '#00E676',
-          background: '#2B521E',
-          surface: '#1E244F',
-          text: '#1E244F',
-        },
-      },
-      brown: { 
-        dark: false,
-        colors: { 
-          primary: '#1E244F', 
-          secondary: '#1E244F', 
-          accent: '#CDDC39', 
-          error: '#FF5722', 
-          success: '#00E676',
-          background: brown.darken4,
-          surface: '#1E244F',
-          text: '#1E244F',
-        },
-      },
       light: { 
         dark: false,
         colors: { 
-          primary: '#D7CCC8', // beige primary color
-          secondary: '#A1887F', // lighter brown secondary color
-          accent: '#FFC107', // light amber accent color
-          error: '#FF5722', // red color for errors
-          success: '#8BC34A', // light green color for success
-          background: '#F5F5DC', // light beige background color
-          surface: '#FAF3E0', // even lighter beige for surface
-          text: '#5D4037', // dark brown text color
+          primary: '#4A90E2', // Питер's синяя рубашка
+          secondary: '#F5A623', // желтый как у Гомера (но мы тут Family Guy)
+          accent: '#7ED321', // яркий зеленый как трава во дворе Гриффинов
+          error: '#D0021B', // красный как помада у Лоис
+          success: '#50E3C2', // мятный зеленый
+          warning: '#F5A623', // оранжевый
+          info: '#4A90E2', // синий
+          background: '#F8F9FA', // очень светлый фон как в мультике
+          surface: '#FFFFFF', // чистый белый для карточек
+          'surface-variant': '#E3F2FD', // светло-голубой
+          'on-background': '#212529', // темный текст на светлом фоне
+          'on-surface': '#212529',
+          'on-primary': '#FFFFFF',
+          'on-secondary': '#000000',
+          'on-accent': '#000000',
         },
       },
-      neon: { 
+      dark: { 
         dark: true,
         colors: { 
-          primary: '#00FFFF', 
-          secondary: '#FF00FF', 
-          accent: '#FFFF00', 
-          error: '#FF5252', 
-          success: '#00E676',
-          background: '#121212',
-          surface: '#1E1E1E',
-          text: '#FFFFFF',
+          primary: '#5DADE2', // более яркий синий для темной темы
+          secondary: '#F39C12', // оранжевый Питера в темном варианте
+          accent: '#58D68D', // яркий зеленый
+          error: '#E74C3C', // красный
+          success: '#2ECC71', // зеленый успех
+          warning: '#F39C12', // оранжевый предупреждение
+          info: '#3498DB', // синий инфо
+          background: '#1A1A2E', // темно-синий фон как ночное небо в Квохоге
+          surface: '#16213E', // темно-синяя поверхность
+          'surface-variant': '#0F3460', // еще темнее синий
+          'on-background': '#EAEDED', // светлый текст на темном фоне
+          'on-surface': '#EAEDED',
+          'on-primary': '#FFFFFF',
+          'on-secondary': '#000000',
+          'on-accent': '#000000',
         },
       },
     },
-    defaultTheme: 'dark',
+    defaultTheme: 'light',
   },
   icons: {
     defaultSet: 'mdi',
