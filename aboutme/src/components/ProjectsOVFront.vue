@@ -1,27 +1,98 @@
 <template>
-  <v-container>
-    <h2 class="text-center">Let's overview my projects!</h2>
+  <v-container class="family-guy-pattern">
+    <h2 class="text-center family-guy-title mb-6">
+      🚀 Let's overview my frontend projects! Like Peter's TV collection! 📺
+    </h2>
+    
     <v-container>
-      <h3>FrontEnd</h3>
-      <v-container v-for="(frontendItem, index) in frontend" :key="index">
-        <h3>{{ frontendItem.name }}</h3>
-        <h3><a target="_blank" :href='frontendItem.git'>{{ frontendItem.git }}</a></h3>
-        <v-carousel show-arrows="hover" hide-delimiters>
-          <v-carousel-item
-            v-for="(projectImg, index) in frontendItem.imgs"
-            :key="index"
+      <h3 class="family-guy-title mb-4">🎨 FrontEnd Projects</h3>
+      
+      <v-row>
+        <v-col 
+          v-for="(frontendItem, index) in frontend" 
+          :key="index"
+          cols="12" 
+          md="6"
+          class="mb-6"
+        >
+          <v-card 
+            class="family-guy-card project-card" 
+            :class="`animate-project-${index + 1}`"
+            elevation="8"
           >
-            <v-card>
-              <v-card-item>
-                <v-img :src="projectImg" height="350px"></v-img>
-              </v-card-item>
-            </v-card>
-          </v-carousel-item>
-        </v-carousel>
-        <div>
-          <p>{{ frontendItem.about }}</p>
-        </div>
-      </v-container>
+            <v-card-title class="family-guy-title d-flex align-center">
+              <v-icon :icon="frontendItem.icon" class="mr-2 family-guy-icon" />
+              {{ frontendItem.name }}
+            </v-card-title>
+            
+            <v-card-subtitle class="family-guy-text mb-2">
+              <v-btn 
+                :href="frontendItem.git" 
+                target="_blank" 
+                variant="outlined" 
+                color="primary"
+                class="family-guy-btn"
+                prepend-icon="mdi-github"
+                size="small"
+              >
+                GitHub
+              </v-btn>
+              <v-chip 
+                v-if="frontendItem.npm"
+                :href="frontendItem.npm" 
+                clickable
+                color="success" 
+                variant="outlined"
+                class="family-guy-btn ml-2"
+                size="small"
+              >
+                📦 NPM
+              </v-chip>
+            </v-card-subtitle>
+
+            <v-carousel 
+              v-if="frontendItem.imgs && frontendItem.imgs.length > 0"
+              show-arrows="hover" 
+              hide-delimiters
+              class="mb-4"
+            >
+              <v-carousel-item
+                v-for="(projectImg, imgIndex) in frontendItem.imgs"
+                :key="imgIndex"
+              >
+                <v-card>
+                  <v-card-item>
+                    <v-img 
+                      :src="projectImg" 
+                      height="350px"
+                      class="family-guy-image"
+                    />
+                  </v-card-item>
+                </v-card>
+              </v-carousel-item>
+            </v-carousel>
+
+            <v-card-text class="family-guy-text">
+              <p>{{ frontendItem.about }}</p>
+              
+              <!-- Family Guy цитата для каждого проекта -->
+              <v-alert 
+                type="info" 
+                variant="tonal" 
+                class="mt-4"
+                :icon="false"
+              >
+                <template v-slot:prepend>
+                  <v-icon>mdi-format-quote-open</v-icon>
+                </template>
+                <em>{{ frontendItem.quote }}</em>
+                <br>
+                <small>- {{ frontendItem.quoteAuthor }}</small>
+              </v-alert>
+            </v-card-text>
+          </v-card>
+        </v-col>
+      </v-row>
     </v-container>
 
     <!-- <v-container>
@@ -56,11 +127,25 @@ const imgFiles = import.meta.glob('../assets/projects/**/*.{png,jpg,jpeg,gif}');
 
 const frontend = ref([
   {
+    name: "Keymap Inspector (NPM Package)",
+    git: "https://github.com/MikyViz/keymap-inspector",
+    npm: "https://www.npmjs.com/package/keymap-inspector",
+    about: `🎯 NPM Package v0.1.5! Supports 7 keyboard layouts (English, Russian, German, French, Spanish, Ukrainian, Hebrew). Bidirectional mapping with CLI tool and TypeScript support. Only 6.5KB package size with 24 monthly downloads. Perfect for international developers!`,
+    folder: "keymap",
+    imgs: [],
+    icon: "mdi-keyboard",
+    quote: "Holy crap! This supports more languages than I know curse words in!",
+    quoteAuthor: "Peter Griffin"
+  },
+  {
     name: "BallonsCalc",
     git: "https://github.com/MikyViz/ballonsCalc",
-    about: `BallonsCalc, it's application  that help to calculate how many ballons and helium you have to buy for your ballons style, how many it will cost, and witch price you will ask for your ballons working.`,
+    about: `BallonsCalc, it's application that help to calculate how many ballons and helium you have to buy for your ballons style, how many it will cost, and witch price you will ask for your ballons working.`,
     folder: "ballonscalc",
     imgs: [],
+    icon: "mdi-balloon",
+    quote: "This is almost as inflated as my ego!",
+    quoteAuthor: "Peter Griffin"
   },
   {
     name: "moneySale",
@@ -68,13 +153,19 @@ const frontend = ref([
     about: `An application for calculating the value of currency, designed not only for purely practical use, but also for educational and entertaining purposes.`,
     folder: "moneySale",
     imgs: [],
+    icon: "mdi-currency-usd",
+    quote: "Finally! Something that can help me understand money better than Lois's lectures!",
+    quoteAuthor: "Peter Griffin"
   },
   {
-    name: "AboutMe",
+    name: "AboutMe (This Site!)",
     git: "https://github.com/MikyViz/combined-aboutme-repo/tree/master/aboutme",
-    about: `Code of this site📝`,
+    about: `Code of this site📝 - Built with Vue.js, Vuetify, and lots of Family Guy references! A modern portfolio website with multiple themes and languages support.`,
     folder: "aboutme",
     imgs: [],
+    icon: "mdi-web",
+    quote: "Blast! This website is more sophisticated than my plans for world domination!",
+    quoteAuthor: "Stewie Griffin"
   },
 ]);
 // const backend = ref([
@@ -110,3 +201,83 @@ onMounted(() => {
   loadImages();
 });
 </script>
+
+<style scoped>
+.project-card {
+  background: rgba(var(--v-theme-surface), 0.95);
+  border: 3px solid var(--v-theme-primary);
+  transition: all 0.3s ease-in-out;
+  height: 100%;
+}
+
+.project-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+  border-color: var(--v-theme-accent);
+}
+
+/* Анимации появления для проектов */
+.animate-project-1 {
+  animation: slideInLeft 0.8s ease-out;
+}
+
+.animate-project-2 {
+  animation: slideInRight 0.8s ease-out 0.2s both;
+}
+
+.animate-project-3 {
+  animation: slideInLeft 0.8s ease-out 0.4s both;
+}
+
+.animate-project-4 {
+  animation: slideInRight 0.8s ease-out 0.6s both;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Hover эффект для карточек */
+.project-card:hover .family-guy-icon {
+  animation: bounce 0.6s ease-in-out;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  40% {
+    transform: translateY(-5px) scale(1.1);
+  }
+  60% {
+    transform: translateY(-3px) scale(1.05);
+  }
+}
+
+/* Стиль для чипов */
+.v-chip {
+  transition: all 0.2s ease;
+}
+
+.v-chip:hover {
+  transform: scale(1.05);
+}
+</style>

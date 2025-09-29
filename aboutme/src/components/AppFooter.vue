@@ -37,6 +37,7 @@
             <v-btn variant="text" class="mb-1 family-guy-btn family-guy-text" to="/about">👨‍💻 {{ t('footer.about') }}</v-btn>
             <v-btn variant="text" class="mb-1 family-guy-btn family-guy-text" to="/frontEnd">🎨 {{ t('footer.frontendProjects') }}</v-btn>
             <v-btn variant="text" class="mb-1 family-guy-btn family-guy-text" to="/backEnd">⚙️ {{ t('footer.backendProjects') }}</v-btn>
+            <v-btn variant="text" class="mb-1 family-guy-btn family-guy-text" to="/npmPackages">📦 NPM Packages</v-btn>
             <v-btn variant="text" class="mb-1 family-guy-btn family-guy-text" to="/contactMe">📧 {{ t('footer.contacts') }}</v-btn>
           </div>
         </v-col>        

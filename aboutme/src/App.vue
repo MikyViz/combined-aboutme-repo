@@ -47,7 +47,7 @@
             <!-- 👇submenu -->
             <v-container v-if="Array.isArray(rout.value) && secondaryNav">              <v-list-item
                 v-for="(secondaryRout, index) in rout.value"
-                :key="secondaryRout"                @click="navigateTo(secondaryRout)"
+                :key="secondaryRout"                @click="navigateToSubmenu(secondaryRout)"
               >
                 <v-list-item-title>{{
                   index === 0 ? t('navigation.frontendProjects') : t('navigation.backendProjects')
@@ -92,6 +92,10 @@ const routs = computed(() => [
   {
     title: t('navigation.projects'),
     value: ["/frontEnd", "/backEnd"],
+  },
+  {
+    title: "📦 NPM Packages",
+    value: "/npmPackages",
   },
   {
     title: t('navigation.contact'),
@@ -150,12 +154,23 @@ function selectTheme(themeName) {
 
 function navigateTo(value) {
   if (typeof value !== "object") {
+    // Закрываем drawer после навигации
+    drawer.value = false;
     router.push(value).catch((err) => {
       console.error("Navigation error:", err);
     });
   } else {
     secondaryNav.value = !secondaryNav.value;
   }
+}
+
+function navigateToSubmenu(route) {
+  // Закрываем drawer и secondaryNav после навигации в submenu
+  drawer.value = false;
+  secondaryNav.value = false;
+  router.push(route).catch((err) => {
+    console.error("Navigation error:", err);
+  });
 }
 </script>
 
