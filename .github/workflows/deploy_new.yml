@@ -3,7 +3,7 @@ name: Deploy to Vercel
 
 on:
   push:
-    branches: [ main, master ]  # включает обе ветки, чтобы точно сработало
+    branches: [ FamilyGuyStyle ]  # деплой с ветки FamilyGuyStyle
 
 jobs:
   build-and-deploy:
