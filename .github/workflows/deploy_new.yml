@@ -29,11 +29,17 @@ jobs:
         # We're using hardcoded EmailJS config values, so we don't need environment variables
         run: npm run build
         
-      - name: Deploy to Vercel
-        uses: amondnet/vercel-action@v25
-        with:
-          vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
-          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
-          working-directory: ./aboutme
-          vercel-args: '--prod'
+      - name: Install Vercel CLI
+        run: npm install --global vercel@latest
+        
+      - name: Pull Vercel Environment Information
+        working-directory: ./aboutme
+        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+        
+      - name: Build Project Artifacts
+        working-directory: ./aboutme
+        run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
+        
+      - name: Deploy prebuilt project to Vercel
+        working-directory: ./aboutme
+        run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
