@@ -74,34 +74,39 @@ import { ref } from 'vue';
 const imageDialog = ref(false);
 const selectedImage = ref(null);
 
+// Функция для загрузки изображений из assets
+const getImageUrl = (name) => {
+  return new URL(`../assets/family-guy/${name}`, import.meta.url).href;
+};
+
 const familyGuyImages = ref([
   {
-    src: '/src/assets/family-guy/Gemini_Generated_Image_56v48g56v48g56v4.png',
+    src: getImageUrl('Gemini_Generated_Image_56v48g56v48g56v4.png'),
     alt: 'Family Guy Style Art 1',
     caption: '🎭 Peter\'s Style'
   },
   {
-    src: '/src/assets/family-guy/Gemini_Generated_Image_6xl8hk6xl8hk6xl8.png',
+    src: getImageUrl('Gemini_Generated_Image_6xl8hk6xl8hk6xl8.png'),
     alt: 'Family Guy Style Art 2',
     caption: '🐕 Brian\'s Wisdom'
   },
   {
-    src: '/src/assets/family-guy/Gemini_Generated_Image_dcr36bdcr36bdcr3.png',
+    src: getImageUrl('Gemini_Generated_Image_dcr36bdcr36bdcr3.png'),
     alt: 'Family Guy Style Art 3',
     caption: '👶 Stewie\'s Plans'
   },
   {
-    src: '/src/assets/family-guy/Gemini_Generated_Image_e7o17ne7o17ne7o1.png',
+    src: getImageUrl('Gemini_Generated_Image_e7o17ne7o17ne7o1.png'),
     alt: 'Family Guy Style Art 4',
     caption: '👩 Lois\'s Grace'
   },
   {
-    src: '/src/assets/family-guy/Gemini_Generated_Image_nxfc2dnxfc2dnxfc.png',
+    src: getImageUrl('Gemini_Generated_Image_nxfc2dnxfc2dnxfc.png'),
     alt: 'Family Guy Style Art 5',
     caption: '👧 Meg\'s... Existence'
   },
   {
-    src: '/src/assets/family-guy/Gemini_Generated_Image_ray92eray92eray9.png',
+    src: getImageUrl('Gemini_Generated_Image_ray92eray92eray9.png'),
     alt: 'Family Guy Style Art 6',
     caption: '🏠 Quahog Life'
   }
