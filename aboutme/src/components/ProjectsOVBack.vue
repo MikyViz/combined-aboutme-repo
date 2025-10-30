@@ -5,7 +5,7 @@
     </h2>
     
     <v-img
-      src="https://th.bing.com/th/id/OIG2.suTSjQHKdZTvDKkqeAsu?pid=ImgGn"
+      src="https://content.internetvideoarchive.com/content/hdphotos/15302/015302/015302_1108x623_638654883664951015.jpg"
       aspect-ratio="2"
       class="my-6 hero family-guy-image"
     ></v-img>

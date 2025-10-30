@@ -27,7 +27,7 @@
         >
           <v-card 
             class="family-guy-card npm-package-card"
-            :class="`animate-package-${index + 1}`"
+            :class="`animate-package`"
             elevation="8"
           >
             <v-card-title class="family-guy-title d-flex align-center">
@@ -74,27 +74,10 @@
             </v-card-subtitle>
 
             <v-card-text>
-              <!-- Описания на разных языках -->
-              <v-tabs v-model="pkg.activeTab" class="mb-4">
-                <v-tab 
-                  v-for="(desc, lang) in pkg.descriptions" 
-                  :key="lang"
-                  :value="lang"
-                  class="family-guy-btn"
-                >
-                  {{ lang === 'en' ? '🇺🇸 EN' : lang === 'ru' ? '🇷🇺 RU' : '🇮🇱 HE' }}
-                </v-tab>
-              </v-tabs>
-
-              <v-window v-model="pkg.activeTab">
-                <v-window-item 
-                  v-for="(desc, lang) in pkg.descriptions" 
-                  :key="lang"
-                  :value="lang"
-                >
-                  <p class="family-guy-text">{{ desc }}</p>
-                </v-window-item>
-              </v-window>
+              <!-- Описание на текущем языке -->
+              <p class="family-guy-text mb-4">
+                {{ pkg.descriptions[currentLocale] || pkg.descriptions['en'] }}
+              </p>
 
               <v-divider class="my-4" />
 
@@ -136,11 +119,7 @@
               <div class="mb-4">
                 <h4 class="family-guy-title mb-2">📦 Installation:</h4>
                 <v-card class="family-guy-code pa-3" color="surface-variant">
-                  <pre class="installation-text"># Install globally for CLI usage
-npm install -g keymap-inspector
-
-# Install locally for library usage  
-npm install keymap-inspector</pre>
+                  <pre class="installation-text">{{ pkg.installationCode }}</pre>
                 </v-card>
               </div>
 
@@ -195,32 +174,32 @@ npm install keymap-inspector</pre>
                   </v-col>
                   <v-col cols="6" sm="3">
                     <v-chip color="primary" variant="outlined" class="family-guy-btn" size="small">
-                      🌍 7 layouts
+                      🌍 {{ pkg.name === 'keymap-inspector' ? '7 layouts' : 'Stats Kit' }}
                     </v-chip>
                   </v-col>
                 </v-row>
                 
                 <!-- Детальная статистика загрузок -->
-                <v-row v-if="downloadStats && !pkg.isLoading" class="mt-2">
+                <v-row v-if="pkg.downloadStatsData && !pkg.isLoading" class="mt-2">
                   <v-col cols="12">
                     <v-card class="pa-3 download-stats-card" color="surface-variant" variant="tonal">
                       <h5 class="family-guy-title mb-2">📈 Download Statistics:</h5>
                       <v-row>
                         <v-col cols="6" sm="3">
                           <div class="text-center">
-                            <div class="text-h6 font-weight-bold stats-number">{{ downloadStats.monthlyFormatted }}</div>
+                            <div class="text-h6 font-weight-bold stats-number">{{ pkg.downloadStatsData.monthlyFormatted }}</div>
                             <div class="text-caption stats-label">Monthly Downloads</div>
                           </div>
                         </v-col>
                         <v-col cols="6" sm="3">
                           <div class="text-center">
-                            <div class="text-h6 font-weight-bold stats-number">{{ downloadStats.weeklyFormatted }}</div>
+                            <div class="text-h6 font-weight-bold stats-number">{{ pkg.downloadStatsData.weeklyFormatted }}</div>
                             <div class="text-caption stats-label">Weekly Downloads</div>
                           </div>
                         </v-col>
                         <v-col cols="6" sm="3">
                           <div class="text-center">
-                            <div class="text-h6 font-weight-bold stats-number">{{ Math.round(downloadStats.weekly / 7) }}</div>
+                            <div class="text-h6 font-weight-bold stats-number">{{ Math.round(pkg.downloadStatsData.weekly / 7) }}</div>
                             <div class="text-caption stats-label">Daily Average</div>
                           </div>
                         </v-col>
@@ -250,18 +229,8 @@ npm install keymap-inspector</pre>
                 <div class="d-flex justify-space-between align-center">
                   <div>
                     <strong>Oops! Failed to load NPM data</strong><br>
-                    <small>{{ error }}</small>
+                    <small>{{ pkg.errorMessage }}</small>
                   </div>
-                  <v-btn 
-                    color="error" 
-                    variant="outlined" 
-                    size="small"
-                    class="family-guy-btn"
-                    @click="fetchPackageInfo"
-                  >
-                    <v-icon class="mr-1">mdi-refresh</v-icon>
-                    Retry
-                  </v-btn>
                 </div>
               </v-alert>
 
@@ -332,27 +301,34 @@ npm install keymap-inspector</pre>
 import { ref, computed } from 'vue';
 import { useHead } from '@vueuse/head';
 import { useNpmPackageInfo } from '@/composables/useNpmPackageInfo.js';
+import { currentLocale } from '@/translations.js';
+import translationsData from '@/translations.json';
 
-// Используем composable для получения динамических данных
+// Используем composable для получения динамических данных для keymap-inspector
 const { 
-  packageData, 
-  downloadStats, 
-  loading, 
-  error, 
-  getDownloadSummary, 
-  getPackageSize, 
-  getFileCount 
+  packageData: keymapPackageData, 
+  downloadStats: keymapDownloadStats, 
+  loading: keymapLoading, 
+  error: keymapError, 
+  getDownloadSummary: keymapGetDownloadSummary, 
+  getPackageSize: keymapGetPackageSize, 
+  getFileCount: keymapGetFileCount 
 } = useNpmPackageInfo('keymap-inspector');
 
-// Статические описания и настройки
-const staticPackageInfo = ref({
+// Используем composable для получения динамических данных для stat-kit
+const { 
+  packageData: statKitPackageData, 
+  downloadStats: statKitDownloadStats, 
+  loading: statKitLoading, 
+  error: statKitError, 
+  getDownloadSummary: statKitGetDownloadSummary, 
+  getPackageSize: statKitGetPackageSize, 
+  getFileCount: statKitGetFileCount 
+} = useNpmPackageInfo('@mikyviz/stat-kit');
+
+// Статические описания и настройки для keymap-inspector
+const staticKeymapInfo = ref({
   icon: 'mdi-keyboard',
-  activeTab: 'en',
-  descriptions: {
-    en: 'Inspect keyboard events and characters across different layouts. Find which physical key corresponds to a character and see what characters are on that key in other keyboard layouts.',
-    ru: 'Инспектор клавиатурных раскладок. Определяет, какая физическая клавиша соответствует символу, и показывает, какие символы находятся на этой клавише в других раскладках.',
-    he: 'בודק פריסות מקלדת. קובע איזה מקש פיזי מתאים לתו ומראה אילו תווים נמצאים על המקש הזה בפריסות מקלדת אחרות.'
-  },
   features: [
     '7 keyboard layouts (English, Russian, German, French, Spanish, Ukrainian, Hebrew)',
     'Bidirectional mapping (Character → Key info, Key code → Characters)',
@@ -370,36 +346,124 @@ const staticPackageInfo = ref({
   ],
   npmUrl: 'https://www.npmjs.com/package/keymap-inspector',
   githubUrl: 'https://github.com/MikyViz/keymap-inspector',
-  quote: "Holy crap! This supports 7 languages! That's more than I can count without using my toes!",
-  quoteAuthor: "Peter Griffin"
+  installationCode: `# Install globally for CLI usage
+npm install -g keymap-inspector
+
+# Install locally for library usage  
+npm install keymap-inspector`
+});
+
+// Статические описания и настройки для stat-kit
+const staticStatKitInfo = ref({
+  icon: 'mdi-chart-bell-curve',
+  features: [
+    'Basic statistics (mean, median, standard deviation)',
+    'Z-scores and Pearson correlation coefficient',
+    'Outlier detection using IQR method',
+    'Multiple range calculations (IQR, percentile, stddev)',
+    'Distribution skewness analysis',
+    'Zero dependencies - pure JavaScript/TypeScript'
+  ],
+  technologies: [
+    'JavaScript',
+    'TypeScript',
+    'Node.js',
+    'Statistical Analysis',
+    'Data Science'
+  ],
+  npmUrl: 'https://www.npmjs.com/package/@mikyviz/stat-kit',
+  githubUrl: 'https://github.com/MikyViz/stat-kit',
+  installationCode: `# Install the package
+npm install @mikyviz/stat-kit
+
+# Quick usage example
+const { mean, median, stddev } = require('@mikyviz/stat-kit');
+const data = [12, 15, 14, 10, 8, 12, 100];
+console.log(mean(data)); // 24.43`
+});
+
+// Функция для получения описаний на всех языках из переводов
+const getDescriptions = (packageKey) => {
+  const descriptions = {};
+  ['en', 'ru', 'he'].forEach(locale => {
+    const keys = `npmPackages.${packageKey}.description`.split('.');
+    let result = translationsData[locale];
+    for (const k of keys) {
+      if (result && result[k]) {
+        result = result[k];
+      }
+    }
+    descriptions[locale] = result || '';
+  });
+  return descriptions;
+};
+
+// Вычисляемое свойство для получения цитаты из переводов (реактивное)
+const getQuote = computed(() => (packageKey) => {
+  const quoteKeys = `npmPackages.${packageKey}.quote`.split('.');
+  const authorKeys = `npmPackages.${packageKey}.quoteAuthor`.split('.');
+  
+  let quote = translationsData[currentLocale.value];
+  let author = translationsData[currentLocale.value];
+  
+  for (const k of quoteKeys) {
+    if (quote && quote[k]) quote = quote[k];
+  }
+  for (const k of authorKeys) {
+    if (author && author[k]) author = author[k];
+  }
+  
+  return {
+    quote: quote || '',
+    quoteAuthor: author || ''
+  };
 });
 
 // Вычисляемые свойства для объединения статических и динамических данных
 const npmPackages = computed(() => [
   {
-    ...staticPackageInfo.value,
-    name: packageData.value?.name || 'keymap-inspector',
-    version: packageData.value?.version || 'Loading...',
-    downloads: loading.value ? 'Loading...' : (error.value ? 'Error loading' : getDownloadSummary()),
-    license: packageData.value?.license || 'MIT',
-    packageSize: loading.value ? 'Loading...' : getPackageSize(),
-    fileCount: loading.value ? 'Loading...' : getFileCount(),
-    isLoading: loading.value,
-    hasError: error.value
+    ...staticKeymapInfo.value,
+    descriptions: getDescriptions('keymapInspector'),
+    ...getQuote.value('keymapInspector'),
+    name: keymapPackageData.value?.name || 'keymap-inspector',
+    version: keymapPackageData.value?.version || 'Loading...',
+    downloads: keymapLoading.value ? 'Loading...' : (keymapError.value ? 'Error loading' : keymapGetDownloadSummary()),
+    license: keymapPackageData.value?.license || 'MIT',
+    packageSize: keymapLoading.value ? 'Loading...' : keymapGetPackageSize(),
+    fileCount: keymapLoading.value ? 'Loading...' : keymapGetFileCount(),
+    isLoading: keymapLoading.value,
+    hasError: keymapError.value,
+    downloadStatsData: keymapDownloadStats.value,
+    errorMessage: keymapError.value
+  },
+  {
+    ...staticStatKitInfo.value,
+    descriptions: getDescriptions('statKit'),
+    ...getQuote.value('statKit'),
+    name: statKitPackageData.value?.name || '@mikyviz/stat-kit',
+    version: statKitPackageData.value?.version || 'Loading...',
+    downloads: statKitLoading.value ? 'Loading...' : (statKitError.value ? 'Error loading' : statKitGetDownloadSummary()),
+    license: statKitPackageData.value?.license || 'MIT',
+    packageSize: statKitLoading.value ? 'Loading...' : statKitGetPackageSize(),
+    fileCount: statKitLoading.value ? 'Loading...' : statKitGetFileCount(),
+    isLoading: statKitLoading.value,
+    hasError: statKitError.value,
+    downloadStatsData: statKitDownloadStats.value,
+    errorMessage: statKitError.value
   }
 ]);
 
 // SEO мета-теги
 useHead({
-  title: 'My NPM Packages - keymap-inspector v0.1.5 | Miky Vizenovsky',
+  title: 'My NPM Packages - keymap-inspector & stat-kit | Miky Vizenovsky',
   meta: [
     {
       name: 'description',
-      content: 'keymap-inspector v0.1.5 - TypeScript package for inspecting keyboard layouts across 7 languages with CLI support'
+      content: 'NPM packages by Miky Vizenovsky: keymap-inspector for keyboard layout inspection and stat-kit for statistical analysis. TypeScript, zero dependencies, MIT licensed.'
     },
     {
       name: 'keywords',
-      content: 'keymap-inspector, NPM package, TypeScript, keyboard layouts, CLI tool, multilingual, developer tools'
+      content: 'keymap-inspector, stat-kit, NPM packages, TypeScript, keyboard layouts, statistics, data analysis, CLI tools, developer tools'
     }
   ]
 });
@@ -411,26 +475,27 @@ useHead({
   border: 3px solid var(--v-theme-primary);
   transition: all 0.3s ease-in-out;
   height: 100%;
+  will-change: transform, box-shadow;
 }
 
 .npm-package-card:hover {
-  transform: translateY(-8px) scale(1.02);
+  transform: translateY(-8px) scale(1.02) !important;
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
   border-color: var(--v-theme-accent);
 }
 
-.animate-package-1 {
+.animate-package {
   animation: slideInUp 0.8s ease-out;
 }
 
 @keyframes slideInUp {
   from {
     opacity: 0;
-    transform: translateY(50px);
+    transform: translateY(50px) scale(0.95);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
   }
 }
 
@@ -519,6 +584,21 @@ useHead({
 /* Темная тема - светлые подписи */
 .v-theme--dark .stats-label {
   color: #e0e0e0 !important;
+  font-weight: 500;
+}
+</style>
+
+<style>
+/* Глобальные стили для тултипов - в светлой теме темный фон, в темной теме светлый фон */
+.v-tooltip .v-overlay__content {
+  background-color: rgba(30, 30, 30, 0.95) !important;
+  color: #ffffff !important;
+  font-weight: 500;
+}
+
+.v-theme--dark .v-tooltip .v-overlay__content {
+  background-color: rgba(245, 245, 245, 0.95) !important;
+  color: #1a1a1a !important;
   font-weight: 500;
 }
 </style>

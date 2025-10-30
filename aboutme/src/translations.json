@@ -109,6 +109,18 @@
         "messageRequired": "Message is required",
         "messageTooShort": "Message must be at least 10 characters"
       }
+    },
+    "npmPackages": {
+      "keymapInspector": {
+        "description": "Inspect keyboard events and characters across different layouts. Find which physical key corresponds to a character and see what characters are on that key in other keyboard layouts.",
+        "quote": "Holy crap! This supports 7 languages! That's more than I can count without using my toes!",
+        "quoteAuthor": "Peter Griffin"
+      },
+      "statKit": {
+        "description": "A lightweight npm package for basic statistics and data analysis. Calculate mean, median, standard deviation, correlation, find outliers, analyze skewness, and more. Zero dependencies, pure math.",
+        "quote": "This has more calculations than the number of beers I've had! And that's saying something!",
+        "quoteAuthor": "Peter Griffin"
+      }
     }
   },
   "ru": {
@@ -206,6 +218,18 @@
         "subjectTooLong": "Тема должна быть меньше 100 символов",
         "messageRequired": "Сообщение обязательно",
         "messageTooShort": "Сообщение должно содержать не менее 10 символов"
+      }
+    },
+    "npmPackages": {
+      "keymapInspector": {
+        "description": "Инспектор клавиатурных раскладок. Определяет, какая физическая клавиша соответствует символу, и показывает, какие символы находятся на этой клавише в других раскладках.",
+        "quote": "Ого! Поддерживает 7 языков! Это больше, чем я могу сосчитать без помощи пальцев ног!",
+        "quoteAuthor": "Питер Гриффин"
+      },
+      "statKit": {
+        "description": "Легковесный npm пакет для базовой статистики и анализа данных. Вычисление среднего, медианы, стандартного отклонения, корреляции, поиск выбросов, анализ асимметрии и многое другое. Без зависимостей, чистая математика.",
+        "quote": "Здесь больше вычислений, чем количество пива, которое я выпил! И это о многом говорит!",
+        "quoteAuthor": "Питер Гриффин"
       }
     },
     "footer": {
@@ -318,6 +342,18 @@
         "subjectTooLong": "הנושא חייב להיות פחות מ-100 תווים",
         "messageRequired": "יש להזין הודעה",
         "messageTooShort": "ההודעה חייבת להכיל לפחות 10 תווים"
+      }
+    },
+    "npmPackages": {
+      "keymapInspector": {
+        "description": "בודק פריסות מקלדת. קובע איזה מקש פיזי מתאים לתו ומראה אילו תווים נמצאים על המקש הזה בפריסות מקלדת אחרות.",
+        "quote": "וואו! תמיכה ב-7 שפות! זה יותר ממה שאני יכול לספור בלי לעזרה של אצבעות הרגליים שלי!",
+        "quoteAuthor": "פיטר גריפין"
+      },
+      "statKit": {
+        "description": "חבילת npm קלה למשקל לסטטיסטיקה בסיסית וניתוח נתונים. חישוב ממוצע, חציון, סטיית תקן, מתאם, מציאת חריגים, ניתוח הטיה ועוד. אפס תלויות, מתמטיקה טהורה.",
+        "quote": "יש כאן יותר חישובים מכמות הבירות ששתיתי! וזה אומר משהו!",
+        "quoteAuthor": "פיטר גריפין"
       }
     },
     "footer": {
