@@ -1,6 +1,24 @@
 <template>
   <v-footer class="mt-8 pt-6 footer-background family-guy-nav">
     <v-container>
+      <!-- Декоративные Family Guy картинки сверху -->
+      <v-row class="mb-4">
+        <v-col cols="12" class="d-flex justify-center align-center flex-wrap ga-3">
+          <v-avatar 
+            v-for="(img, index) in decorativeImages" 
+            :key="index"
+            size="60"
+            class="family-guy-decorative-avatar"
+          >
+            <v-img 
+              :src="img.src"
+              :alt="img.alt"
+              cover
+            />
+          </v-avatar>
+        </v-col>
+      </v-row>
+      
       <v-row>        
         <!-- Информация о сайте в стиле Family Guy -->
         <v-col cols="12" md="4" class="text-center text-md-left">          
@@ -75,6 +93,36 @@
 
 <script setup>
 import { t } from '@/translations';
+import { ref } from 'vue';
+
+// Функция для загрузки изображений
+const getImageUrl = (name) => {
+  return new URL(`../assets/family-guy/${name}`, import.meta.url).href;
+};
+
+// Декоративные картинки для футера
+const decorativeImages = ref([
+  {
+    src: getImageUrl('Gemini_Generated_Image_56v48g56v48g56v4.png'),
+    alt: 'Peter Style'
+  },
+  {
+    src: getImageUrl('Gemini_Generated_Image_6xl8hk6xl8hk6xl8.png'),
+    alt: 'Brian Wisdom'
+  },
+  {
+    src: getImageUrl('Gemini_Generated_Image_dcr36bdcr36bdcr3.png'),
+    alt: 'Stewie Plans'
+  },
+  {
+    src: getImageUrl('Gemini_Generated_Image_nxfc2dnxfc2dnxfc.png'),
+    alt: 'Meg Existence'
+  },
+  {
+    src: getImageUrl('Gemini_Generated_Image_ray92eray92eray9.png'),
+    alt: 'Quahog Life'
+  }
+]);
 </script>
 
 <style scoped>
@@ -126,5 +174,47 @@ import { t } from '@/translations';
 .family-guy-btn:hover {
   background-color: rgba(var(--v-theme-primary), 0.1) !important;
   transform: scale(1.05) !important;
+}
+
+/* Стили для декоративных аватаров */
+.family-guy-decorative-avatar {
+  border: 2px solid var(--v-theme-primary);
+  transition: all 0.3s ease-in-out;
+  animation: float 3s ease-in-out infinite;
+}
+
+.family-guy-decorative-avatar:hover {
+  transform: scale(1.2) rotate(10deg);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  animation: none;
+}
+
+.family-guy-decorative-avatar:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.family-guy-decorative-avatar:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.family-guy-decorative-avatar:nth-child(3) {
+  animation-delay: 1s;
+}
+
+.family-guy-decorative-avatar:nth-child(4) {
+  animation-delay: 1.5s;
+}
+
+.family-guy-decorative-avatar:nth-child(5) {
+  animation-delay: 2s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 </style>

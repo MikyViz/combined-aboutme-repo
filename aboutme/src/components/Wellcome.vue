@@ -13,7 +13,7 @@
         class="family-guy-image mb-4">
         <v-img 
           height="100%"
-          src="../assets/me.jpeg"
+          src="../assets/family-guy/Gemini_Generated_Image_e7o17ne7o17ne7o1.png"
           cover
         />
       </v-avatar>

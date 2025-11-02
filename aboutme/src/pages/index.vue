@@ -11,11 +11,6 @@
         </p>
       </v-col>
       
-      <!-- Family Guy Gallery Component -->
-      <v-col cols="12">
-        <FamilyGuyGallery />
-      </v-col>
-      
       <v-col cols="12">
         <Wellcome />
       </v-col>
@@ -30,7 +25,6 @@
 import { useHead } from '@vueuse/head';
 import Wellcome from '@/components/Wellcome.vue';
 import AkizerAbout from '@/components/AkizerAbout.vue';
-import FamilyGuyGallery from '@/components/FamilyGuyGallery.vue';
 
 // Добавляем мета-теги для SEO
 useHead({

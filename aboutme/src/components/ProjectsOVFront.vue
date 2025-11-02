@@ -127,14 +127,13 @@ const imgFiles = import.meta.glob('../assets/projects/**/*.{png,jpg,jpeg,gif}');
 
 const frontend = ref([
   {
-    name: "Keymap Inspector (NPM Package)",
-    git: "https://github.com/MikyViz/keymap-inspector",
-    npm: "https://www.npmjs.com/package/keymap-inspector",
-    about: `🎯 NPM Package v0.1.5! Supports 7 keyboard layouts (English, Russian, German, French, Spanish, Ukrainian, Hebrew). Bidirectional mapping with CLI tool and TypeScript support. Only 6.5KB package size with 24 monthly downloads. Perfect for international developers!`,
-    folder: "keymap",
+    name: "Public Transport Control System",
+    git: "https://phpstack-1063351-5511176.cloudwaysapps.com/auth",
+    about: `🚍 Advanced web application for monitoring and controlling public transportation. Real-time tracking, route management, and comprehensive analytics dashboard. Built with modern frontend technologies for seamless user experience.`,
+    folder: "transport-control",
     imgs: [],
-    icon: "mdi-keyboard",
-    quote: "Holy crap! This supports more languages than I know curse words in!",
+    icon: "mdi-bus",
+    quote: "This is more organized than my daily routine of TV, beer, and chicken fights!",
     quoteAuthor: "Peter Griffin"
   },
   {
