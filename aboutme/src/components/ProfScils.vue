@@ -70,7 +70,7 @@ import { t } from '@/translations';
 
 const JavaScript = ref([
     { name: 'JavaScript', img: 'https://www.freepnglogos.com/uploads/javascript-png/javascript-vector-logo-yellow-png-transparent-javascript-vector-12.png' },
-    { name: 'Vue.js', img: 'https://blog.adroitguru.com/storage/30/conversions/vuejs_logo-cover.jpg' },
+    { name: 'Vue.js', img: 'https://www.kindpng.com/picc/m/452-4529223_vue-js-logo-png-transparent-png.png' },
     { name: 'React.js', img: 'https://pluspng.com/img-png/react-logo-png-react-js-logo-history-design-history-and-evolution-5500x3094.png' },
 ]);
 

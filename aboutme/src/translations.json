@@ -121,6 +121,60 @@
         "quote": "This has more calculations than the number of beers I've had! And that's saying something!",
         "quoteAuthor": "Peter Griffin"
       }
+    },
+    "projects": {
+      "page": {
+        "title": "🚀 Let's overview my frontend projects! Like Peter's TV collection! 📺",
+        "sectionTitle": "🎨 FrontEnd Projects"
+      },
+      "transportControl": {
+        "name": "Public Transport Control System",
+        "description": "🚍 Advanced web application for monitoring and controlling public transportation. Real-time tracking, route management, and comprehensive analytics dashboard. Built with modern frontend technologies for seamless user experience.",
+        "quote": "This is more organized than my daily routine of TV, beer, and chicken fights!",
+        "quoteAuthor": "Peter Griffin"
+      },
+      "ballonsCalc": {
+        "name": "BallonsCalc",
+        "description": "BallonsCalc, it's application that help to calculate how many ballons and helium you have to buy for your ballons style, how many it will cost, and witch price you will ask for your ballons working.",
+        "quote": "This is almost as inflated as my ego!",
+        "quoteAuthor": "Peter Griffin"
+      },
+      "moneySale": {
+        "name": "moneySale",
+        "description": "An application for calculating the value of currency, designed not only for purely practical use, but also for educational and entertaining purposes.",
+        "quote": "Finally! Something that can help me understand money better than Lois's lectures!",
+        "quoteAuthor": "Peter Griffin"
+      },
+      "aboutMe": {
+        "name": "AboutMe (This Site!)",
+        "description": "Code of this site📝 - Built with Vue.js, Vuetify, and lots of Family Guy references! A modern portfolio website with multiple themes and languages support.",
+        "quote": "Blast! This website is more sophisticated than my plans for world domination!",
+        "quoteAuthor": "Stewie Griffin"
+      },
+      "mooseBroWeather": {
+        "name": "MooseBroWeather",
+        "description": "🌤️ Modern weather application built with Vue.js and Chart.js using Composables Pattern. Real-time weather data with beautiful visualizations and interactive charts for temperature, humidity, and forecast analytics. Live demo available!",
+        "quote": "This is more accurate than my weather predictions based on my knee pain!",
+        "quoteAuthor": "Peter Griffin"
+      }
+    },
+    "backendProjects": {
+      "page": {
+        "title": "⚙️ Let's overview my backend projects! Like Stewie's lab equipment! 🧪",
+        "sectionTitle": "🔧 BackEnd & DB behind the scenes"
+      },
+      "aboutMeBE": {
+        "name": "aboutMeBE",
+        "description": "This is a simple REST API for this website. It is built with Node.js, Express, and SQLite (by Sequelize). It is a simple API that allows users to create, read, update, and delete (CRUD) information about themselves and to leave their overviews about working with me😎",
+        "quote": "This API is more reliable than Cleveland's return to the show!",
+        "quoteAuthor": "Brian Griffin"
+      },
+      "ballonsCalcServer": {
+        "name": "ballonsCalcServer",
+        "description": "This is server code for ballonsCalc application. It is built with Node.js, Express, and MySQL (by Sequelize). It is simple API that provides to the app users and project management functionality.",
+        "quote": "Blast! This server architecture is more organized than my evil plans!",
+        "quoteAuthor": "Stewie Griffin"
+      }
     }
   },
   "ru": {
@@ -230,6 +284,60 @@
         "description": "Легковесный npm пакет для базовой статистики и анализа данных. Вычисление среднего, медианы, стандартного отклонения, корреляции, поиск выбросов, анализ асимметрии и многое другое. Без зависимостей, чистая математика.",
         "quote": "Здесь больше вычислений, чем количество пива, которое я выпил! И это о многом говорит!",
         "quoteAuthor": "Питер Гриффин"
+      }
+    },
+    "projects": {
+      "page": {
+        "title": "🚀 Давайте посмотрим на мои фронтенд проекты! Как коллекция ТВ-шоу Питера! 📺",
+        "sectionTitle": "🎨 FrontEnd Проекты"
+      },
+      "transportControl": {
+        "name": "Система Контроля Общественного Транспорта",
+        "description": "🚍 Продвинутое веб-приложение для мониторинга и управления общественным транспортом. Отслеживание в реальном времени, управление маршрутами и комплексная аналитическая панель. Создано с использованием современных фронтенд технологий для безупречного пользовательского опыта.",
+        "quote": "Это более организовано, чем мой ежедневный распорядок из ТВ, пива и куриных боев!",
+        "quoteAuthor": "Питер Гриффин"
+      },
+      "ballonsCalc": {
+        "name": "BallonsCalc",
+        "description": "BallonsCalc - это приложение, которое помогает рассчитать, сколько шаров и гелия вам нужно купить для вашего стиля оформления шарами, сколько это будет стоить, и какую цену вы попросите за свою работу с шарами.",
+        "quote": "Это почти такое же надутое, как мое эго!",
+        "quoteAuthor": "Питер Гриффин"
+      },
+      "moneySale": {
+        "name": "moneySale",
+        "description": "Приложение для расчета стоимости валюты, разработанное не только для чисто практического использования, но и для образовательных и развлекательных целей.",
+        "quote": "Наконец! Что-то, что может помочь мне понять деньги лучше, чем лекции Лоис!",
+        "quoteAuthor": "Питер Гриффин"
+      },
+      "aboutMe": {
+        "name": "AboutMe (Этот Сайт!)",
+        "description": "Код этого сайта📝 - Создан с Vue.js, Vuetify и множеством отсылок к Family Guy! Современный сайт-портфолио с поддержкой нескольких тем и языков.",
+        "quote": "Черт возьми! Этот сайт более изощренный, чем мои планы по захвату мира!",
+        "quoteAuthor": "Стьюи Гриффин"
+      },
+      "mooseBroWeather": {
+        "name": "MooseBroWeather",
+        "description": "🌤️ Современное приложение погоды, созданное с Vue.js и Chart.js с использованием паттерна Composables. Данные о погоде в реальном времени с красивыми визуализациями и интерактивными графиками температуры, влажности и прогноза. Доступно живое демо!",
+        "quote": "Это точнее, чем мои прогнозы погоды, основанные на боли в колене!",
+        "quoteAuthor": "Питер Гриффин"
+      }
+    },
+    "backendProjects": {
+      "page": {
+        "title": "⚙️ Давайте посмотрим на мои бекенд проекты! Как лабораторное оборудование Стьюи! 🧪",
+        "sectionTitle": "🔧 BackEnd и БД за кулисами"
+      },
+      "aboutMeBE": {
+        "name": "aboutMeBE",
+        "description": "Это простой REST API для этого сайта. Создан с помощью Node.js, Express и SQLite (через Sequelize). Простой API, который позволяет пользователям создавать, читать, обновлять и удалять (CRUD) информацию о себе и оставлять свои отзывы о работе со мной😎",
+        "quote": "Этот API надежнее, чем возвращение Кливленда в шоу!",
+        "quoteAuthor": "Брайан Гриффин"
+      },
+      "ballonsCalcServer": {
+        "name": "ballonsCalcServer",
+        "description": "Это серверный код для приложения ballonsCalc. Создан с помощью Node.js, Express и MySQL (через Sequelize). Простой API, который предоставляет приложению функциональность управления пользователями и проектами.",
+        "quote": "Черт возьми! Эта серверная архитектура более организована, чем мои злодейские планы!",
+        "quoteAuthor": "Стьюи Гриффин"
       }
     },
     "footer": {
@@ -354,6 +462,60 @@
         "description": "חבילת npm קלה למשקל לסטטיסטיקה בסיסית וניתוח נתונים. חישוב ממוצע, חציון, סטיית תקן, מתאם, מציאת חריגים, ניתוח הטיה ועוד. אפס תלויות, מתמטיקה טהורה.",
         "quote": "יש כאן יותר חישובים מכמות הבירות ששתיתי! וזה אומר משהו!",
         "quoteAuthor": "פיטר גריפין"
+      }
+    },
+    "projects": {
+      "page": {
+        "title": "🚀 בואו נסקור את פרויקטי הפרונטאנד שלי! כמו אוסף התוכניות של פיטר! 📺",
+        "sectionTitle": "🎨 פרויקטי FrontEnd"
+      },
+      "transportControl": {
+        "name": "מערכת בקרת תחבורה ציבורית",
+        "description": "🚍 אפליקציית אינטרנט מתקדמת למעקב ובקרה של תחבורה ציבורית. מעקב בזמן אמת, ניהול מסלולים ולוח בקרה אנליטי מקיף. נבנתה עם טכנולוגיות פרונטאנד מודרניות לחוויית משתמש חלקה.",
+        "quote": "זה יותר מאורגן מהשגרה היומית שלי של טלוויזיה, בירה וקרבות תרנגולות!",
+        "quoteAuthor": "פיטר גריפין"
+      },
+      "ballonsCalc": {
+        "name": "BallonsCalc",
+        "description": "BallonsCalc - זוהי אפליקציה שעוזרת לחשב כמה בלונים והליום אתה צריך לקנות לסגנון הבלונים שלך, כמה זה יעלה, ואיזה מחיר תבקש עבור העבודה שלך עם בלונים.",
+        "quote": "זה כמעט מנופח כמו האגו שלי!",
+        "quoteAuthor": "פיטר גריפין"
+      },
+      "moneySale": {
+        "name": "moneySale",
+        "description": "אפליקציה לחישוב ערך המטבע, שתוכננה לא רק לשימוש מעשי גרידא, אלא גם למטרות חינוכיות ובידוריות.",
+        "quote": "סוף סוף! משהו שיכול לעזור לי להבין כסף טוב יותר מההרצאות של לויס!",
+        "quoteAuthor": "פיטר גריפין"
+      },
+      "aboutMe": {
+        "name": "AboutMe (האתר הזה!)",
+        "description": "קוד של האתר הזה📝 - נבנה עם Vue.js, Vuetify והרבה התייחסויות ל-Family Guy! אתר תיק עבודות מודרני עם תמיכה במספר ערכות נושא ושפות.",
+        "quote": "לעזאזל! האתר הזה מתוחכם יותר מהתוכניות שלי לשליטה עולמית!",
+        "quoteAuthor": "סטיואי גריפין"
+      },
+      "mooseBroWeather": {
+        "name": "MooseBroWeather",
+        "description": "🌤️ אפליקציית מזג אוויר מודרנית שנבנתה עם Vue.js ו-Chart.js תוך שימוש ב-Composables Pattern. נתוני מזג אוויר בזמן אמת עם ויזואליזציות יפות ותרשימים אינטראקטיביים עבור טמפרטורה, לחות וניתוח תחזית. דמו חי זמין!",
+        "quote": "זה יותר מדויק מתחזיות מזג האוויר שלי המבוססות על כאב הברך שלי!",
+        "quoteAuthor": "פיטר גריפין"
+      }
+    },
+    "backendProjects": {
+      "page": {
+        "title": "⚙️ בואו נסקור את פרויקטי הבקאנד שלי! כמו ציוד המעבדה של סטיואי! 🧪",
+        "sectionTitle": "🔧 BackEnd ומסדי נתונים מאחורי הקלעים"
+      },
+      "aboutMeBE": {
+        "name": "aboutMeBE",
+        "description": "זהו REST API פשוט עבור אתר זה. בנוי עם Node.js, Express ו-SQLite (באמצעות Sequelize). API פשוט המאפשר למשתמשים ליצור, לקרוא, לעדכן ולמחוק (CRUD) מידע על עצמם ולהשאיר את חוות דעתם על העבודה איתי😎",
+        "quote": "ה-API הזה אמין יותר מהחזרתו של קליבלנד לתוכנית!",
+        "quoteAuthor": "בריאן גריפין"
+      },
+      "ballonsCalcServer": {
+        "name": "ballonsCalcServer",
+        "description": "זהו קוד השרת עבור אפליקציית ballonsCalc. בנוי עם Node.js, Express ו-MySQL (באמצעות Sequelize). API פשוט המספק לאפליקציה פונקציונליות ניהול משתמשים ופרויקטים.",
+        "quote": "לעזאזל! ארכיטקטורת השרת הזו מאורגנת יותר מהתוכניות המרושעות שלי!",
+        "quoteAuthor": "סטיואי גריפין"
       }
     },
     "footer": {

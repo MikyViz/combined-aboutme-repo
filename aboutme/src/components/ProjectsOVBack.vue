@@ -1,7 +1,7 @@
 <template>
   <v-container class="family-guy-pattern">
     <h2 class="text-center family-guy-title mb-6">
-      ⚙️ Let's overview my backend projects! Like Stewie's lab equipment! 🧪
+      {{ t('backendProjects.page.title') }}
     </h2>
     
     <v-img
@@ -11,7 +11,7 @@
     ></v-img>
     
     <div class="container">
-      <h2 class="family-guy-title mb-4">🔧 BackEnd & DB behind the scenes</h2>
+      <h2 class="family-guy-title mb-4">{{ t('backendProjects.page.sectionTitle') }}</h2>
       <v-row class="my-4">
         <v-col
           v-for="(backendItem, index) in backend"
@@ -26,7 +26,7 @@
           >
             <v-card-title class="family-guy-title d-flex align-center">
               <v-icon :icon="backendItem.icon" class="mr-2 family-guy-icon" />
-              {{ backendItem.name }}
+              {{ t(backendItem.nameKey) }}
             </v-card-title>
             
             <v-card-subtitle class="family-guy-text mb-2">
@@ -44,7 +44,7 @@
             </v-card-subtitle>
             
             <v-card-text class="family-guy-text">
-              <p><strong>About:</strong> {{ backendItem.about }}</p>
+              <p>{{ t(backendItem.descKey) }}</p>
               
               <!-- Family Guy цитата -->
               <v-alert 
@@ -56,9 +56,9 @@
                 <template v-slot:prepend>
                   <v-icon>mdi-format-quote-open</v-icon>
                 </template>
-                <em>{{ backendItem.quote }}</em>
+                <em>{{ t(backendItem.quoteKey) }}</em>
                 <br>
-                <small>- {{ backendItem.quoteAuthor }}</small>
+                <small>- {{ t(backendItem.quoteAuthorKey) }}</small>
               </v-alert>
             </v-card-text>
           </v-card>
@@ -69,25 +69,24 @@
 </template>
 <script setup>
 import { ref, onMounted } from "vue";
+import { t } from '@/translations';
 
 const backend = ref([
   {
-    name: "aboutMeBE",
+    nameKey: "backendProjects.aboutMeBE.name",
+    descKey: "backendProjects.aboutMeBE.description",
+    quoteKey: "backendProjects.aboutMeBE.quote",
+    quoteAuthorKey: "backendProjects.aboutMeBE.quoteAuthor",
     git: "https://github.com/MikyViz/combined-aboutme-repo/tree/master/aboutmebe",
-    about:
-      "This is a simple REST API for this website. It is built with Node.js, Express, and SQLite (by Sequelize). It is a simple API that allows users to create, read, update, and delete (CRUD) information about themselves and to leave their overviews about working with me😎",
-    icon: "mdi-api",
-    quote: "This API is more reliable than Cleveland's return to the show!",
-    quoteAuthor: "Brian Griffin"
+    icon: "mdi-api"
   },
   {
-    name: "ballonsCalcServer",
+    nameKey: "backendProjects.ballonsCalcServer.name",
+    descKey: "backendProjects.ballonsCalcServer.description",
+    quoteKey: "backendProjects.ballonsCalcServer.quote",
+    quoteAuthorKey: "backendProjects.ballonsCalcServer.quoteAuthor",
     git: "https://github.com/MikyViz/ballonsCalcServer",
-    about:
-      "This is server code for ballonsCalc application. It is built with Node.js, Express, and MySQL (by Sequelize). It is simple API that provides to the app users and project management functionality.",
-    icon: "mdi-server",
-    quote: "Blast! This server architecture is more organized than my evil plans!",
-    quoteAuthor: "Stewie Griffin"
+    icon: "mdi-server"
   },
 ]);
 </script>

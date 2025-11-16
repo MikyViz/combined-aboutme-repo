@@ -1,11 +1,11 @@
 <template>
   <v-container class="family-guy-pattern">
     <h2 class="text-center family-guy-title mb-6">
-      🚀 Let's overview my frontend projects! Like Peter's TV collection! 📺
+      {{ t('projects.page.title') }}
     </h2>
     
     <v-container>
-      <h3 class="family-guy-title mb-4">🎨 FrontEnd Projects</h3>
+      <h3 class="family-guy-title mb-4">{{ t('projects.page.sectionTitle') }}</h3>
       
       <v-row>
         <v-col 
@@ -22,7 +22,7 @@
           >
             <v-card-title class="family-guy-title d-flex align-center">
               <v-icon :icon="frontendItem.icon" class="mr-2 family-guy-icon" />
-              {{ frontendItem.name }}
+              {{ t(frontendItem.nameKey) }}
             </v-card-title>
             
             <v-card-subtitle class="family-guy-text mb-2">
@@ -48,6 +48,18 @@
               >
                 📦 NPM
               </v-chip>
+              <v-btn 
+                v-if="frontendItem.site"
+                :href="frontendItem.site" 
+                target="_blank"
+                variant="outlined" 
+                color="secondary"
+                class="family-guy-btn ml-2"
+                prepend-icon="mdi-open-in-new"
+                size="small"
+              >
+                🌐 Live Demo
+              </v-btn>
             </v-card-subtitle>
 
             <v-carousel 
@@ -73,7 +85,7 @@
             </v-carousel>
 
             <v-card-text class="family-guy-text">
-              <p>{{ frontendItem.about }}</p>
+              <p>{{ t(frontendItem.descKey) }}</p>
               
               <!-- Family Guy цитата для каждого проекта -->
               <v-alert 
@@ -85,9 +97,9 @@
                 <template v-slot:prepend>
                   <v-icon>mdi-format-quote-open</v-icon>
                 </template>
-                <em>{{ frontendItem.quote }}</em>
+                <em>{{ t(frontendItem.quoteKey) }}</em>
                 <br>
-                <small>- {{ frontendItem.quoteAuthor }}</small>
+                <small>- {{ t(frontendItem.quoteAuthorKey) }}</small>
               </v-alert>
             </v-card-text>
           </v-card>
@@ -121,50 +133,63 @@
 </template>
 <script setup>
 import { ref, onMounted } from "vue";
+import { t } from '@/translations';
 
 // Импорт всех изображений из указанной папки
 const imgFiles = import.meta.glob('../assets/projects/**/*.{png,jpg,jpeg,gif}');
 
 const frontend = ref([
   {
-    name: "Public Transport Control System",
+    nameKey: "projects.transportControl.name",
+    descKey: "projects.transportControl.description",
+    quoteKey: "projects.transportControl.quote",
+    quoteAuthorKey: "projects.transportControl.quoteAuthor",
     git: "https://phpstack-1063351-5511176.cloudwaysapps.com/auth",
-    about: `🚍 Advanced web application for monitoring and controlling public transportation. Real-time tracking, route management, and comprehensive analytics dashboard. Built with modern frontend technologies for seamless user experience.`,
     folder: "transport-control",
+    site: "https://phpstack-1063351-5511176.cloudwaysapps.com/auth",
     imgs: [],
-    icon: "mdi-bus",
-    quote: "This is more organized than my daily routine of TV, beer, and chicken fights!",
-    quoteAuthor: "Peter Griffin"
+    icon: "mdi-bus"
   },
   {
-    name: "BallonsCalc",
+    nameKey: "projects.ballonsCalc.name",
+    descKey: "projects.ballonsCalc.description",
+    quoteKey: "projects.ballonsCalc.quote",
+    quoteAuthorKey: "projects.ballonsCalc.quoteAuthor",
     git: "https://github.com/MikyViz/ballonsCalc",
-    about: `BallonsCalc, it's application that help to calculate how many ballons and helium you have to buy for your ballons style, how many it will cost, and witch price you will ask for your ballons working.`,
     folder: "ballonscalc",
     imgs: [],
-    icon: "mdi-balloon",
-    quote: "This is almost as inflated as my ego!",
-    quoteAuthor: "Peter Griffin"
+    icon: "mdi-balloon"
   },
   {
-    name: "moneySale",
+    nameKey: "projects.moneySale.name",
+    descKey: "projects.moneySale.description",
+    quoteKey: "projects.moneySale.quote",
+    quoteAuthorKey: "projects.moneySale.quoteAuthor",
     git: "https://github.com/MikyViz/ExchangeRateApp",
-    about: `An application for calculating the value of currency, designed not only for purely practical use, but also for educational and entertaining purposes.`,
     folder: "moneySale",
     imgs: [],
-    icon: "mdi-currency-usd",
-    quote: "Finally! Something that can help me understand money better than Lois's lectures!",
-    quoteAuthor: "Peter Griffin"
+    icon: "mdi-currency-usd"
   },
   {
-    name: "AboutMe (This Site!)",
+    nameKey: "projects.aboutMe.name",
+    descKey: "projects.aboutMe.description",
+    quoteKey: "projects.aboutMe.quote",
+    quoteAuthorKey: "projects.aboutMe.quoteAuthor",
     git: "https://github.com/MikyViz/combined-aboutme-repo/tree/master/aboutme",
-    about: `Code of this site📝 - Built with Vue.js, Vuetify, and lots of Family Guy references! A modern portfolio website with multiple themes and languages support.`,
     folder: "aboutme",
     imgs: [],
-    icon: "mdi-web",
-    quote: "Blast! This website is more sophisticated than my plans for world domination!",
-    quoteAuthor: "Stewie Griffin"
+    icon: "mdi-web"
+  },
+  {
+    nameKey: "projects.mooseBroWeather.name",
+    descKey: "projects.mooseBroWeather.description",
+    quoteKey: "projects.mooseBroWeather.quote",
+    quoteAuthorKey: "projects.mooseBroWeather.quoteAuthor",
+    git: "https://github.com/MikyViz/MooseBroWeather",
+    site: "https://mikyviz.github.io/MooseBroWeather/",
+    folder: "moosebroweather",
+    imgs: [],
+    icon: "mdi-weather-partly-cloudy"
   },
 ]);
 // const backend = ref([
