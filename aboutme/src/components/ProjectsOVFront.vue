@@ -191,6 +191,27 @@ const frontend = ref([
     imgs: [],
     icon: "mdi-weather-partly-cloudy"
   },
+  {
+    nameKey: "projects.mbw.name",
+    descKey: "projects.mbw.description",
+    quoteKey: "projects.mbw.quote",
+    quoteAuthorKey: "projects.mbw.quoteAuthor",
+    git: "https://github.com/MikyViz/MBW",
+    folder: "mbw",
+    imgs: [],
+    icon: "mdi-cellphone-weather"
+  },
+  {
+    nameKey: "projects.keymapConverter.name",
+    descKey: "projects.keymapConverter.description",
+    quoteKey: "projects.keymapConverter.quote",
+    quoteAuthorKey: "projects.keymapConverter.quoteAuthor",
+    git: "https://github.com/MikyViz/keymapConverter",
+    site: "https://marketplace.visualstudio.com/items?itemName=MooseBro.keymap-converter",
+    folder: "keymap-converter",
+    imgs: [],
+    icon: "mdi-keyboard-variant"
+  },
 ]);
 // const backend = ref([
  

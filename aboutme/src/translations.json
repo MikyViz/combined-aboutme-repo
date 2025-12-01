@@ -156,6 +156,18 @@
         "description": "🌤️ Modern weather application built with Vue.js and Chart.js using Composables Pattern. Real-time weather data with beautiful visualizations and interactive charts for temperature, humidity, and forecast analytics. Live demo available!",
         "quote": "This is more accurate than my weather predictions based on my knee pain!",
         "quoteAuthor": "Peter Griffin"
+      },
+      "mbw": {
+        "name": "MBW (Mobile Weather)",
+        "description": "📱 Mobile version of MooseBroWeather! Native mobile weather application with all the features of the web version, optimized for iOS and Android. Perfect for checking weather on the go!",
+        "quote": "Now I can check the weather while avoiding the giant chicken! Excellent!",
+        "quoteAuthor": "Peter Griffin"
+      },
+      "keymapConverter": {
+        "name": "Keymap Converter",
+        "description": "⌨️ Universal VS Code extension for converting text between keyboard layouts. Supports Russian, English, and Hebrew layouts. No more typing in the wrong layout! Available on VS Code Marketplace.",
+        "quote": "This is more useful than my universal translator for talking to chickens!",
+        "quoteAuthor": "Peter Griffin"
       }
     },
     "backendProjects": {
@@ -319,6 +331,18 @@
         "name": "MooseBroWeather",
         "description": "🌤️ Современное приложение погоды, созданное с Vue.js и Chart.js с использованием паттерна Composables. Данные о погоде в реальном времени с красивыми визуализациями и интерактивными графиками температуры, влажности и прогноза. Доступно живое демо!",
         "quote": "Это точнее, чем мои прогнозы погоды, основанные на боли в колене!",
+        "quoteAuthor": "Питер Гриффин"
+      },
+      "mbw": {
+        "name": "MBW (Мобильная Погода)",
+        "description": "📱 Мобильная версия MooseBroWeather! Нативное мобильное приложение погоды со всеми функциями веб-версии, оптимизированное для iOS и Android. Идеально для проверки погоды на ходу!",
+        "quote": "Теперь я могу проверять погоду, убегая от гигантского цыпленка! Превосходно!",
+        "quoteAuthor": "Питер Гриффин"
+      },
+      "keymapConverter": {
+        "name": "Keymap Converter",
+        "description": "⌨️ Универсальное расширение VS Code для конвертации текста между раскладками клавиатуры. Поддерживает русскую, английскую и ивритскую раскладки. Больше никакого набора текста в неправильной раскладке! Доступно в VS Code Marketplace.",
+        "quote": "Это полезнее, чем мой универсальный переводчик для разговоров с цыплятами!",
         "quoteAuthor": "Питер Гриффин"
       }
     },
@@ -497,6 +521,18 @@
         "name": "MooseBroWeather",
         "description": "🌤️ אפליקציית מזג אוויר מודרנית שנבנתה עם Vue.js ו-Chart.js תוך שימוש ב-Composables Pattern. נתוני מזג אוויר בזמן אמת עם ויזואליזציות יפות ותרשימים אינטראקטיביים עבור טמפרטורה, לחות וניתוח תחזית. דמו חי זמין!",
         "quote": "זה יותר מדויק מתחזיות מזג האוויר שלי המבוססות על כאב הברך שלי!",
+        "quoteAuthor": "פיטר גריפין"
+      },
+      "mbw": {
+        "name": "MBW (מזג אוויר מובייל)",
+        "description": "📱 גרסת מובייל של MooseBroWeather! אפליקציית מזג אוויר מקורית עם כל התכונות של גרסת האינטרנט, מותאמת ל-iOS ו-Android. מושלמת לבדיקת מזג האוויר בדרכים!",
+        "quote": "עכשיו אני יכול לבדוק את מזג האוויר בזמן שאני בורח מהתרנגול הענק! מצוין!",
+        "quoteAuthor": "פיטר גריפין"
+      },
+      "keymapConverter": {
+        "name": "Keymap Converter",
+        "description": "⌨️ הרחבת VS Code אוניברסלית להמרת טקסט בין פריסות מקלדת. תומך בפריסות רוסית, אנגלית ועברית. לא עוד הקלדה בפריסה הלא נכונה! זמין ב-VS Code Marketplace.",
+        "quote": "זה יותר שימושי מהמתרגם האוניברסלי שלי לשיחות עם תרנגולות!",
         "quoteAuthor": "פיטר גריפין"
       }
     },
