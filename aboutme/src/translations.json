@@ -165,7 +165,7 @@
       },
       "keymapConverter": {
         "name": "Keymap Converter",
-        "description": "⌨️ Universal VS Code extension for converting text between keyboard layouts. Supports Russian, English, and Hebrew layouts. No more typing in the wrong layout! Available on VS Code Marketplace.",
+        "description": "⌨️ Universal VS Code and Chrome extension for converting text between keyboard layouts. Supports Russian, English, and Hebrew layouts. No more typing in the wrong layout! Available on VS Code Marketplace.",
         "quote": "This is more useful than my universal translator for talking to chickens!",
         "quoteAuthor": "Peter Griffin"
       }
@@ -341,7 +341,7 @@
       },
       "keymapConverter": {
         "name": "Keymap Converter",
-        "description": "⌨️ Универсальное расширение VS Code для конвертации текста между раскладками клавиатуры. Поддерживает русскую, английскую и ивритскую раскладки. Больше никакого набора текста в неправильной раскладке! Доступно в VS Code Marketplace.",
+        "description": "⌨️ Универсальное расширение VS Code  и Chrome для конвертации текста между раскладками клавиатуры. Поддерживает русскую, английскую и ивритскую раскладки. Больше никакого набора текста в неправильной раскладке! Доступно в VS Code Marketplace.",
         "quote": "Это полезнее, чем мой универсальный переводчик для разговоров с цыплятами!",
         "quoteAuthor": "Питер Гриффин"
       }
@@ -531,7 +531,7 @@
       },
       "keymapConverter": {
         "name": "Keymap Converter",
-        "description": "⌨️ הרחבת VS Code אוניברסלית להמרת טקסט בין פריסות מקלדת. תומך בפריסות רוסית, אנגלית ועברית. לא עוד הקלדה בפריסה הלא נכונה! זמין ב-VS Code Marketplace.",
+        "description": "⌨️ הרחבת VS Code ו-Chrome אוניברסלית להמרת טקסט בין פריסות מקלדת. תומך בפריסות רוסית, אנגלית ועברית. לא עוד הקלדה בפריסה הלא נכונה! זמין ב-VS Code Marketplace.",
         "quote": "זה יותר שימושי מהמתרגם האוניברסלי שלי לשיחות עם תרנגולות!",
         "quoteAuthor": "פיטר גריפין"
       }

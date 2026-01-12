@@ -1,22 +1,24 @@
 <template>
   <v-container class="family-guy-pattern">
     <h2 class="text-center family-guy-title mb-6">
-      {{ t('projects.page.title') }}
+      {{ t("projects.page.title") }}
     </h2>
-    
+
     <v-container>
-      <h3 class="family-guy-title mb-4">{{ t('projects.page.sectionTitle') }}</h3>
-      
+      <h3 class="family-guy-title mb-4">
+        {{ t("projects.page.sectionTitle") }}
+      </h3>
+
       <v-row>
-        <v-col 
-          v-for="(frontendItem, index) in frontend" 
+        <v-col
+          v-for="(frontendItem, index) in frontend"
           :key="index"
-          cols="12" 
+          cols="12"
           md="6"
           class="mb-6"
         >
-          <v-card 
-            class="family-guy-card project-card" 
+          <v-card
+            class="family-guy-card project-card"
             :class="`animate-project-${index + 1}`"
             elevation="8"
           >
@@ -24,12 +26,12 @@
               <v-icon :icon="frontendItem.icon" class="mr-2 family-guy-icon" />
               {{ t(frontendItem.nameKey) }}
             </v-card-title>
-            
+
             <v-card-subtitle class="family-guy-text mb-2">
-              <v-btn 
-                :href="frontendItem.git" 
-                target="_blank" 
-                variant="outlined" 
+              <v-btn
+                :href="frontendItem.git"
+                target="_blank"
+                variant="outlined"
                 color="primary"
                 class="family-guy-btn"
                 prepend-icon="mdi-github"
@@ -37,34 +39,39 @@
               >
                 GitHub
               </v-btn>
-              <v-chip 
+              <v-chip
                 v-if="frontendItem.npm"
-                :href="frontendItem.npm" 
+                :href="frontendItem.npm"
                 clickable
-                color="success" 
+                color="success"
                 variant="outlined"
                 class="family-guy-btn ml-2"
                 size="small"
               >
                 📦 NPM
               </v-chip>
-              <v-btn 
-                v-if="frontendItem.site"
-                :href="frontendItem.site" 
+              <v-btn
+                v-for="(siteLink, siteIndex) in Array.isArray(frontendItem.site) 
+                  ? frontendItem.site 
+                  : frontendItem.site 
+                  ? [frontendItem.site] 
+                  : []"
+                :key="siteIndex"
+                :href="siteLink"
                 target="_blank"
-                variant="outlined" 
+                variant="outlined"
                 color="secondary"
                 class="family-guy-btn ml-2"
                 prepend-icon="mdi-open-in-new"
                 size="small"
               >
-                🌐 Live Demo
+                🌐 Check me out
               </v-btn>
             </v-card-subtitle>
 
-            <v-carousel 
+            <v-carousel
               v-if="frontendItem.imgs && frontendItem.imgs.length > 0"
-              show-arrows="hover" 
+              show-arrows="hover"
               hide-delimiters
               class="mb-4"
             >
@@ -74,8 +81,8 @@
               >
                 <v-card>
                   <v-card-item>
-                    <v-img 
-                      :src="projectImg" 
+                    <v-img
+                      :src="projectImg"
                       height="350px"
                       class="family-guy-image"
                     />
@@ -86,19 +93,14 @@
 
             <v-card-text class="family-guy-text">
               <p>{{ t(frontendItem.descKey) }}</p>
-              
+
               <!-- Family Guy цитата для каждого проекта -->
-              <v-alert 
-                type="info" 
-                variant="tonal" 
-                class="mt-4"
-                :icon="false"
-              >
+              <v-alert type="info" variant="tonal" class="mt-4" :icon="false">
                 <template v-slot:prepend>
                   <v-icon>mdi-format-quote-open</v-icon>
                 </template>
                 <em>{{ t(frontendItem.quoteKey) }}</em>
-                <br>
+                <br />
                 <small>- {{ t(frontendItem.quoteAuthorKey) }}</small>
               </v-alert>
             </v-card-text>
@@ -133,10 +135,10 @@
 </template>
 <script setup>
 import { ref, onMounted } from "vue";
-import { t } from '@/translations';
+import { t } from "@/translations";
 
 // Импорт всех изображений из указанной папки
-const imgFiles = import.meta.glob('../assets/projects/**/*.{png,jpg,jpeg,gif}');
+const imgFiles = import.meta.glob("../assets/projects/**/*.{png,jpg,jpeg,gif}");
 
 const frontend = ref([
   {
@@ -146,9 +148,9 @@ const frontend = ref([
     quoteAuthorKey: "projects.transportControl.quoteAuthor",
     git: "https://phpstack-1063351-5511176.cloudwaysapps.com/auth",
     folder: "transport-control",
-    site: "https://phpstack-1063351-5511176.cloudwaysapps.com/auth",
+    site: ["https://phpstack-1063351-5511176.cloudwaysapps.com/auth"],
     imgs: [],
-    icon: "mdi-bus"
+    icon: "mdi-bus",
   },
   {
     nameKey: "projects.ballonsCalc.name",
@@ -158,7 +160,7 @@ const frontend = ref([
     git: "https://github.com/MikyViz/ballonsCalc",
     folder: "ballonscalc",
     imgs: [],
-    icon: "mdi-balloon"
+    icon: "mdi-balloon",
   },
   {
     nameKey: "projects.moneySale.name",
@@ -168,7 +170,7 @@ const frontend = ref([
     git: "https://github.com/MikyViz/ExchangeRateApp",
     folder: "moneySale",
     imgs: [],
-    icon: "mdi-currency-usd"
+    icon: "mdi-currency-usd",
   },
   {
     nameKey: "projects.aboutMe.name",
@@ -178,7 +180,7 @@ const frontend = ref([
     git: "https://github.com/MikyViz/combined-aboutme-repo/tree/master/aboutme",
     folder: "aboutme",
     imgs: [],
-    icon: "mdi-web"
+    icon: "mdi-web",
   },
   {
     nameKey: "projects.mooseBroWeather.name",
@@ -186,10 +188,10 @@ const frontend = ref([
     quoteKey: "projects.mooseBroWeather.quote",
     quoteAuthorKey: "projects.mooseBroWeather.quoteAuthor",
     git: "https://github.com/MikyViz/MooseBroWeather",
-    site: "https://mikyviz.github.io/MooseBroWeather/",
+    site: ["https://mikyviz.github.io/MooseBroWeather/"],
     folder: "moosebroweather",
     imgs: [],
-    icon: "mdi-weather-partly-cloudy"
+    icon: "mdi-weather-partly-cloudy",
   },
   {
     nameKey: "projects.mbw.name",
@@ -199,7 +201,7 @@ const frontend = ref([
     git: "https://github.com/MikyViz/MBW",
     folder: "mbw",
     imgs: [],
-    icon: "mdi-cellphone-weather"
+    icon: "mdi-cellphone-weather",
   },
   {
     nameKey: "projects.keymapConverter.name",
@@ -207,14 +209,17 @@ const frontend = ref([
     quoteKey: "projects.keymapConverter.quote",
     quoteAuthorKey: "projects.keymapConverter.quoteAuthor",
     git: "https://github.com/MikyViz/keymapConverter",
-    site: "https://marketplace.visualstudio.com/items?itemName=MooseBro.keymap-converter",
+    site: [
+      "https://marketplace.visualstudio.com/items?itemName=MooseBro.keymap-converter",
+      "https://chromewebstore.google.com/detail/klngleclidpnlbioohliekakoffbeiao?utm_source=item-share-cb",
+    ],
     folder: "keymap-converter",
     imgs: [],
-    icon: "mdi-keyboard-variant"
+    icon: "mdi-keyboard-variant",
   },
 ]);
 // const backend = ref([
- 
+
 // ]);
 
 const loadImages = async () => {
@@ -240,7 +245,6 @@ const loadImages = async () => {
   //   proj.imgs = loadedImgs;
   // }
 };
-
 
 onMounted(() => {
   loadImages();
@@ -306,7 +310,11 @@ onMounted(() => {
 }
 
 @keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
     transform: translateY(0) scale(1);
   }
   40% {

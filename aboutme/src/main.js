@@ -23,7 +23,7 @@ import emailjs from '@emailjs/browser'
 import { createApp } from 'vue'
 
 // Analytics
-import { inject } from '@vercel/analytics'
+// import { inject } from '@vercel/analytics'
 
 // SEO
 import { createHead } from '@vueuse/head'
