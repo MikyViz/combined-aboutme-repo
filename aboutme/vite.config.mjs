@@ -55,4 +55,12 @@ export default defineConfig({
   server: {
     port: 3001,
   },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        api: 'modern-compiler',
+        silenceDeprecations: ['legacy-js-api'],
+      },
+    },
+  },
 })
