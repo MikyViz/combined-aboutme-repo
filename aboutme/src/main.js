@@ -23,7 +23,7 @@ import emailjs from '@emailjs/browser'
 import { createApp } from 'vue'
 
 // Analytics
-// import { inject } from '@vercel/analytics'
+import { inject } from '@vercel/analytics'
 
 // SEO
 import { createHead } from '@vueuse/head'
@@ -50,7 +50,11 @@ app.config.performance = true
 
 // Добавляем аналитику в режиме production
 if (process.env.NODE_ENV === 'production') {
-  inject();
+  try {
+    inject();
+  } catch (error) {
+    console.warn('Analytics injection failed:', error);
+  }
 }
 
 app.use(createPinia())

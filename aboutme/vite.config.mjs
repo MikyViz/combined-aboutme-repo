@@ -32,7 +32,13 @@ export default defineConfig({
         }],
       },
     }),
-  ],  optimizeDeps: {
+  ],
+  build: {
+    modulePreload: {
+      polyfill: false,
+    },
+  },
+  optimizeDeps: {
     exclude: ['vue-colorful']
   },
   define: {
@@ -59,7 +65,7 @@ export default defineConfig({
     preprocessorOptions: {
       scss: {
         api: 'modern-compiler',
-        silenceDeprecations: ['legacy-js-api'],
+        silenceDeprecations: ['legacy-js-api', 'if-function'],
       },
     },
   },
