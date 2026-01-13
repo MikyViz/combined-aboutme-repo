@@ -4,9 +4,8 @@ services:
     build: ./aboutme
     container_name: aboutmefe
     ports:
-      - 3000:3000
-    volumes:
-      - ./aboutme:/app/aboutme
+      - 3000:80
+    restart: unless-stopped
   aboutmebe:
     build: ./aboutmebe
     container_name: aboutmebe
