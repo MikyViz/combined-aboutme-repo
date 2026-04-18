@@ -86,6 +86,8 @@ const Frontend = ref([
 const Backend = ref([
     { name: 'JavaScript', img: 'https://www.freepnglogos.com/uploads/javascript-png/javascript-vector-logo-yellow-png-transparent-javascript-vector-12.png' },
     { name: 'Node.js', img: 'https://apipilot.com/wp-content/uploads/2023/01/4.png' },
+    { name: 'PHP', img: 'https://www.php.net/images/logos/new-php-logo.svg' },
+    { name: 'Laravel', img: 'http://www.aquayazilim.com/tema/genel/uploads/haberler/laravel-featured.webp' },
     { name: 'Sequelize DB', img: 'https://th.bing.com/th/id/OIP.dcQcS2jeF7zNTNWygTlYoAHaIk?rs=1&pid=ImgDetMain' },
     { name: 'MySQL', img: 'https://th.bing.com/th/id/OIP.lIIc_svaWdGdEJuEk7TBlgHaHa?rs=1&pid=ImgDetMain' }
 ]);

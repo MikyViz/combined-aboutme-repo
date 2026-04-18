@@ -32,6 +32,8 @@ const skills = ref([
   { name: 'React.js', level: 83 },
   { name: 'HTML/CSS', level: 95 },
   { name: 'Node.js', level: 80 },
+  { name: 'PHP', level: 78 },
+  { name: 'Laravel', level: 75 },
   { name: 'Vuetify', level: 85 },
   { name: 'MySQL', level: 82 },
   { name: 'Docker', level: 75 },

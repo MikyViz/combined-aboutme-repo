@@ -73,6 +73,8 @@
             <v-chip color="secondary" variant="outlined" class="ma-1 family-guy-btn">HTML5 📄</v-chip>
             <v-chip color="accent" variant="outlined" class="ma-1 family-guy-btn">CSS3 🎨</v-chip>
             <v-chip color="primary" variant="outlined" class="ma-1 family-guy-btn">Node.js 🌟</v-chip>
+            <v-chip color="secondary" variant="outlined" class="ma-1 family-guy-btn">PHP 🐘</v-chip>
+            <v-chip color="accent" variant="outlined" class="ma-1 family-guy-btn">Laravel 🔥</v-chip>
           </v-chip-group>
         </v-col>
       </v-row>
