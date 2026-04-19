@@ -1,27 +1,27 @@
 <template>
-  <v-container class="wrapper family-guy-pattern">
+  <v-container class="wrapper fade-in">
     <v-row>
       <v-col v-for="(card, index) in cards" :key="index" cols="12" md="6">
         <v-card 
           :color="card.color" 
-          elevation="16" 
-          class="main family-guy-card"
-          :class="{ 'family-guy-bounce': index === 0 }"
+          elevation="0" 
+          class="main glass-card professional-card"
+          :class="{ 'floating': index === 0 }"
         >
-          <v-card-title class="family-guy-title text-white">
+          <v-card-title class="professional-title text-white">
             {{ card.icon }} {{ card.title }}
           </v-card-title>
-          <v-card-text class="family-guy-text">
+          <v-card-text class="professional-text">
             <HtmlRenderer :content="card.text" />
             <div class="mt-3 text-center">
-              <em class="family-guy-text">"{{ card.quote }}"</em>
+              <em class="professional-subtitle">"{{ card.quote }}"</em>
             </div>
           </v-card-text>
           <v-card-actions>
             <v-img 
               :src="card.image" 
               height="400"
-              class="family-guy-image"
+              class="professional-avatar"
               contain
             />
           </v-card-actions>
@@ -44,16 +44,16 @@ const cards = computed(() => [
     text: t('homepage.aboutMeText'),
     image: diplomeImg,
     color: "primary",
-    icon: "🎓",
-    quote: "Just like Stewie with his evil plans, I plan amazing websites!"
+    icon: "",
+    quote: "Passionate about creating exceptional digital experiences"
   },  
   {
     title: t('homepage.moosebroTitle'),
     text: t('homepage.moosebroText'),
     image: moosebroImg,
     color: "secondary",
-    icon: "🫎",
-    quote: "As Brian would say: 'This moose is quite sophisticated!'"
+    icon: "",
+    quote: "Innovation meets creativity in every project"
   },
 ]);
 </script>
@@ -62,18 +62,12 @@ const cards = computed(() => [
 .main {
   margin: 40px;
   padding: 20px;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .main:hover {
-  transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3) !important;
-}
-
-/* Дополнительные Family Guy стили */
-.family-guy-card {
-  background: linear-gradient(135deg, var(--v-theme-surface) 0%, var(--v-theme-surface-variant) 100%);
-  border: 3px solid var(--v-theme-primary);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2) !important;
 }
 
 .wrapper {

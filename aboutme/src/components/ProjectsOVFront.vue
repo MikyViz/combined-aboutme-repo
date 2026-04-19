@@ -1,11 +1,11 @@
 <template>
-  <v-container class="family-guy-pattern">
-    <h2 class="text-center family-guy-title mb-6">
+  <v-container class="fade-in">
+    <h2 class="text-center professional-title mb-6">
       {{ t("projects.page.title") }}
     </h2>
 
     <v-container>
-      <h3 class="family-guy-title mb-4">
+      <h3 class="professional-title mb-4">
         {{ t("projects.page.sectionTitle") }}
       </h3>
 
@@ -18,22 +18,22 @@
           class="mb-6"
         >
           <v-card
-            class="family-guy-card project-card"
+            class="professional-card glass-card project-card"
             :class="`animate-project-${index + 1}`"
-            elevation="8"
+            elevation="0"
           >
-            <v-card-title class="family-guy-title d-flex align-center">
-              <v-icon :icon="frontendItem.icon" class="mr-2 family-guy-icon" />
+            <v-card-title class="professional-title d-flex align-center">
+              <v-icon :icon="frontendItem.icon" class="mr-2 professional-icon" />
               {{ t(frontendItem.nameKey) }}
             </v-card-title>
 
-            <v-card-subtitle class="family-guy-text mb-2">
+            <v-card-subtitle class="professional-text mb-2">
               <v-btn
                 :href="frontendItem.git"
                 target="_blank"
                 variant="outlined"
                 color="primary"
-                class="family-guy-btn"
+                class="professional-btn"
                 prepend-icon="mdi-github"
                 size="small"
               >
@@ -45,10 +45,10 @@
                 clickable
                 color="success"
                 variant="outlined"
-                class="family-guy-btn ml-2"
+                class="skill-pill ml-2"
                 size="small"
               >
-                📦 NPM
+                NPM
               </v-chip>
               <v-btn
                 v-for="(siteLink, siteIndex) in Array.isArray(frontendItem.site) 
@@ -61,11 +61,11 @@
                 target="_blank"
                 variant="outlined"
                 color="secondary"
-                class="family-guy-btn ml-2"
+                class="professional-btn ml-2"
                 prepend-icon="mdi-open-in-new"
                 size="small"
               >
-                🌐 Check me out
+                View Project
               </v-btn>
             </v-card-subtitle>
 
@@ -84,25 +84,15 @@
                     <v-img
                       :src="projectImg"
                       height="350px"
-                      class="family-guy-image"
+                      class="professional-avatar"
                     />
                   </v-card-item>
                 </v-card>
               </v-carousel-item>
             </v-carousel>
 
-            <v-card-text class="family-guy-text">
+            <v-card-text class="professional-text">
               <p>{{ t(frontendItem.descKey) }}</p>
-
-              <!-- Family Guy цитата для каждого проекта -->
-              <v-alert type="info" variant="tonal" class="mt-4" :icon="false">
-                <template v-slot:prepend>
-                  <v-icon>mdi-format-quote-open</v-icon>
-                </template>
-                <em>{{ t(frontendItem.quoteKey) }}</em>
-                <br />
-                <small>- {{ t(frontendItem.quoteAuthorKey) }}</small>
-              </v-alert>
             </v-card-text>
           </v-card>
         </v-col>
@@ -144,8 +134,6 @@ const frontend = ref([
   {
     nameKey: "projects.transportControl.name",
     descKey: "projects.transportControl.description",
-    quoteKey: "projects.transportControl.quote",
-    quoteAuthorKey: "projects.transportControl.quoteAuthor",
     git: "https://phpstack-1063351-5511176.cloudwaysapps.com/auth",
     folder: "transport-control",
     site: ["https://phpstack-1063351-5511176.cloudwaysapps.com/auth"],
@@ -155,8 +143,6 @@ const frontend = ref([
   {
     nameKey: "projects.ballonsCalc.name",
     descKey: "projects.ballonsCalc.description",
-    quoteKey: "projects.ballonsCalc.quote",
-    quoteAuthorKey: "projects.ballonsCalc.quoteAuthor",
     git: "https://github.com/MikyViz/ballonsCalc",
     folder: "ballonscalc",
     imgs: [],
@@ -165,8 +151,6 @@ const frontend = ref([
   {
     nameKey: "projects.moneySale.name",
     descKey: "projects.moneySale.description",
-    quoteKey: "projects.moneySale.quote",
-    quoteAuthorKey: "projects.moneySale.quoteAuthor",
     git: "https://github.com/MikyViz/ExchangeRateApp",
     folder: "moneySale",
     imgs: [],
@@ -175,8 +159,6 @@ const frontend = ref([
   {
     nameKey: "projects.aboutMe.name",
     descKey: "projects.aboutMe.description",
-    quoteKey: "projects.aboutMe.quote",
-    quoteAuthorKey: "projects.aboutMe.quoteAuthor",
     git: "https://github.com/MikyViz/combined-aboutme-repo/tree/master/aboutme",
     folder: "aboutme",
     imgs: [],
@@ -185,8 +167,6 @@ const frontend = ref([
   {
     nameKey: "projects.mooseBroWeather.name",
     descKey: "projects.mooseBroWeather.description",
-    quoteKey: "projects.mooseBroWeather.quote",
-    quoteAuthorKey: "projects.mooseBroWeather.quoteAuthor",
     git: "https://github.com/MikyViz/MooseBroWeather",
     site: ["https://mikyviz.github.io/MooseBroWeather/"],
     folder: "moosebroweather",
@@ -196,8 +176,6 @@ const frontend = ref([
   {
     nameKey: "projects.mbw.name",
     descKey: "projects.mbw.description",
-    quoteKey: "projects.mbw.quote",
-    quoteAuthorKey: "projects.mbw.quoteAuthor",
     git: "https://github.com/MikyViz/MBW",
     folder: "mbw",
     imgs: [],
@@ -206,8 +184,6 @@ const frontend = ref([
   {
     nameKey: "projects.keymapConverter.name",
     descKey: "projects.keymapConverter.description",
-    quoteKey: "projects.keymapConverter.quote",
-    quoteAuthorKey: "projects.keymapConverter.quoteAuthor",
     git: "https://github.com/MikyViz/keymapConverter",
     site: [
       "https://marketplace.visualstudio.com/items?itemName=MooseBro.keymap-converter",
@@ -305,7 +281,7 @@ onMounted(() => {
 }
 
 /* Hover эффект для карточек */
-.project-card:hover .family-guy-icon {
+.project-card:hover .card-icon {
   animation: bounce 0.6s ease-in-out;
 }
 

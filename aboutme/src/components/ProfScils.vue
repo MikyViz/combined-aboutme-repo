@@ -1,4 +1,6 @@
-<template>    <v-container>
+<template>
+  <div>
+    <v-container>
         <h3 class="section-title mb-4">{{ t('skills.javascript') }}</h3>
         <v-carousel show-arrows="hover" hide-delimiters>
             <v-carousel-item v-for="(JavaScriptItem, index) in JavaScript" :key="index">
@@ -63,6 +65,7 @@
             </v-carousel-item>
         </v-carousel>
     </v-container>
+  </div>
 </template>
 <script setup>
 import { ref } from 'vue';

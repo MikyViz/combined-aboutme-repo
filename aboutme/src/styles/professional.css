@@ -1,0 +1,268 @@
+/* Professional Modern Styles */
+
+/* Typography - Clean & Professional */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+  --accent-color: #0066FF;
+  --text-primary: #000000;
+  --text-secondary: #666666;
+  --border-color: #E5E5E5;
+}
+
+/* Navigation Styles */
+.professional-nav {
+  border-bottom: 1px solid var(--border-color) !important;
+  background: #FFFFFF !important;
+}
+
+.professional-nav .v-btn {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--text-primary);
+}
+
+.professional-nav .v-btn:hover {
+  color: var(--accent-color);
+}
+
+/* Main App Background */
+.professional-bg-light {
+  background: #FFFFFF;
+  min-height: 100vh;
+}
+
+.professional-bg-dark {
+  background: #121212;
+  min-height: 100vh;
+}
+
+/* Clean card design */
+.glass-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 0;
+  box-shadow: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+/* Modern Typography */
+.professional-title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.professional-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  color: var(--text-secondary);
+  letter-spacing: -0.01em;
+}
+
+.professional-text {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Clean Buttons */
+.professional-btn {
+  border-radius: 0;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.75rem;
+  padding: 12px 32px;
+  transition: all 0.2s ease;
+  border: 2px solid var(--text-primary);
+}
+
+.professional-btn:hover {
+  background: var(--text-primary);
+  color: white;
+  transform: none;
+}
+
+/* Clean Navigation */
+.professional-nav {
+  background: #FFFFFF !important;
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+/* Card Styles */
+.professional-card {
+  border-radius: 0;
+  border: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+  overflow: hidden;
+  background: #FFFFFF;
+}
+
+.professional-card:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Smooth Animations */
+.fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slide-in-right {
+  animation: slideInRight 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Clean Text Effects */
+.gradient-text {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* Professional Avatar */
+.professional-avatar {
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+  transition: all 0.3s ease;
+}
+
+.professional-avatar:hover {
+  transform: none;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Icon Styles */
+.professional-icon {
+  transition: all 0.2s ease;
+}
+
+.professional-icon:hover {
+  transform: none;
+}
+
+/* Floating removed - too playful */
+.floating {
+  animation: none;
+}
+
+/* Skill Pills - Clean design */
+.skill-pill {
+  border-radius: 0;
+  padding: 8px 16px;
+  background: transparent;
+  border: 1px solid var(--border-color);
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+  display: inline-block;
+  color: var(--text-secondary);
+}
+
+.skill-pill:hover {
+  border-color: var(--text-primary);
+  background: var(--text-primary);
+  color: white;
+  transform: none;
+}
+
+/* Section Divider */
+.section-divider {
+  height: 1px;
+  background: var(--border-color);
+  margin: 60px 0;
+}
+
+/* Dark theme adjustments */
+.theme--dark .professional-card,
+.theme--dark .glass-card {
+  background: #1E1E1E;
+  border-color: #333;
+}
+
+.theme--dark .professional-nav {
+  background: #121212 !important;
+  border-color: #333;
+}
+
+.theme--dark .professional-title {
+  color: #FFFFFF;
+}
+
+.theme--dark .professional-text,
+.theme--dark .professional-subtitle {
+  color: #B5B5B5;
+}
+
+.theme--dark .skill-pill {
+  border-color: #333;
+  color: #B5B5B5;
+}
+
+.theme--dark .skill-pill:hover {
+  border-color: #FFFFFF;
+  background: #FFFFFF;
+  color: #000000;
+}
+
+/* Remove all playful animations */
+.pulse-animation {
+  animation: none;
+}
+
+/* Responsive Design */
+@media (max-width: 960px) {
+  .professional-title {
+    font-size: 2rem;
+  }
+}

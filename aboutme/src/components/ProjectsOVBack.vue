@@ -1,17 +1,17 @@
 <template>
-  <v-container class="family-guy-pattern">
-    <h2 class="text-center family-guy-title mb-6">
+  <v-container class="fade-in">
+    <h2 class="text-center professional-title mb-6">
       {{ t('backendProjects.page.title') }}
     </h2>
     
     <v-img
       src="https://content.internetvideoarchive.com/content/hdphotos/15302/015302/015302_1108x623_638654883664951015.jpg"
       aspect-ratio="2"
-      class="my-6 hero family-guy-image"
+      class="my-6 hero professional-avatar"
     ></v-img>
     
     <div class="container">
-      <h2 class="family-guy-title mb-4">{{ t('backendProjects.page.sectionTitle') }}</h2>
+      <h2 class="professional-title mb-4">{{ t('backendProjects.page.sectionTitle') }}</h2>
       <v-row class="my-4">
         <v-col
           v-for="(backendItem, index) in backend"
@@ -21,21 +21,21 @@
           md="6"
         >
           <v-card 
-            class="my-card family-guy-card"
+            class="my-card professional-card glass-card"
             :class="`animate-backend-${index + 1}`"
           >
-            <v-card-title class="family-guy-title d-flex align-center">
-              <v-icon :icon="backendItem.icon" class="mr-2 family-guy-icon" />
+            <v-card-title class="professional-title d-flex align-center">
+              <v-icon :icon="backendItem.icon" class="mr-2 professional-icon" />
               {{ t(backendItem.nameKey) }}
             </v-card-title>
             
-            <v-card-subtitle class="family-guy-text mb-2">
+            <v-card-subtitle class="professional-text mb-2">
               <v-btn 
                 :href="backendItem.git" 
                 target="_blank" 
                 variant="outlined" 
                 color="primary"
-                class="family-guy-btn"
+                class="professional-btn"
                 prepend-icon="mdi-github"
                 size="small"
               >
@@ -43,23 +43,8 @@
               </v-btn>
             </v-card-subtitle>
             
-            <v-card-text class="family-guy-text">
+            <v-card-text class="professional-text">
               <p>{{ t(backendItem.descKey) }}</p>
-              
-              <!-- Family Guy цитата -->
-              <v-alert 
-                type="info" 
-                variant="tonal" 
-                class="mt-4"
-                :icon="false"
-              >
-                <template v-slot:prepend>
-                  <v-icon>mdi-format-quote-open</v-icon>
-                </template>
-                <em>{{ t(backendItem.quoteKey) }}</em>
-                <br>
-                <small>- {{ t(backendItem.quoteAuthorKey) }}</small>
-              </v-alert>
             </v-card-text>
           </v-card>
         </v-col>
@@ -75,16 +60,12 @@ const backend = ref([
   {
     nameKey: "backendProjects.aboutMeBE.name",
     descKey: "backendProjects.aboutMeBE.description",
-    quoteKey: "backendProjects.aboutMeBE.quote",
-    quoteAuthorKey: "backendProjects.aboutMeBE.quoteAuthor",
     git: "https://github.com/MikyViz/combined-aboutme-repo/tree/master/aboutmebe",
     icon: "mdi-api"
   },
   {
     nameKey: "backendProjects.ballonsCalcServer.name",
     descKey: "backendProjects.ballonsCalcServer.description",
-    quoteKey: "backendProjects.ballonsCalcServer.quote",
-    quoteAuthorKey: "backendProjects.ballonsCalcServer.quoteAuthor",
     git: "https://github.com/MikyViz/ballonsCalcServer",
     icon: "mdi-server"
   },
@@ -135,7 +116,7 @@ const backend = ref([
 }
 
 /* Hover эффект для иконок */
-.my-card:hover .family-guy-icon {
+.my-card:hover .card-icon {
   animation: spin 0.6s ease-in-out;
 }
 

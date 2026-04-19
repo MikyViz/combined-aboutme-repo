@@ -10,8 +10,8 @@ import { createPinia } from 'pinia'
 
 // Подключаем стили шрифтов
 import './assets/fonts.css'
-// Family Guy стили
-import './styles/family-guy.css'
+// Professional modern styles
+import './styles/professional.css'
 
 // Components
 import App from './App.vue'

@@ -1,20 +1,20 @@
 <template>
-  <!-- Family Guy Style Homepage -->
-  <div class="family-guy-pattern pa-4">
+  <!-- Professional Modern Homepage -->
+  <div class="pa-4">
     <v-row class="d-flex justify-center">
       <v-col cols="12" class="text-center mb-4">
-        <h1 class="family-guy-title text-h3 mb-2">
-          🏠 Welcome to Quahog... I mean, My Portfolio! 🏠
+        <h1 class="professional-title text-h3 mb-2 fade-in">
+          Welcome to My Portfolio
         </h1>
-        <p class="family-guy-text text-h6">
-          Just like the Griffin family, I'm here to entertain and maybe learn something new! 📺
+        <p class="professional-text text-h6 slide-in-left">
+          Transforming ideas into elegant digital solutions
         </p>
       </v-col>
       
       <v-col cols="12">
         <Wellcome />
       </v-col>
-      <v-col cols="10" class="d-flex justify-center">
+      <v-col cols="12" md="10" class="d-flex justify-center">
         <AkizerAbout />
       </v-col>
     </v-row>
@@ -28,22 +28,22 @@ import AkizerAbout from '@/components/AkizerAbout.vue';
 
 // Добавляем мета-теги для SEO
 useHead({
-  title: 'Miky Vizenovsky - Family Guy Style Portfolio 🏠',
+  title: 'Miky Vizenovsky - Full Stack Developer 💻',
   meta: [
     {
       name: 'description',
-      content: 'Welcome to Quahog! Portfolio Miky Vizenovsky - Frontend Developer в стиле Family Guy с современными веб-технологиями'
+      content: 'Portfolio of Miky Vizenovsky - Full Stack Developer specializing in Vue.js, React, Node.js and modern web technologies'
     },{
       name: 'keywords',
-      content: 'Frontend Developer, Vue.js, JavaScript, Web Development, Portfolio, Miky Vizenovsky, Family Guy Style, Quahog'
+      content: 'Frontend Developer, Full Stack Developer, Vue.js, React, JavaScript, Web Development, Portfolio, Miky Vizenovsky'
     },
     {
       property: 'og:title',
-      content: 'Miky Vizenovsky - Family Guy Style Portfolio 🏠'
+      content: 'Miky Vizenovsky - Full Stack Developer 💻'
     },
     {
       property: 'og:description',
-      content: 'Welcome to Quahog! Ознакомьтесь с портфолио Miky Vizenovsky в стиле Family Guy'
+      content: 'Explore the portfolio of Miky Vizenovsky - Full Stack Developer with expertise in modern web technologies'
     },
     {
       property: 'og:type',
@@ -81,7 +81,7 @@ useHead({
 }
 
 /* Дополнительная анимация для главной страницы */
-.family-guy-pattern {
+.professional-pattern {
   background-attachment: fixed;
 }
 

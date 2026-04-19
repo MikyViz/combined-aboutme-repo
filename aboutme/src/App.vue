@@ -1,36 +1,39 @@
-<template>  <v-app :class="{ 'family-guy-gradient-light': !theme.global.current.value.dark, 'family-guy-gradient-dark': theme.global.current.value.dark, 'family-guy-pattern': true }">
-    <v-main>      <v-app-bar color="primary" prominent="true" class="family-guy-nav">
-        <v-app-bar-nav-icon
-          variant="text"
-          @click.stop="drawer = !drawer"
-          class="family-guy-icon"
-        ></v-app-bar-nav-icon>
-        <v-toolbar-title class="family-guy-title">🏠 Griffin Family Style - Miky Vizenovsky</v-toolbar-title>
-        <v-spacer></v-spacer>
-        
-        <!-- Переключатель языка -->
-        <LanguageSwitcher class="mr-2" />
-          <v-menu>
-          <template v-slot:activator="{ props }">            <v-btn 
-              v-bind="props"
-              icon
-              class="ml-3 family-guy-btn family-guy-bounce"
+<template>  <v-app :class="{ 'professional-bg-light': !theme.global.current.value.dark, 'professional-bg-dark': theme.global.current.value.dark }">
+    <v-main>      <v-app-bar color="surface" flat class="professional-nav" height="80">
+        <v-container class="d-flex align-center">
+          <v-toolbar-title class="professional-title text-h6 font-weight-bold">MIKY VIZENOVSKY</v-toolbar-title>
+          <v-spacer></v-spacer>
+          
+          <!-- Desktop Navigation -->
+          <div class="d-none d-md-flex align-center">
+            <v-btn variant="text" class="mx-2 professional-text" to="/">HOME</v-btn>
+            <v-btn variant="text" class="mx-2 professional-text" to="/about">ABOUT</v-btn>
+            <v-btn variant="text" class="mx-2 professional-text" to="/frontEnd">FRONTEND</v-btn>
+            <v-btn variant="text" class="mx-2 professional-text" to="/backEnd">BACKEND</v-btn>
+            <v-btn variant="text" class="mx-2 professional-text" to="/npmPackages">NPM</v-btn>
+            <v-btn variant="text" class="mx-2 professional-text" to="/contactMe">CONTACT</v-btn>
+            
+            <!-- Language Switcher -->
+            <LanguageSwitcher class="mx-2" />
+            
+            <!-- Theme Toggle -->
+            <v-btn 
+              icon 
+              variant="text"
+              @click="toggleTheme"
+              class="ml-2"
             >
-              <v-icon class="family-guy-icon">{{ themeIcon }}</v-icon>
+              <v-icon>{{ themeIcon }}</v-icon>
             </v-btn>
-          </template>
-          <v-list>
-            <v-list-item
-              v-for="(themeOption, i) in themeOptions"
-              :key="i"
-              @click="selectTheme(themeOption.value)"
-            >
-              <v-list-item-title>
-                {{ themeOption.icon }} {{ themeOption.name }}
-              </v-list-item-title>
-            </v-list-item>
-          </v-list>
-        </v-menu>
+          </div>
+          
+          <!-- Mobile Menu -->
+          <v-app-bar-nav-icon
+            variant="text"
+            @click.stop="drawer = !drawer"
+            class="d-md-none"
+          ></v-app-bar-nav-icon>
+        </v-container>
       </v-app-bar>
       <v-navigation-drawer
         v-model="drawer"
@@ -94,7 +97,7 @@ const routs = computed(() => [
     value: ["/frontEnd", "/backEnd"],
   },
   {
-    title: "📦 NPM Packages",
+    title: "NPM Packages",
     value: "/npmPackages",
   },
   {
@@ -122,32 +125,13 @@ watch(
 const theme = useTheme();
 const selectedTheme = ref("light");
 
-const themeOptions = [
-  { name: "Light (Quahog Day)", value: "light", icon: "☀️" },
-  { name: "Dark (Quahog Night)", value: "dark", icon: "🌙" }
-];
-
 const themeIcon = computed(() => {
-  const current = selectedTheme.value;
-  switch(current) {
-    case 'light': return 'mdi-weather-sunny';
-    case 'dark': return 'mdi-weather-night';
-    default: return 'mdi-theme-light-dark';
-  }
+  return selectedTheme.value === 'dark' ? 'mdi-weather-sunny' : 'mdi-weather-night';
 });
 
-function selectTheme(themeName) {
-  selectedTheme.value = themeName;
-  theme.global.name.value = themeName;
-    // Находим выбранную тему в списке опций
-  const themeOption = themeOptions.find(option => option.value === themeName);
-  
-  // Add confetti with the selected theme icon
-  simchalesConfetti.addConfetti({
-    emojis: [themeOption?.icon || '✨'], 
-    confettiRadius: 6,
-    confettiNumber: 100,
-  });
+function toggleTheme() {
+  selectedTheme.value = selectedTheme.value === 'light' ? 'dark' : 'light';
+  theme.global.name.value = selectedTheme.value;
 }
 
 // Функция для переключения темы удалена, так как теперь используется только selectTheme

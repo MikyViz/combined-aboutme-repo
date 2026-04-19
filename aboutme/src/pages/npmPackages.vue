@@ -1,14 +1,14 @@
 <template>
-  <div class="family-guy-pattern pa-4">
-    <!-- Family Guy заголовок для NPM пакетов -->
+  <div class="professional-bg-light pa-4">
+    <!-- NPM Packages Header -->
     <v-container>
       <v-row class="mb-6">
         <v-col cols="12" class="text-center">
-          <h1 class="family-guy-title text-h3 mb-4 family-guy-bounce">
-            📦 My NPM Packages - Like Stewie's Inventions! 🚀
+          <h1 class="professional-title text-h3 mb-4">
+            My NPM Packages
           </h1>
-          <p class="family-guy-text text-h6">
-            "Blast! These packages are more sophisticated than my mind control device!" - Stewie Griffin
+          <p class="professional-subtitle text-h6">
+            Open source packages for the developer community
           </p>
         </v-col>
       </v-row>
@@ -26,20 +26,20 @@
           class="mx-auto"
         >
           <v-card 
-            class="family-guy-card npm-package-card"
+            class="professional-card npm-package-card"
             :class="`animate-package`"
             elevation="8"
           >
-            <v-card-title class="family-guy-title d-flex align-center">
-              <v-icon :icon="pkg.icon" class="mr-2 family-guy-icon" size="large" />
+            <v-card-title class="professional-title d-flex align-center">
+              <v-icon :icon="pkg.icon" class="mr-2" size="large" />
               {{ pkg.name }}
             </v-card-title>
 
-            <v-card-subtitle class="family-guy-text">
+            <v-card-subtitle class="professional-subtitle">
               <v-chip 
                 color="primary" 
                 variant="outlined" 
-                class="family-guy-btn mr-2"
+                class="mr-2"
                 size="small"
                 :loading="pkg.isLoading"
               >
@@ -49,7 +49,7 @@
               <v-chip 
                 :color="pkg.hasError ? 'error' : 'success'" 
                 variant="outlined" 
-                class="family-guy-btn"
+                class=""
                 size="small"
                 :loading="pkg.isLoading"
               >
@@ -63,7 +63,7 @@
                     v-bind="props"
                     color="info" 
                     variant="outlined" 
-                    class="family-guy-btn ml-2"
+                    class="ml-2"
                     size="small"
                   >
                     <v-icon icon="mdi-api" class="mr-1" />
@@ -75,7 +75,7 @@
 
             <v-card-text>
               <!-- Описание на текущем языке -->
-              <p class="family-guy-text mb-4">
+              <p class="professional-text mb-4">
                 {{ pkg.descriptions[currentLocale] || pkg.descriptions['en'] }}
               </p>
 
@@ -83,14 +83,14 @@
 
               <!-- Фичи пакета -->
               <div class="mb-4">
-                <h4 class="family-guy-title mb-2">✨ Features:</h4>
+                <h4 class="professional-title mb-2">Features:</h4>
                 <v-chip-group>
                   <v-chip 
                     v-for="feature in pkg.features" 
                     :key="feature"
                     color="accent" 
                     variant="outlined"
-                    class="family-guy-btn ma-1"
+                    class="ma-1"
                     size="small"
                   >
                     {{ feature }}
@@ -100,14 +100,14 @@
 
               <!-- Технологии -->
               <div class="mb-4">
-                <h4 class="family-guy-title mb-2">🛠️ Tech Stack:</h4>
+                <h4 class="professional-title mb-2">Tech Stack:</h4>
                 <v-chip-group>
                   <v-chip 
                     v-for="tech in pkg.technologies" 
                     :key="tech"
                     color="secondary" 
                     variant="outlined"
-                    class="family-guy-btn ma-1"
+                    class="ma-1"
                     size="small"
                   >
                     {{ tech }}
@@ -117,16 +117,16 @@
 
               <!-- Установка -->
               <div class="mb-4">
-                <h4 class="family-guy-title mb-2">📦 Installation:</h4>
-                <v-card class="family-guy-code pa-3" color="surface-variant">
+                <h4 class="professional-title mb-2">Installation:</h4>
+                <v-card class="pa-3" color="surface-variant">
                   <pre class="installation-text">{{ pkg.installationCode }}</pre>
                 </v-card>
               </div>
 
               <!-- Статистика пакета (динамическая) -->
               <div class="mb-4">
-                <h4 class="family-guy-title mb-2">
-                  📊 Package Stats: 
+                <h4 class="professional-title mb-2">
+                  Package Stats: 
                   <v-chip 
                     v-if="pkg.isLoading" 
                     color="info" 
@@ -143,38 +143,38 @@
                     <v-chip 
                       color="success" 
                       variant="outlined" 
-                      class="family-guy-btn" 
+                      class="" 
                       size="small"
                       :loading="pkg.isLoading"
                     >
-                      📁 {{ pkg.fileCount }} files
+                       {{ pkg.fileCount }} files
                     </v-chip>
                   </v-col>
                   <v-col cols="6" sm="3">
                     <v-chip 
                       color="info" 
                       variant="outlined" 
-                      class="family-guy-btn" 
+                      class="" 
                       size="small"
                       :loading="pkg.isLoading"
                     >
-                      📦 {{ pkg.packageSize }}
+                       {{ pkg.packageSize }}
                     </v-chip>
                   </v-col>
                   <v-col cols="6" sm="3">
                     <v-chip 
                       color="warning" 
                       variant="outlined" 
-                      class="family-guy-btn" 
+                      class="" 
                       size="small"
                       :loading="pkg.isLoading"
                     >
-                      🪪 {{ pkg.license }}
+                       {{ pkg.license }}
                     </v-chip>
                   </v-col>
                   <v-col cols="6" sm="3">
-                    <v-chip color="primary" variant="outlined" class="family-guy-btn" size="small">
-                      🌍 {{ pkg.name === 'keymap-inspector' ? '7 layouts' : 'Stats Kit' }}
+                    <v-chip color="primary" variant="outlined" class="" size="small">
+                       {{ pkg.name === 'keymap-inspector' ? '7 layouts' : 'Stats Kit' }}
                     </v-chip>
                   </v-col>
                 </v-row>
@@ -183,7 +183,7 @@
                 <v-row v-if="pkg.downloadStatsData && !pkg.isLoading" class="mt-2">
                   <v-col cols="12">
                     <v-card class="pa-3 download-stats-card" color="surface-variant" variant="tonal">
-                      <h5 class="family-guy-title mb-2">📈 Download Statistics:</h5>
+                      <h5 class="professional-title mb-2">Download Statistics:</h5>
                       <v-row>
                         <v-col cols="6" sm="3">
                           <div class="text-center">
@@ -220,7 +220,7 @@
                 v-if="pkg.hasError" 
                 type="error" 
                 variant="tonal" 
-                class="family-guy-text mt-4"
+                class="professional-text mt-4"
                 :icon="false"
               >
                 <template v-slot:prepend>
@@ -234,19 +234,18 @@
                 </div>
               </v-alert>
 
-              <!-- Family Guy цитата -->
+              <!-- Professional note -->
               <v-alert 
+                v-if="!pkg.hasError" 
                 type="info" 
                 variant="tonal" 
-                class="family-guy-text mt-4"
+                class="professional-text mt-4"
                 :icon="false"
               >
                 <template v-slot:prepend>
-                  <v-icon>mdi-format-quote-open</v-icon>
+                  <v-icon>mdi-information</v-icon>
                 </template>
-                <em>{{ pkg.quote }}</em>
-                <br>
-                <small>- {{ pkg.quoteAuthor }}</small>
+                <div>{{ pkg.descriptions[currentLocale] || pkg.descriptions['en'] }}</div>
               </v-alert>
             </v-card-text>
 
@@ -255,39 +254,39 @@
                 :href="pkg.npmUrl" 
                 target="_blank" 
                 color="primary"
-                class="family-guy-btn mr-2"
+                class="mr-2"
                 prepend-icon="mdi-npm"
               >
-                📦 NPM Package
+                 NPM Package
               </v-btn>
               <v-btn 
                 :href="pkg.githubUrl" 
                 target="_blank" 
                 color="secondary"
-                class="family-guy-btn"
+                class=""
                 prepend-icon="mdi-github"
               >
-                💻 GitHub
+                 GitHub
               </v-btn>
             </v-card-actions>
           </v-card>
         </v-col>
       </v-row>
 
-      <!-- Дополнительная информация -->
+      <!-- Additional information -->
       <v-row class="mt-8">
         <v-col cols="12">
-          <v-card class="family-guy-card text-center">
+          <v-card class="professional-card text-center">
             <v-card-text>
-              <h3 class="family-guy-title mb-4">
-                🎯 Why NPM Packages?
+              <h3 class="professional-title mb-4">
+                Why NPM Packages?
               </h3>
-              <p class="family-guy-text text-h6">
-                "Just like Peter's crazy schemes, but these actually work and help other developers!" 
+              <p class="professional-text text-h6">
+                Sharing useful tools with the developer community
               </p>
-              <p class="family-guy-text">
-                Creating NPM packages allows me to share useful tools with the developer community,
-                just like how the Griffin family shares their... unique wisdom with Quahog! 🏠
+              <p class="professional-text">
+                Creating NPM packages allows me to contribute to the open source ecosystem
+                and help other developers solve common problems.
               </p>
             </v-card-text>
           </v-card>
@@ -398,33 +397,11 @@ const getDescriptions = (packageKey) => {
   return descriptions;
 };
 
-// Вычисляемое свойство для получения цитаты из переводов (реактивное)
-const getQuote = computed(() => (packageKey) => {
-  const quoteKeys = `npmPackages.${packageKey}.quote`.split('.');
-  const authorKeys = `npmPackages.${packageKey}.quoteAuthor`.split('.');
-  
-  let quote = translationsData[currentLocale.value];
-  let author = translationsData[currentLocale.value];
-  
-  for (const k of quoteKeys) {
-    if (quote && quote[k]) quote = quote[k];
-  }
-  for (const k of authorKeys) {
-    if (author && author[k]) author = author[k];
-  }
-  
-  return {
-    quote: quote || '',
-    quoteAuthor: author || ''
-  };
-});
-
 // Вычисляемые свойства для объединения статических и динамических данных
 const npmPackages = computed(() => [
   {
     ...staticKeymapInfo.value,
     descriptions: getDescriptions('keymapInspector'),
-    ...getQuote.value('keymapInspector'),
     name: keymapPackageData.value?.name || 'keymap-inspector',
     version: keymapPackageData.value?.version || 'Loading...',
     downloads: keymapLoading.value ? 'Loading...' : (keymapError.value ? 'Error loading' : keymapGetDownloadSummary()),
@@ -439,7 +416,6 @@ const npmPackages = computed(() => [
   {
     ...staticStatKitInfo.value,
     descriptions: getDescriptions('statKit'),
-    ...getQuote.value('statKit'),
     name: statKitPackageData.value?.name || '@mikyviz/stat-kit',
     version: statKitPackageData.value?.version || 'Loading...',
     downloads: statKitLoading.value ? 'Loading...' : (statKitError.value ? 'Error loading' : statKitGetDownloadSummary()),
@@ -513,7 +489,7 @@ useHead({
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.npm-package-card:hover .family-guy-icon {
+.npm-package-card:hover .package-icon {
   animation: bounce 0.6s ease-in-out;
 }
 
@@ -529,13 +505,13 @@ useHead({
   }
 }
 
-.family-guy-code {
+.code-block {
   border-radius: 10px;
   border: 2px solid var(--v-theme-primary);
   font-family: 'Courier New', monospace;
 }
 
-.family-guy-code pre {
+.code-block pre {
   color: var(--v-theme-on-surface-variant);
   margin: 0;
 }
