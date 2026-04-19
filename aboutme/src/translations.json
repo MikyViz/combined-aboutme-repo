@@ -2,17 +2,17 @@
   "en": {
     "welcome": {
       "title": "Welcome to my portfolio!",
-      "subtitle": "I'm a FullStack Developer",
-      "description": "Creating modern and responsive web applications",
-      "greeting": "Hi bro!!!",
-      "subtitle1": "Always glad to see you, on my site!",
-      "subtitle2": "Let's hang out)"
+      "subtitle": "Full-Stack Developer",
+      "description": "Building scalable, modern web applications with cutting-edge technologies",
+      "greeting": "Welcome",
+      "subtitle1": "Full-Stack Developer specializing in modern web solutions",
+      "subtitle2": "Delivering high-quality, production-ready applications"
     },
     "homepage": {
-      "aboutMeTitle": "So, who am I?",
-      "aboutMeText": "My name is Michael David Vizenovsky, and I am a FullStack developer.<br />I learned this interesting profession in the PROG institute 👉 <a href=\"https://www.prog.co.il/\" target=\"_blank\">https://www.prog.co.il/</a><br />And I had the honor of attending the classes of the coolest programmers in Israel - Israel Dahan and Rahamim Hania.",
-      "moosebroTitle": "MOOSEBRO",
-      "moosebroText": "In the development industry and in commercial projects, I am also known as \"MOOSEBRO\""
+      "aboutMeTitle": "Professional Profile",
+      "aboutMeText": "My name is Michael David Vizenovsky, a Full-Stack Developer currently employed at <strong>Hybiz</strong> (since February 8, 2026).<br />I completed professional training at the PROG Institute <a href=\"https://www.prog.co.il/\" target=\"_blank\">https://www.prog.co.il/</a>, where I was mentored by leading Israeli developers Israel Dahan and Rahamim Hania.<br />I specialize in building end-to-end web solutions using modern JavaScript frameworks, Node.js, and database technologies.",
+      "moosebroTitle": "Professional Alias",
+      "moosebroText": "Known in the development community as \"MOOSEBRO\" - contributing to open-source projects and commercial applications"
     },
     "footer": {
       "title": "Miky Vizenovsky",
@@ -29,12 +29,12 @@
       "and": "and"
     },
     "navigation": {
-      "home": "Nice to meet you",
-      "about": "Professional skills",
+      "home": "Home",
+      "about": "Skills & Expertise",
       "frontendProjects": "Frontend Projects",
       "backendProjects": "Backend Projects",
-      "projects": "My projects",
-      "contact": "Contact me"
+      "projects": "Portfolio",
+      "contact": "Get in Touch"
     },
     "about": {
       "title": "About me",
@@ -90,7 +90,7 @@
       "moreDetails": "More details"
     },
     "contact": {
-      "title": "Wаnt to stay in touch?...🤙",
+      "title": "Let's Connect",
       "name": "Name",
       "email": "Email",
       "subject": "Subject",
@@ -172,23 +172,23 @@
       "title": "Добро пожаловать в мое портфолио!",
       "subtitle": "Я FullStack разработчик",
       "description": "Создаю современные и отзывчивые веб-приложения",
-      "greeting": "Здарова, бро!!!",
-      "subtitle1": "Всегда рад видеть тебя на моем сайте!",
-      "subtitle2": "Молодец, что зашел)"
+      "greeting": "Добро пожаловать",
+      "subtitle1": "Full-Stack разработчик, специализирующийся на современных веб-решениях",
+      "subtitle2": "Создание качественных продакшен-готовых приложений"
     },
     "homepage": {
-      "aboutMeTitle": "Итак, кто я?",
-      "aboutMeText": "Меня зовут Михаэль Давид Виценовский, и я FullStack разработчик.<br />Я изучил эту интересную профессию в институте PROG 👉 <a href=\"https://www.prog.co.il/\" target=\"_blank\">https://www.prog.co.il/</a><br />И мне выпала честь посещать занятия самых крутых программистов Израиля - Исраэля Даана и Рахамима Хании.",
-      "moosebroTitle": "MOOSEBRO",
-      "moosebroText": "В индустрии разработки и в коммерческих проектах меня также знают как \"MOOSEBRO\""
+      "aboutMeTitle": "Профессиональный профиль",
+      "aboutMeText": "Меня зовут Михаэль Давид Виценовский, я Full-Stack разработчик, в настоящее время работаю в компании <strong>Hybiz</strong> (с 8 февраля 2026 г.).<br />Профессиональную подготовку прошел в институте PROG <a href=\"https://www.prog.co.il/\" target=\"_blank\">https://www.prog.co.il/</a>, где моими наставниками были ведущие израильские разработчики Исраэль Даан и Рахамим Хания.<br />Специализируюсь на создании комплексных веб-решений с использованием современных JavaScript фреймворков, Node.js и баз данных.",
+      "moosebroTitle": "Профессиональный псевдоним",
+      "moosebroText": "Известен в сообществе разработчиков под ником \"MOOSEBRO\" - вношу вклад в open-source проекты и коммерческие приложения"
     },
     "navigation": {
-      "home": "Приятно познакомиться",
-      "about": "Профессиональные навыки",
+      "home": "Главная",
+      "about": "Навыки и экспертиза",
       "frontendProjects": "Frontend проекты",
       "backendProjects": "Backend проекты",
-      "projects": "Мои проекты",
-      "contact": "Связаться со мной"
+      "projects": "Портфолио",
+      "contact": "Контакты"
     },
     "about": {
       "title": "Обо мне",
@@ -338,24 +338,24 @@
   "he": {
     "welcome": {
       "title": "!ברוך הבא לתיק העבודות שלי",
-      "subtitle": "FullStack אני מפתח ",
-      "description": "יוצר יישומי אינטרנט מודרניים ותגובתיים",
-      "greeting": "!!!היי ברו",
-      "subtitle1": "!תמיד שמח לראות אותך באתר שלי",
-      "subtitle2": "(:כל הכבוד שנכנסת "
+      "subtitle": "Full-Stack מפתח",
+      "description": "בניית אפליקציות אינטרנט מתקדמות ומדרגיות עם טכנולוגיות חדשניות",
+      "greeting": "ברוכים הבאים",
+      "subtitle1": "מתמחה בפתרונות אינטרנט מודרניים Full-Stack מפתח",
+      "subtitle2": "בניית אפליקציות איכותיות מוכנות לפרודקשן"
     },
     "homepage": {
-      "aboutMeTitle": "?אז, מי אני",
-      "aboutMeText": ".FullStack שמי מיכאל דוד ויצנובסקי, ואני מפתח <br />PROG👇 למדתי את המקצוע המעניין הזה במכון   <a href=\"https://www.prog.co.il/\" target=\"_blank\">https://www.prog.co.il/</a><br />והיה לי הכבוד להשתתף בשיעורים של המתכנתים המגניבים ביותר בישראל - ישראל דהן ורחמים חניה",
-      "moosebroTitle": "MOOSEBRO",
-      "moosebroText": "בתעשיית הפיתוח ובפרויקטים מסחריים, אני ידוע גם בכינוי \"MOOSEBRO\""
+      "aboutMeTitle": "פרופיל מקצועי",
+      "aboutMeText": "(2026 בפברואר 8-מ) <strong>Hybiz</strong> בחברת Full-Stack שמי מיכאל דוד ויצנובסקי, מפתח המועסק כיום <br />PROG הכשרה מקצועית עברתי במכון  <a href=\"https://www.prog.co.il/\" target=\"_blank\">https://www.prog.co.il/</a> שבו הדריכו אותי מפתחים מובילים בישראל - ישראל דהן ורחמים חניה<br />ומסדי נתונים Node.js ,JavaScript מתמחה בבניית פתרונות אינטרנט מקיפים תוך שימוש בפריימוורקים מודרניים של",
+      "moosebroTitle": "כינוי מקצועי",
+      "moosebroText": "תורם לפרויקטים של קוד פתוח ואפליקציות מסחריות - \"MOOSEBRO\" ידוע בקהילת המפתחים בכינוי"
     },
     "navigation": {
-      "home": "נעים להכיר",
-      "about": "כישורים מקצועיים",
+      "home": "דף הבית",
+      "about": "כישורים ומומחיות",
       "frontendProjects": "פרויקטים Frontend",
       "backendProjects": "פרויקטים Backend",
-      "projects": "הפרויקטים שלי",
+      "projects": "תיק עבודות",
       "contact": "צור קשר"
     },
     "about": {

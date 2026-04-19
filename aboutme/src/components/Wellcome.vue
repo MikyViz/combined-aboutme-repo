@@ -1,23 +1,29 @@
 <template>  
   <v-container class="fade-in">
-    <v-row>
+    <v-row class="d-flex align-center">
+      <v-col cols="12" md="4" class="d-flex justify-center">
+        <div class="professional-photo-wrapper">
+          <v-img
+            :src="profilePhoto"
+            alt="Professional Photo"
+            class="professional-photo"
+            contain
+          />
+        </div>
+      </v-col>
       <v-col cols="12" md="8">        
-        <h1 class="welcome-title professional-title text-right" :class="titleColorClass">
+        <h1 class="welcome-title professional-title" :class="titleColorClass">
           {{ t('welcome.greeting') }}
         </h1>
-      </v-col>
-    </v-row>
-    <v-row class="d-flex justify-center align-center">
-      <v-col cols="12" md="10">
-        <h2 class="welcome-subtitle professional-subtitle text-center slide-in-left" :class="subtitleColorClass">
+        <h2 class="welcome-subtitle professional-subtitle slide-in-left" :class="subtitleColorClass">
           {{ t('welcome.subtitle1') }}
         </h2>
-        <h2 class="welcome-subtitle professional-subtitle text-md-right text-lg-left text-sm-center slide-in-right" :class="subtitleColorClass">
+        <h2 class="welcome-subtitle professional-subtitle slide-in-right" :class="subtitleColorClass">
           {{ t('welcome.subtitle2') }}
         </h2>
-        <div class="text-center mt-4">
-          <p class="professional-text text-h6 gradient-text" :class="subtitleColorClass">
-            "Crafting digital experiences with passion and precision"
+        <div class="mt-4">
+          <p class="professional-text text-h6" :class="subtitleColorClass">
+            "Building scalable solutions with modern technologies"
           </p>
         </div>
       </v-col>
@@ -29,6 +35,7 @@
 import { t } from '@/translations';
 import { computed } from 'vue';
 import { useTheme } from 'vuetify';
+import profilePhoto from '@/assets/me2.png';
 
 const theme = useTheme();
 
@@ -68,17 +75,29 @@ const subtitleColorClass = computed(() => {
   transition: transform 0.3s ease;
 }
 
-/* Avatar styles */
-.v-avatar {
-  border: 4px solid;
-  border-color: rgb(var(--v-theme-primary));
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-  transition: all 0.3s ease-in-out;
+/* Professional Photo Styles */
+.professional-photo-wrapper {
+  width: 100%;
+  max-width: 350px;
+  overflow: hidden;
+  border: 2px solid #000000;
+  transition: all 0.3s ease;
 }
 
-.v-avatar:hover {
-  transform: scale(1.1) rotate(5deg);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+.professional-photo {
+  width: 100%;
+  height: auto;
+  filter: grayscale(0%);
+  transition: filter 0.3s ease;
+}
+
+.professional-photo-wrapper:hover .professional-photo {
+  filter: grayscale(0%) brightness(1.05);
+}
+
+/* Dark theme photo border */
+.v-theme--dark .professional-photo-wrapper {
+  border-color: #ffffff;
 }
 
 /* Responsive typography */

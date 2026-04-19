@@ -1,7 +1,7 @@
 <template>  <v-app :class="{ 'professional-bg-light': !theme.global.current.value.dark, 'professional-bg-dark': theme.global.current.value.dark }">
     <v-main>      <v-app-bar color="surface" flat class="professional-nav" height="80">
         <v-container class="d-flex align-center">
-          <v-toolbar-title class="professional-title text-h6 font-weight-bold">MIKY VIZENOVSKY</v-toolbar-title>
+          <v-toolbar-title class="professional-title professional-name font-weight-bold">MIKY VIZENOVSKY</v-toolbar-title>
           <v-spacer></v-spacer>
           
           <!-- Desktop Navigation -->
@@ -161,6 +161,36 @@ function navigateToSubmenu(route) {
 <style scoped>
 .pa-4 {
   padding: 16px;
+}
+
+/* Responsive professional name */
+.professional-name {
+  font-size: 0.75rem;
+  white-space: nowrap;
+  letter-spacing: 0.3px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 180px;
+}
+
+@media (min-width: 400px) {
+  .professional-name {
+    font-size: 0.85rem;
+    max-width: 220px;
+  }
+}
+
+@media (min-width: 600px) {
+  .professional-name {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 960px) {
+  .professional-name {
+    font-size: 1.25rem;
+  }
 }
 
 /* Стиль для селектора темы удален */

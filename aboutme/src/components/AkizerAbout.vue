@@ -35,7 +35,8 @@
 import { computed } from "vue";
 import { t } from '@/translations';
 import diplomeImg from "../assets/diplome.jpg";
-import moosebroImg from "../assets/MOOSEBRO.jpg";
+import moosebroImg from "../assets/Gemini_Generated_Image.png";
+// import moosebroImg from "../assets/MOOSEBRO.jpg";
 import HtmlRenderer from "./HtmlRenderer.vue";
 
 const cards = computed(() => [
@@ -45,7 +46,7 @@ const cards = computed(() => [
     image: diplomeImg,
     color: "primary",
     icon: "",
-    quote: "Passionate about creating exceptional digital experiences"
+    quote: "Delivering robust, enterprise-grade solutions"
   },  
   {
     title: t('homepage.moosebroTitle'),
@@ -53,7 +54,7 @@ const cards = computed(() => [
     image: moosebroImg,
     color: "secondary",
     icon: "",
-    quote: "Innovation meets creativity in every project"
+    quote: "Contributing to the developer community through quality code"
   },
 ]);
 </script>
