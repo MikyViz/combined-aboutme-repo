@@ -8,10 +8,10 @@
           class="main glass-card professional-card"
           :class="{ 'floating': index === 0 }"
         >
-          <v-card-title class="professional-title text-white">
+          <v-card-title class="professional-title">
             {{ card.icon }} {{ card.title }}
           </v-card-title>
-          <v-card-text class="professional-text">
+          <v-card-text>
             <HtmlRenderer :content="card.text" />
             <div class="mt-3 text-center">
               <em class="professional-subtitle">"{{ card.quote }}"</em>
@@ -104,5 +104,19 @@ const cards = computed(() => [
     opacity: 1;
     transform: translateX(0);
   }
+}
+
+/* Обеспечиваем правильный контраст текста на карточках */
+.v-card :deep(.v-card-title) {
+  color: inherit;
+}
+
+.v-card :deep(.v-card-text) {
+  color: inherit;
+}
+
+.v-card :deep(.professional-title),
+.v-card :deep(.professional-subtitle) {
+  color: inherit !important;
 }
 </style>
