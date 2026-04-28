@@ -83,6 +83,44 @@ import { t } from '@/translations';
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+/* Переопределяем цвета текста в футере для темной темы */
+.v-footer :deep(.professional-title) {
+  color: #000000 !important;
+}
+
+.v-footer :deep(.professional-text) {
+  color: #666666 !important;
+}
+
+/* Переопределяем цвет иконок */
+.v-footer :deep(.v-icon) {
+  color: #000000 !important;
+}
+
+/* Сохраняем красный цвет для сердечка */
+.v-footer :deep(.v-icon.text-red) {
+  color: #FF0000 !important;
+}
+
+.v-footer :deep(.mdi-heart) {
+  color: #FF0000 !important;
+}
+
+/* Переопределяем цвет текста в кнопках */
+.v-footer :deep(.v-btn) {
+  color: #666666 !important;
+}
+
+/* Переопределяем текст с классом text-medium-emphasis */
+.v-footer :deep(.text-medium-emphasis) {
+  color: #666666 !important;
+}
+
+/* Переопределяем текст body-2 */
+.v-footer :deep(.text-body-2) {
+  color: #666666 !important;
+}
+
 .v-btn {
   text-transform: none;
 }
