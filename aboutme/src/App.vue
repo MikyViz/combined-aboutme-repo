@@ -1,7 +1,7 @@
 <template>  <v-app :class="{ 'professional-bg-light': !theme.global.current.value.dark, 'professional-bg-dark': theme.global.current.value.dark }">
     <v-main>      <v-app-bar color="surface" flat class="professional-nav" height="80">
-        <v-container class="d-flex align-center">
-          <v-toolbar-title class="professional-title professional-name font-weight-bold">MIKY VIZENOVSKY</v-toolbar-title>
+        <v-container class="d-flex align-center" style="max-width: 100%;">
+          <div class="professional-title professional-name font-weight-bold">MIKY VIZENOVSKY</div>
           <v-spacer></v-spacer>
           
           <!-- Desktop Navigation -->
@@ -168,22 +168,22 @@ function navigateToSubmenu(route) {
   font-size: 0.75rem;
   white-space: nowrap;
   letter-spacing: 0.3px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 180px;
+  max-width: none !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+  flex-shrink: 0;
+  width: auto !important;
 }
 
 @media (min-width: 400px) {
   .professional-name {
     font-size: 0.85rem;
-    max-width: 220px;
   }
 }
 
 @media (min-width: 600px) {
   .professional-name {
     font-size: 1rem;
-    max-width: 100%;
   }
 }
 
