@@ -141,6 +141,15 @@ const frontend = ref([
     icon: "mdi-bus",
   },
   {
+    nameKey: "projects.mikuderechRequest.name",
+    descKey: "projects.mikuderechRequest.description",
+    git: "",
+    folder: "mikuderechRequest",
+    site: ["https://p.mikuderech.co.il/"],
+    imgs: [],
+    icon: "mdi-bus-stop-covered",
+  },
+  {
     nameKey: "projects.ballonsCalc.name",
     descKey: "projects.ballonsCalc.description",
     git: "https://github.com/MikyViz/ballonsCalc",
@@ -210,16 +219,6 @@ const loadImages = async () => {
     proj.imgs = loadedImgs;
   }
 
-  // for (const proj of backend.value) {
-  //   const loadedImgs = [];
-  //   for (const path in imgFiles) {
-  //     if (path.includes(proj.folder)) {
-  //       const module = await imgFiles[path]();
-  //       loadedImgs.push(module);
-  //     }
-  //   }
-  //   proj.imgs = loadedImgs;
-  // }
 };
 
 onMounted(() => {
