@@ -6,7 +6,6 @@
           variant="text"
           v-bind="props"
           :prepend-icon="getCurrentLocale.icon"
-          color="white"
           class="lang-switcher-btn"
         >
           {{ getCurrentLocale.name }}

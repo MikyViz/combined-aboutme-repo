@@ -5,7 +5,7 @@
     </h2>
     
     <v-img
-      src="https://content.internetvideoarchive.com/content/hdphotos/15302/015302/015302_1108x623_638654883664951015.jpg"
+      src="../assets/beckgroundHero.png"
       aspect-ratio="2"
       class="my-6 hero professional-avatar"
     ></v-img>

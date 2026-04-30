@@ -78,8 +78,8 @@ import LanguageSwitcher from '@/components/LanguageSwitcher.vue';
 import { t, currentLocale } from '@/translations';
 // import { useThemeStore } from "./stores/theme";
 
-const simchalesConfetti = new JSConfetti2() //🎉
-simchalesConfetti.addConfetti() //🎉
+// const simchalesConfetti = new JSConfetti2();
+// simchalesConfetti.addConfetti();
 
 const drawer = ref(false);
 const secondaryNav = ref(false);
