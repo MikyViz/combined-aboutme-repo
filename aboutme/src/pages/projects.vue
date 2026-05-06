@@ -130,7 +130,7 @@ import PlaceholderImg from '@/assets/Placeholder.png';
 // Import images
 const imgFiles = import.meta.glob("../assets/projects/**/*.{png,jpg,jpeg,gif}");
 
-const frontendProjects = ref([
+const allProjects = ref([
   {
     nameKey: "projects.mikuderech.name",
     descKey: "projects.mikuderech.description",
@@ -139,7 +139,7 @@ const frontendProjects = ref([
     site: ["https://phpstack-1063351-5511176.cloudwaysapps.com/auth"],
     imgs: [],
     icon: "mdi-bus",
-    roles: ["Frontend", "E2E"],
+    roles: ["Frontend"],
   },
   {
     nameKey: "projects.mikuderechRequest.name",
@@ -149,7 +149,7 @@ const frontendProjects = ref([
     site: ["https://p.mikuderech.co.il/"],
     imgs: [],
     icon: "mdi-bus-stop-covered",
-    roles: ["Frontend"],
+    roles: ["Frontend", "Backend", "API"],
   },
   {
     nameKey: "projects.ballonsCalc.name",
@@ -172,11 +172,11 @@ const frontendProjects = ref([
   {
     nameKey: "projects.aboutMe.name",
     descKey: "projects.aboutMe.description",
-    git: "https://github.com/MikyViz/combined-aboutme-repo/tree/master/aboutme",
+    git: "https://github.com/MikyViz/combined-aboutme-repo/",
     folder: "aboutme",
     imgs: [],
     icon: "mdi-web",
-    roles: ["Frontend", "Backend", "E2E"],
+    roles: ["Frontend", "Backend", "API", "Database"],
   },
   {
     nameKey: "projects.mooseBroWeather.name",
@@ -194,7 +194,7 @@ const frontendProjects = ref([
     git: "https://github.com/MikyViz/MBW",
     folder: "mbw",
     imgs: [],
-    icon: "mdi-cellphone-weather",
+    icon: "mdi-weather-partly-lightning",
     roles: ["Frontend"],
   },
   {
@@ -212,30 +212,6 @@ const frontendProjects = ref([
   },
 ]);
 
-const backendProjects = ref([
-  {
-    nameKey: "backendProjects.aboutMeBE.name",
-    descKey: "backendProjects.aboutMeBE.description",
-    git: "https://github.com/MikyViz/combined-aboutme-repo/tree/master/aboutmebe",
-    icon: "mdi-api",
-    imgs: [],
-    roles: ["Backend", "API"],
-  },
-  {
-    nameKey: "backendProjects.ballonsCalcServer.name",
-    descKey: "backendProjects.ballonsCalcServer.description",
-    git: "https://github.com/MikyViz/ballonsCalcServer",
-    icon: "mdi-server",
-    imgs: [],
-    roles: ["Backend", "Database"],
-  },
-]);
-
-// Combine all projects
-const allProjects = computed(() => {
-  return [...frontendProjects.value, ...backendProjects.value];
-});
-
 // Role color mapping
 const getRoleColor = (role) => {
   const colorMap = {
@@ -250,8 +226,14 @@ const getRoleColor = (role) => {
 };
 
 const loadImages = async () => {
-  // Load images for frontend projects
-  for (const proj of frontendProjects.value) {
+  // Load images for all projects
+  for (const proj of allProjects.value) {
+    if (!proj.folder) {
+      // If no folder, use placeholder
+      proj.imgs = [PlaceholderImg];
+      continue;
+    }
+    
     const loadedImgs = [];
     for (const path in imgFiles) {
       if (path.includes(proj.folder)) {
@@ -261,11 +243,6 @@ const loadImages = async () => {
     }
     // If no images found, use placeholder
     proj.imgs = loadedImgs.length > 0 ? loadedImgs : [PlaceholderImg];
-  }
-  
-  // Set placeholder for backend projects (they don't have image folders)
-  for (const proj of backendProjects.value) {
-    proj.imgs = [PlaceholderImg];
   }
 };
 
