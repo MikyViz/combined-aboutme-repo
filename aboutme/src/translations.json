@@ -20,8 +20,7 @@
       "navigation": "Navigation",
       "home": "Home",
       "about": "About",
-      "frontendProjects": "Frontend projects",
-      "backendProjects": "Backend projects",
+      "projects": "Projects",
       "contacts": "Contacts",
       "techStack": "Technology stack",
       "rights": "All rights reserved.",
@@ -31,8 +30,6 @@
     "navigation": {
       "home": "Home",
       "about": "Skills & Expertise",
-      "frontendProjects": "Frontend Projects",
-      "backendProjects": "Backend Projects",
       "projects": "Portfolio",
       "contact": "Get in Touch"
     },
@@ -123,8 +120,8 @@
         "title": "Frontend Projects",
         "sectionTitle": "FrontEnd Projects"
       },
-      "transportControl": {
-        "name": "Public Transport Control System",
+      "mikuderech": {
+        "name": "Mikuderech",
         "description": "Advanced web application for monitoring and controlling public transportation. Real-time tracking, route management, and comprehensive analytics dashboard. Built with modern frontend technologies for seamless user experience."
       },
       "mikuderechRequest": {
@@ -133,15 +130,15 @@
       },
       "ballonsCalc": {
         "name": "BallonsCalc",
-        "description": "BallonsCalc, it's application that help to calculate how many ballons and helium you have to buy for your ballons style, how many it will cost, and witch price you will ask for your ballons working."
+        "description": "BallonsCalc is an application that helps calculate how many balloons and helium you need to buy for your balloon styling, how much it will cost, and what price you should charge for your balloon work. The client side is implemented with Vue.js. The server code for the BallonsCalc application is built with Node.js, Express, and MySQL (via Sequelize). A simple API that provides the application with user and project management functionality."
       },
       "moneySale": {
-        "name": "moneySale",
-        "description": "An application for calculating the value of currency, designed not only for purely practical use, but also for educational and entertaining purposes."
+        "name": "MoneySale",
+        "description": "An application for calculating currency values, designed not only for purely practical use, but also for educational and entertaining purposes. Implemented with Flutter, it uses an API to retrieve current exchange rates and provides a convenient interface for currency conversion and value analysis."
       },
       "aboutMe": {
-        "name": "AboutMe (This Site!)",
-        "description": "Code of this site - Built with Vue.js, Vuetify. A modern portfolio website with multiple themes and languages support."
+        "name": "aboutmikyviz.vercel.app (This Site!)",
+        "description": "Code of this site - Built with Vue.js, Vuetify. A modern portfolio website with multiple themes and languages support. The server side is a simple REST API for this website. Built with Node.js, Express, and SQLite (via Sequelize). A simple API that allows users to create, read, update, and delete (CRUD) information about themselves and leave their reviews about working with me."
       },
       "mooseBroWeather": {
         "name": "MooseBroWeather",
@@ -149,7 +146,7 @@
       },
       "mbw": {
         "name": "MBW (Mobile Weather)",
-        "description": "Mobile version of MooseBroWeather! Native mobile weather application with all the features of the web version, optimized for iOS and Android. Perfect for checking weather on the go!"
+        "description": "Mobile version of MooseBroWeather! Native mobile weather application on Kotlin with all the features of the web version, optimized for iOS and Android. Perfect for checking weather on the go!"
       },
       "keymapConverter": {
         "name": "Keymap Converter",
@@ -160,14 +157,6 @@
       "page": {
         "title": "Backend Projects",
         "sectionTitle": "BackEnd & DB behind the scenes"
-      },
-      "aboutMeBE": {
-        "name": "aboutMeBE",
-        "description": "This is a simple REST API for this website. It is built with Node.js, Express, and SQLite (by Sequelize). It is a simple API that allows users to create, read, update, and delete (CRUD) information about themselves and to leave their overviews about working with me"
-      },
-      "ballonsCalcServer": {
-        "name": "ballonsCalcServer",
-        "description": "This is server code for ballonsCalc application. It is built with Node.js, Express, and MySQL (by Sequelize). It is simple API that provides to the app users and project management functionality."
       }
     }
   },
@@ -189,8 +178,6 @@
     "navigation": {
       "home": "Главная",
       "about": "Навыки и экспертиза",
-      "frontendProjects": "Frontend проекты",
-      "backendProjects": "Backend проекты",
       "projects": "Портфолио",
       "contact": "Контакты"
     },
@@ -236,7 +223,7 @@
         "text": "Расширил навыки на серверную разработку, изучил работу с API и базами данных."
       },
       "fullstack": {
-        "title": "Полный стек разработчик",
+        "title": "Фуллстек разработчик",
         "subtitle": "От идеи до продакшена",
         "text": "Объединил все знания в создании полноценных веб-приложений полного цикла."
       },
@@ -281,8 +268,8 @@
         "title": "Frontend Проекты",
         "sectionTitle": "FrontEnd Проекты"
       },
-      "transportControl": {
-        "name": "Система Контроля Общественного Транспорта",
+      "mikuderech": {
+        "name": "Mikuderech",
         "description": "Продвинутое веб-приложение для мониторинга и управления общественным транспортом. Отслеживание в реальном времени, управление маршрутами и комплексная аналитическая панель. Создано с использованием современных фронтенд технологий для безупречного пользовательского опыта."
       },
       "mikuderechRequest": {
@@ -291,15 +278,15 @@
       },
       "ballonsCalc": {
         "name": "BallonsCalc",
-        "description": "BallonsCalc - это приложение, которое помогает рассчитать, сколько шаров и гелия вам нужно купить для вашего стиля оформления шарами, сколько это будет стоить, и какую цену вы попросите за свою работу с шарами."
+        "description": "BallonsCalc - это приложение, которое помогает рассчитать, сколько шаров и гелия вам нужно купить для вашего стиля оформления шарами, сколько это будет стоить, и какую цену вы попросите за свою работу с шарами. Клиентская часть реализованна через Vue.js. Серверный код для приложения BallonsCalc создан с помощью Node.js, Express и MySQL (через Sequelize). Простой API, который предоставляет приложению функциональность управления пользователями и проектами."
       },
       "moneySale": {
-        "name": "moneySale",
-        "description": "Приложение для расчета стоимости валюты, разработанное не только для чисто практического использования, но и для образовательных и развлекательных целей."
+        "name": "MoneySale",
+        "description": "Приложение для расчета стоимости валюты, разработанное не только для чисто практического использования, но и для образовательных и развлекательных целей. Реализованно с помощью Flutter, использует API для получения актуальных курсов валют и предоставляет удобный интерфейс для конвертации валют и анализа их стоимости."
       },
       "aboutMe": {
-        "name": "AboutMe (Этот Сайт!)",
-        "description": "Код этого сайта - Создан с Vue.js, Vuetify. Современный сайт-портфолио с поддержкой нескольких тем и языков."
+        "name": "aboutmikyviz.vercel.app (Этот Сайт!)",
+        "description": "Код этого сайта - Создан с Vue.js, Vuetify. Современный сайт-портфолио с поддержкой нескольких тем и языков. Серверная часть -простой REST API для этого сайта. Создан с помощью Node.js, Express и SQLite (через Sequelize). Простой API, который позволяет пользователям создавать, читать, обновлять и удалять (CRUD) информацию о себе и оставлять свои отзывы о работе со мной"
       },
       "mooseBroWeather": {
         "name": "MooseBroWeather",
@@ -307,7 +294,7 @@
       },
       "mbw": {
         "name": "MBW (Мобильная Погода)",
-        "description": "Мобильная версия MooseBroWeather! Нативное мобильное приложение погоды со всеми функциями веб-версии, оптимизированное для iOS и Android. Идеально для проверки погоды на ходу!"
+        "description": "Мобильная версия MooseBroWeather! Нативное мобильное приложение погоды на Kotlin со всеми функциями веб-версии, оптимизированное для iOS и Android. Идеально для проверки погоды на ходу!"
       },
       "keymapConverter": {
         "name": "Keymap Converter",
@@ -318,14 +305,6 @@
       "page": {
         "title": "Backend Проекты",
         "sectionTitle": "BackEnd и БД за кулисами"
-      },
-      "aboutMeBE": {
-        "name": "aboutMeBE",
-        "description": "Это простой REST API для этого сайта. Создан с помощью Node.js, Express и SQLite (через Sequelize). Простой API, который позволяет пользователям создавать, читать, обновлять и удалять (CRUD) информацию о себе и оставлять свои отзывы о работе со мной"
-      },
-      "ballonsCalcServer": {
-        "name": "ballonsCalcServer",
-        "description": "Это серверный код для приложения ballonsCalc. Создан с помощью Node.js, Express и MySQL (через Sequelize). Простой API, который предоставляет приложению функциональность управления пользователями и проектами."
       }
     },
     "footer": {
@@ -334,6 +313,7 @@
       "navigation": "Навигация",
       "home": "Главная",
       "about": "О себе",
+      "projects": "Проекты",
       "frontendProjects": "Frontend проекты",
       "backendProjects": "Backend проекты",
       "contacts": "Контакты",
@@ -453,7 +433,7 @@
         "title": "Frontend פרויקטים",
         "sectionTitle": "פרויקטי FrontEnd"
       },
-      "transportControl": {
+      "mikuderech": {
         "name": "מערכת בקרת תחבורה ציבורית",
         "description": "אפליקציית אינטרנט מתקדמת למעקב ובקרה של תחבורה ציבורית. מעקב בזמן אמת, ניהול מסלולים ולוח בקרה אנליטי מקיף. נבנתה עם טכנולוגיות פרונטאנד מודרניות לחוויית משתמש חלקה."
       },
@@ -463,15 +443,15 @@
       },
       "ballonsCalc": {
         "name": "BallonsCalc",
-        "description": "BallonsCalc - זוהי אפליקציה שעוזרת לחשב כמה בלונים והליום אתה צריך לקנות לסגנון הבלונים שלך, כמה זה יעלה, ואיזה מחיר תבקש עבור העבודה שלך עם בלונים."
+        "description": "BallonsCalc - זוהי אפליקציה שעוזרת לחשב כמה בלונים והליום אתה צריך לקנות לסגנון הבלונים שלך, כמה זה יעלה, ואיזה מחיר תבקש עבור העבודה שלך עם בלונים. הצד הלקוח מיושם דרך Vue.js. קוד השרת עבור אפליקציית BallonsCalc נוצר באמצעות Node.js, Express ו-MySQL (דרך Sequelize). API פשוט המספק לאפליקציה פונקציונליות ניהול משתמשים ופרויקטים."
       },
       "moneySale": {
-        "name": "moneySale",
-        "description": "אפליקציה לחישוב ערך המטבע, שתוכננה לא רק לשימוש מעשי גרידא, אלא גם למטרות חינוכיות ובידוריות."
+        "name": "MoneySale",
+        "description": "אפליקציה לחישוב ערכי מטבע, שתוכננה לא רק לשימוש מעשי גרידא, אלא גם למטרות חינוכיות ובידוריות. מיושמת עם Flutter, משתמשת ב-API לקבלת שערי חליפין עדכניים ומספקת ממשק נוח להמרת מטבעות וניתוח ערכם."
       },
       "aboutMe": {
-        "name": "AboutMe (האתר הזה!)",
-        "description": "קוד של האתר הזה - נבנה עם Vue.js, Vuetify. אתר תיק עבודות מודרני עם תמיכה במספר ערכות נושא ושפות."
+        "name": "aboutmikyviz.vercel.app (האתר הזה!)",
+        "description": "קוד של האתר הזה - נבנה עם Vue.js, Vuetify. אתר תיק עבודות מודרני עם תמיכה במספר ערכות נושא ושפות. הצד השרת - REST API פשוט עבור אתר זה. נוצר באמצעות Node.js, Express ו-SQLite (דרך Sequelize). API פשוט המאפשר למשתמשים ליצור, לקרוא, לעדכן ולמחוק (CRUD) מידע על עצמם ולהשאיר ביקורות שלהם על העבודה איתי."
       },
       "mooseBroWeather": {
         "name": "MooseBroWeather",
@@ -479,7 +459,7 @@
       },
       "mbw": {
         "name": "MBW (מזג אוויר מובייל)",
-        "description": "גרסת מובייל של MooseBroWeather! אפליקציית מזג אוויר מקורית עם כל התכונות של גרסת האינטרנט, מותאמת ל-iOS ו-Android. מושלמת לבדיקת מזג האוויר בדרכים!"
+        "description": "גרסת מובייל של MooseBroWeather! אפליקציית מזג אוויר מקורית ב-Kotlin עם כל התכונות של גרסת האינטרנט, מותאמת ל-iOS ו-Android. מושלמת לבדיקת מזג האוויר בדרכים!"
       },
       "keymapConverter": {
         "name": "Keymap Converter",
@@ -490,14 +470,6 @@
       "page": {
         "title": "Backend פרויקטים",
         "sectionTitle": "BackEnd ומסדי נתונים מאחורי הקלעים"
-      },
-      "aboutMeBE": {
-        "name": "aboutMeBE",
-        "description": "זהו REST API פשוט עבור אתר זה. בנוי עם Node.js, Express ו-SQLite (באמצעות Sequelize). API פשוט המאפשר למשתמשים ליצור, לקרוא, לעדכן ולמחוק (CRUD) מידע על עצמם ולהשאיר את חוות דעתם על העבודה איתי"
-      },
-      "ballonsCalcServer": {
-        "name": "ballonsCalcServer",
-        "description": "זהו קוד השרת עבור אפליקציית ballonsCalc. בנוי עם Node.js, Express ו-MySQL (באמצעות Sequelize). API פשוט המספק לאפליקציה פונקציונליות ניהול משתמשים ופרויקטים."
       }
     },
     "footer": {
@@ -506,6 +478,7 @@
       "navigation": "ניווט",
       "home": "דף הבית",
       "about": "אודותיי",
+      "projects": "פרויקטים",
       "frontendProjects": "פרויקטים Frontend",
       "backendProjects": "פרויקטים Backend",
       "contacts": "צור קשר",

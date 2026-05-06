@@ -32,8 +32,7 @@
           <div class="d-flex flex-column">
             <v-btn variant="text" class="mb-1 professional-text" to="/">{{ t('footer.home') }}</v-btn>
             <v-btn variant="text" class="mb-1 professional-text" to="/about">{{ t('footer.about') }}</v-btn>
-            <v-btn variant="text" class="mb-1 professional-text" to="/frontEnd">{{ t('footer.frontendProjects') }}</v-btn>
-            <v-btn variant="text" class="mb-1 professional-text" to="/backEnd">{{ t('footer.backendProjects') }}</v-btn>
+            <v-btn variant="text" class="mb-1 professional-text" to="/projects">{{ t('footer.projects') }}</v-btn>
             <v-btn variant="text" class="mb-1 professional-text" to="/npmPackages">NPM Packages</v-btn>
             <v-btn variant="text" class="mb-1 professional-text" to="/contactMe">{{ t('footer.contacts') }}</v-btn>
           </div>

@@ -64,7 +64,7 @@ useHead({
   link: [
     {
       rel: 'canonical',
-      href: 'https://mikyvizenovsky.com/' // Замените на ваш настоящий домен
+      href: 'https://aboutmikyviz.vercel.app/'
     }
   ]
 });

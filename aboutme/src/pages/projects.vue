@@ -1,17 +1,22 @@
 <template>
-  <v-container class="fade-in">
-    <h2 class="text-center professional-title mb-6">
-      {{ t("projects.page.title") }}
-    </h2>
-
+  <div class="pa-4">
+    <!-- Professional projects page -->
     <v-container>
-      <h3 class="professional-title mb-4">
-        {{ t("projects.page.sectionTitle") }}
-      </h3>
+      <v-row class="mb-6">
+        <v-col cols="12" class="text-center">
+          <h1 class="professional-title text-h3 mb-4 fade-in">
+            My Projects
+          </h1>
+          <p class="professional-text text-h6 slide-in-right">
+            Full-stack solutions: from modern UIs to robust backends
+          </p>
+        </v-col>
+      </v-row>
 
+      <!-- All Projects in one grid -->
       <v-row>
         <v-col
-          v-for="(frontendItem, index) in frontend"
+          v-for="(project, index) in allProjects"
           :key="index"
           cols="12"
           md="6"
@@ -19,17 +24,33 @@
         >
           <v-card
             class="professional-card glass-card project-card"
-            :class="`animate-project-${index + 1}`"
+            :class="`animate-project-${(index % 4) + 1}`"
             elevation="0"
           >
             <v-card-title class="professional-title d-flex align-center">
-              <v-icon :icon="frontendItem.icon" class="mr-2 professional-icon" />
-              {{ t(frontendItem.nameKey) }}
+              <v-icon :icon="project.icon" class="mr-2 professional-icon" />
+              {{ t(project.nameKey) }}
             </v-card-title>
 
             <v-card-subtitle class="professional-text mb-2">
+              <!-- Role/Participation badges -->
+              <div class="mb-3">
+                <v-chip
+                  v-for="role in project.roles"
+                  :key="role"
+                  :color="getRoleColor(role)"
+                  variant="flat"
+                  size="small"
+                  class="mr-2 mb-1 role-chip"
+                >
+                  {{ role }}
+                </v-chip>
+              </div>
+
+              <!-- Links -->
               <v-btn
-                :href="frontendItem.git"
+                v-if="project.git"
+                :href="project.git"
                 target="_blank"
                 variant="outlined"
                 color="primary"
@@ -40,8 +61,8 @@
                 GitHub
               </v-btn>
               <v-chip
-                v-if="frontendItem.npm"
-                :href="frontendItem.npm"
+                v-if="project.npm"
+                :href="project.npm"
                 clickable
                 color="success"
                 variant="outlined"
@@ -51,10 +72,10 @@
                 NPM
               </v-chip>
               <v-btn
-                v-for="(siteLink, siteIndex) in Array.isArray(frontendItem.site) 
-                  ? frontendItem.site 
-                  : frontendItem.site 
-                  ? [frontendItem.site] 
+                v-for="(siteLink, siteIndex) in Array.isArray(project.site) 
+                  ? project.site 
+                  : project.site 
+                  ? [project.site] 
                   : []"
                 :key="siteIndex"
                 :href="siteLink"
@@ -70,13 +91,13 @@
             </v-card-subtitle>
 
             <v-carousel
-              v-if="frontendItem.imgs && frontendItem.imgs.length > 0"
+              v-if="project.imgs && project.imgs.length > 0"
               show-arrows="hover"
               hide-delimiters
               class="mb-4"
             >
               <v-carousel-item
-                v-for="(projectImg, imgIndex) in frontendItem.imgs"
+                v-for="(projectImg, imgIndex) in project.imgs"
                 :key="imgIndex"
               >
                 <v-card>
@@ -92,53 +113,33 @@
             </v-carousel>
 
             <v-card-text class="professional-text">
-              <p>{{ t(frontendItem.descKey) }}</p>
+              <p>{{ t(project.descKey) }}</p>
             </v-card-text>
           </v-card>
         </v-col>
       </v-row>
     </v-container>
-
-    <!-- <v-container>
-      <h3>BackEnd</h3>
-      <v-container v-for="(backendItem, index) in backend" :key="index">
-        <h3>{{ backendItem.name }}</h3>
-        <h3>{{ backendItem.git }}</h3>
-        <v-carousel show-arrows="hover" hide-delimiters>
-          <v-carousel-item
-            v-for="(projectImg, index) in backendItem.imgs"
-            :key="index"
-          >
-            <v-card>
-              <v-card-item>
-                <v-img :src="projectImg" height="200px"></v-img>
-              </v-card-item>
-            </v-card>
-          </v-carousel-item>
-        </v-carousel>
-        <div>
-          <p>{{ backendItem.about }}</p>
-        </div>
-      </v-container>
-    </v-container> -->
-  </v-container>
+  </div>
 </template>
-<script setup>
-import { ref, onMounted } from "vue";
-import { t } from "@/translations";
 
-// Импорт всех изображений из указанной папки
+<script setup>
+import { ref, onMounted, computed } from 'vue';
+import { t } from '@/translations';
+import PlaceholderImg from '@/assets/Placeholder.png';
+
+// Import images
 const imgFiles = import.meta.glob("../assets/projects/**/*.{png,jpg,jpeg,gif}");
 
-const frontend = ref([
+const frontendProjects = ref([
   {
-    nameKey: "projects.transportControl.name",
-    descKey: "projects.transportControl.description",
+    nameKey: "projects.mikuderech.name",
+    descKey: "projects.mikuderech.description",
     git: "https://phpstack-1063351-5511176.cloudwaysapps.com/auth",
     folder: "transport-control",
     site: ["https://phpstack-1063351-5511176.cloudwaysapps.com/auth"],
     imgs: [],
     icon: "mdi-bus",
+    roles: ["Frontend", "E2E"],
   },
   {
     nameKey: "projects.mikuderechRequest.name",
@@ -148,6 +149,7 @@ const frontend = ref([
     site: ["https://p.mikuderech.co.il/"],
     imgs: [],
     icon: "mdi-bus-stop-covered",
+    roles: ["Frontend"],
   },
   {
     nameKey: "projects.ballonsCalc.name",
@@ -156,6 +158,7 @@ const frontend = ref([
     folder: "ballonscalc",
     imgs: [],
     icon: "mdi-balloon",
+    roles: ["Frontend", "Backend"],
   },
   {
     nameKey: "projects.moneySale.name",
@@ -164,6 +167,7 @@ const frontend = ref([
     folder: "moneySale",
     imgs: [],
     icon: "mdi-currency-usd",
+    roles: ["Frontend"],
   },
   {
     nameKey: "projects.aboutMe.name",
@@ -172,6 +176,7 @@ const frontend = ref([
     folder: "aboutme",
     imgs: [],
     icon: "mdi-web",
+    roles: ["Frontend", "Backend", "E2E"],
   },
   {
     nameKey: "projects.mooseBroWeather.name",
@@ -181,6 +186,7 @@ const frontend = ref([
     folder: "moosebroweather",
     imgs: [],
     icon: "mdi-weather-partly-cloudy",
+    roles: ["Frontend"],
   },
   {
     nameKey: "projects.mbw.name",
@@ -189,6 +195,7 @@ const frontend = ref([
     folder: "mbw",
     imgs: [],
     icon: "mdi-cellphone-weather",
+    roles: ["Frontend"],
   },
   {
     nameKey: "projects.keymapConverter.name",
@@ -201,14 +208,50 @@ const frontend = ref([
     folder: "keymap-converter",
     imgs: [],
     icon: "mdi-keyboard-variant",
+    roles: ["Frontend", "Extension Dev"],
   },
 ]);
-// const backend = ref([
 
-// ]);
+const backendProjects = ref([
+  {
+    nameKey: "backendProjects.aboutMeBE.name",
+    descKey: "backendProjects.aboutMeBE.description",
+    git: "https://github.com/MikyViz/combined-aboutme-repo/tree/master/aboutmebe",
+    icon: "mdi-api",
+    imgs: [],
+    roles: ["Backend", "API"],
+  },
+  {
+    nameKey: "backendProjects.ballonsCalcServer.name",
+    descKey: "backendProjects.ballonsCalcServer.description",
+    git: "https://github.com/MikyViz/ballonsCalcServer",
+    icon: "mdi-server",
+    imgs: [],
+    roles: ["Backend", "Database"],
+  },
+]);
+
+// Combine all projects
+const allProjects = computed(() => {
+  return [...frontendProjects.value, ...backendProjects.value];
+});
+
+// Role color mapping
+const getRoleColor = (role) => {
+  const colorMap = {
+    'Frontend': 'primary',
+    'Backend': 'secondary',
+    'E2E': 'success',
+    'API': 'info',
+    'Database': 'warning',
+    'Extension Dev': 'purple',
+  };
+  return colorMap[role] || 'default';
+};
 
 const loadImages = async () => {
-  for (const proj of frontend.value) {
+  // Load images for frontend projects
+  for (const proj of frontendProjects.value) {
     const loadedImgs = [];
     for (const path in imgFiles) {
       if (path.includes(proj.folder)) {
@@ -216,9 +259,14 @@ const loadImages = async () => {
         loadedImgs.push(module.default);
       }
     }
-    proj.imgs = loadedImgs;
+    // If no images found, use placeholder
+    proj.imgs = loadedImgs.length > 0 ? loadedImgs : [PlaceholderImg];
   }
-
+  
+  // Set placeholder for backend projects (they don't have image folders)
+  for (const proj of backendProjects.value) {
+    proj.imgs = [PlaceholderImg];
+  }
 };
 
 onMounted(() => {
@@ -240,72 +288,53 @@ onMounted(() => {
   border-color: var(--v-theme-accent);
 }
 
+.role-chip {
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
 /* Анимации появления для проектов */
 .animate-project-1 {
-  animation: slideInLeft 0.8s ease-out;
+  animation: fadeInUp 0.8s ease-out;
 }
 
 .animate-project-2 {
-  animation: slideInRight 0.8s ease-out 0.2s both;
+  animation: fadeInUp 0.8s ease-out 0.2s backwards;
 }
 
 .animate-project-3 {
-  animation: slideInLeft 0.8s ease-out 0.4s both;
+  animation: fadeInUp 0.8s ease-out 0.4s backwards;
 }
 
 .animate-project-4 {
-  animation: slideInRight 0.8s ease-out 0.6s both;
+  animation: fadeInUp 0.8s ease-out 0.6s backwards;
 }
 
-@keyframes slideInLeft {
+@keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateX(-50px);
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateY(0);
   }
 }
 
-@keyframes slideInRight {
+.fade-in {
+  animation: fadeIn 0.8s ease-out;
+}
+
+.slide-in-right {
+  animation: slideInRight 0.8s ease-out;
+}
+
+@keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateX(50px);
   }
   to {
     opacity: 1;
-    transform: translateX(0);
   }
-}
-
-/* Hover эффект для карточек */
-.project-card:hover .card-icon {
-  animation: bounce 0.6s ease-in-out;
-}
-
-@keyframes bounce {
-  0%,
-  20%,
-  50%,
-  80%,
-  100% {
-    transform: translateY(0) scale(1);
-  }
-  40% {
-    transform: translateY(-5px) scale(1.1);
-  }
-  60% {
-    transform: translateY(-3px) scale(1.05);
-  }
-}
-
-/* Стиль для чипов */
-.v-chip {
-  transition: all 0.2s ease;
-}
-
-.v-chip:hover {
-  transform: scale(1.05);
 }
 </style>

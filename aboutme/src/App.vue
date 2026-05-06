@@ -8,8 +8,7 @@
           <div class="d-none d-md-flex align-center">
             <v-btn variant="text" class="mx-2 professional-text" to="/">HOME</v-btn>
             <v-btn variant="text" class="mx-2 professional-text" to="/about">ABOUT</v-btn>
-            <v-btn variant="text" class="mx-2 professional-text" to="/frontEnd">FRONTEND</v-btn>
-            <v-btn variant="text" class="mx-2 professional-text" to="/backEnd">BACKEND</v-btn>
+            <v-btn variant="text" class="mx-2 professional-text" to="/projects">PROJECTS</v-btn>
             <v-btn variant="text" class="mx-2 professional-text" to="/npmPackages">NPM</v-btn>
             <v-btn variant="text" class="mx-2 professional-text" to="/contactMe">CONTACT</v-btn>
             
@@ -47,16 +46,6 @@
             @click="navigateTo(rout.value)"
           >
             <v-list-item-title>{{ rout.title }}</v-list-item-title>
-            <!-- 👇submenu -->
-            <v-container v-if="Array.isArray(rout.value) && secondaryNav">              <v-list-item
-                v-for="(secondaryRout, index) in rout.value"
-                :key="secondaryRout"                @click="navigateToSubmenu(secondaryRout)"
-              >
-                <v-list-item-title>{{
-                  index === 0 ? t('navigation.frontendProjects') : t('navigation.backendProjects')
-                }}</v-list-item-title>
-              </v-list-item>
-            </v-container>
           </v-list-item>
         </v-list>
       </v-navigation-drawer>
@@ -94,7 +83,8 @@ const routs = computed(() => [
   },
   {
     title: t('navigation.projects'),
-    value: ["/frontEnd", "/backEnd"],
+    value: "/projects", // Здесь можно добавить подменю для проектов, например: ["/frontEnd", "/backEnd"]
+    // value: ["/frontEnd", "/backEnd"],
   },
   {
     title: "NPM Packages",
