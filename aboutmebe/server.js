@@ -19,7 +19,7 @@ const __dirname = path.dirname(__filename);
 const parentDir = path.resolve(__dirname, '..');
 
 const corsOptions = {
-  origin: '*',
+  origin: process.env.FRONTEND_URL || '*',
   optionsSuccessStatus: 200,
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
 };
@@ -35,8 +35,6 @@ app.get('/', (req, res) => {
 app.use('/users', UserRouter);
 app.use('/review', ReviewRouter);
 app.use('/contact', ContactRouter);
-
-app.use('/imgs', express.static(path.join(__dirname, 'imgs')));
 
 app.listen(port, () => {
   console.log(`Listening on http://localhost:${port}`);

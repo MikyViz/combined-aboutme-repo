@@ -1,4 +1,4 @@
-import sequelize from './db-sqlite.js';
+import sequelize from './db-postgres.js';
 import User from './models/UserModel.js';
 import Review from './models/ReviewModel.js';
 

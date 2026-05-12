@@ -1,5 +1,4 @@
-// import sequelize  from "../index.js";
-import sequelize  from "../db-sqlite.js";
+import sequelize  from "../db-postgres.js";
 import { DataTypes } from "sequelize";
 import jwt from "jsonwebtoken";
 import { v4 as uuidv4 } from "uuid";

@@ -1,4 +1,4 @@
-import sequelize  from "../db-sqlite.js";
+import sequelize  from "../db-postgres.js";
 import { DataTypes } from "sequelize";
 import { v4 as uuidv4 } from "uuid";
 import User from "./UserModel.js";

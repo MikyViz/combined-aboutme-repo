@@ -1,20 +1,28 @@
 import express from 'express';
 import multer from 'multer';
+import { v2 as cloudinary } from 'cloudinary';
+import { CloudinaryStorage } from 'multer-storage-cloudinary';
 import UserController from '../controllers/userControler.js';
-import path from 'path';
 import auth from '../middlewares/auth.js';
+
 const router = express.Router();
 
-const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-        cb(null, './imgs'); 
+cloudinary.config({
+    cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+    api_key: process.env.CLOUDINARY_API_KEY,
+    api_secret: process.env.CLOUDINARY_API_SECRET,
+});
+
+const storage = new CloudinaryStorage({
+    cloudinary,
+    params: {
+        folder: 'avatars',
+        allowed_formats: ['jpg', 'jpeg', 'png', 'webp'],
+        transformation: [{ width: 300, height: 300, crop: 'fill' }],
     },
-    filename: function (req, file, cb) {
-        const uniqueFileName = `${Date.now()}${path.extname(file.originalname)}`;
-        cb(null, uniqueFileName);
-    }
-  });
-  const upload = multer({ storage: storage });
+});
+
+const upload = multer({ storage });
 
 // User routes
 router.post('/signUp', upload.single('avatar'), UserController.createUser);
