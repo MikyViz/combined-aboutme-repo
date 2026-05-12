@@ -300,8 +300,8 @@
 import { ref, computed } from 'vue';
 import { useHead } from '@vueuse/head';
 import { useNpmPackageInfo } from '@/composables/useNpmPackageInfo.js';
-import { currentLocale } from '@/translations.js';
-import translationsData from '@/translations.json';
+import { currentLocale } from '@/i18n';
+import translationsData from '@/i18n/translations.json';
 
 // Используем composable для получения динамических данных для keymap-inspector
 const { 

@@ -30,7 +30,7 @@
 </template>
 
 <script setup>
-import { availableLocales, currentLocale, setLocale, getCurrentLocale } from '@/translations';
+import { availableLocales, currentLocale, setLocale, getCurrentLocale } from '@/i18n';
 
 const changeLocale = (locale) => {
   console.log('Changing locale to:', locale);

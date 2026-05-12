@@ -16,7 +16,7 @@
 
     <!-- Professional skills -->
     <div class="professional-card glass-card ma-4">
-      <ProfScils />
+      <ProfSkills />
     </div>
     
     <!-- Skills visualization -->
@@ -34,7 +34,7 @@
 <script setup>
 import SkillsDisplay from '@/components/SkillsDisplay.vue';
 import TimelineExperience from '@/components/TimelineExperience.vue';
-import ProfScils from '@/components/ProfScils.vue';
+import ProfSkills from '@/components/ProfSkills.vue';
 </script>
 
 <style scoped>

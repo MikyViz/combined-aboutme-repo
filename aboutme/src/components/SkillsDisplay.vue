@@ -24,7 +24,7 @@
 
 <script setup>
 import { ref } from 'vue';
-import { t } from '@/translations';
+import { t } from '@/i18n';
 const hoveredSkill = ref(null);
 const skills = ref([
   { name: 'JavaScript', level: 90 },

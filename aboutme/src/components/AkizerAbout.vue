@@ -33,7 +33,7 @@
 
 <script setup>
 import { computed } from "vue";
-import { t } from '@/translations';
+import { t } from '@/i18n';
 import diplomeImg from "../assets/diplome.jpg";
 import moosebroImg from "../assets/Gemini_Generated_Image.png";
 // import moosebroImg from "../assets/MOOSEBRO.jpg";

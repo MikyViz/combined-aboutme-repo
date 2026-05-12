@@ -9,7 +9,7 @@ import { registerPlugins } from '@/plugins'
 import { createPinia } from 'pinia'
 
 // Подключаем стили шрифтов
-import './assets/fonts.css'
+import './styles/fonts.css'
 // Professional modern styles
 import './styles/professional.css'
 

@@ -32,7 +32,7 @@
 </template>
 
 <script setup>
-import { t } from '@/translations';
+import { t } from '@/i18n';
 import { computed } from 'vue';
 import { useTheme } from 'vuetify';
 import profilePhoto from '@/assets/me2.png';

@@ -124,7 +124,7 @@
 
 <script setup>
 import { ref, onMounted, computed } from 'vue';
-import { t } from '@/translations';
+import { t } from '@/i18n';
 import PlaceholderImg from '@/assets/Placeholder.png';
 
 // Import images

@@ -64,8 +64,8 @@ import router from "./router";
 import JSConfetti2 from 'js-confetti';
 import AppFooter from '@/components/AppFooter.vue';
 import LanguageSwitcher from '@/components/LanguageSwitcher.vue';
-import { t, currentLocale } from '@/translations';
-// import { useThemeStore } from "./stores/theme";
+import { t, currentLocale } from '@/i18n';
+// import { useThemeStore } from '@/stores/theme';
 
 // const simchalesConfetti = new JSConfetti2();
 // simchalesConfetti.addConfetti();

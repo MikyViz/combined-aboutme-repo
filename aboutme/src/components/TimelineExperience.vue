@@ -38,7 +38,7 @@
 
 <script setup>
 import { ref } from 'vue';
-import { t } from '@/translations';
+import { t } from '@/i18n';
 const hover = ref(null);
 
 const timelineItems = [  {

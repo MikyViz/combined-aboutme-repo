@@ -118,7 +118,7 @@
 
 <script setup>
 import { ref, computed, onMounted } from 'vue';
-import { t } from '@/translations';
+import { t } from '@/i18n';
 import emailjs from '@emailjs/browser';
 import { emailjsConfig } from '@/config/emailjs';
 

@@ -12,7 +12,7 @@
       </v-col>
       
       <v-col cols="12">
-        <Wellcome />
+        <Welcome />
       </v-col>
       <v-col cols="12" md="10" class="d-flex justify-center">
         <AkizerAbout />
@@ -23,7 +23,7 @@
 
 <script setup>
 import { useHead } from '@vueuse/head';
-import Wellcome from '@/components/Wellcome.vue';
+import Welcome from '@/components/Welcome.vue';
 import AkizerAbout from '@/components/AkizerAbout.vue';
 
 // Добавляем мета-теги для SEO

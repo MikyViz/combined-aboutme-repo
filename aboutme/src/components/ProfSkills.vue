@@ -69,7 +69,7 @@
 </template>
 <script setup>
 import { ref } from 'vue';
-import { t } from '@/translations';
+import { t } from '@/i18n';
 
 const JavaScript = ref([
     { name: 'JavaScript', img: 'https://www.freepnglogos.com/uploads/javascript-png/javascript-vector-logo-yellow-png-transparent-javascript-vector-12.png' },

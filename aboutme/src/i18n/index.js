@@ -1,5 +1,5 @@
 import { ref, reactive, computed } from 'vue';
-import translationsData from '@/translations.json';
+import translationsData from './translations.json';
 
 // Available languages
 const availableLocales = [

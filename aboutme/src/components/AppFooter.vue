@@ -72,7 +72,7 @@
 </template>
 
 <script setup>
-import { t } from '@/translations';
+import { t } from '@/i18n';
 </script>
 
 <style scoped>
