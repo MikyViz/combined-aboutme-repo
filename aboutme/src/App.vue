@@ -24,6 +24,9 @@
             >
               <v-icon>{{ themeIcon }}</v-icon>
             </v-btn>
+
+            <!-- User Auth -->
+            <UserAuth class="ml-2" />
           </div>
           
           <!-- Mobile Menu -->
@@ -64,6 +67,7 @@ import router from "./router";
 import JSConfetti2 from 'js-confetti';
 import AppFooter from '@/components/AppFooter.vue';
 import LanguageSwitcher from '@/components/LanguageSwitcher.vue';
+import UserAuth from '@/components/UserAuth.vue';
 import { t, currentLocale } from '@/i18n';
 // import { useThemeStore } from '@/stores/theme';
 
