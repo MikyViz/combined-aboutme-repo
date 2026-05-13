@@ -22,4 +22,13 @@ export default class ReviewController {
             res.status(500).json({ msg: error.message });
         };
     };
+
+    static async getAllReviews(req, res) {
+        try {
+            const reviews = await ReviewService.getAllReviews();
+            res.status(200).json(reviews);
+        } catch (error) {
+            res.status(500).json({ msg: error.message });
+        };
+    };
 };
