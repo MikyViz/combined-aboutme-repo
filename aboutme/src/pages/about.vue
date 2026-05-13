@@ -29,10 +29,6 @@
       <TimelineExperience />
     </div>
 
-    <!-- Reviews -->
-    <div class="professional-card glass-card ma-4">
-      <Reviews />
-    </div>
   </div>
 </template>
 
@@ -40,7 +36,6 @@
 import SkillsDisplay from '@/components/SkillsDisplay.vue';
 import TimelineExperience from '@/components/TimelineExperience.vue';
 import ProfSkills from '@/components/ProfSkills.vue';
-import Reviews from '@/components/Reviews.vue';
 </script>
 
 <style scoped>

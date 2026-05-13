@@ -53,6 +53,26 @@ export const useAuthStore = defineStore('auth', {
         this.loading = false;
       }
     },
+    async updateUser(formData) {
+      this.loading = true;
+      this.error = null;
+      try {
+        const res = await fetch(`${API_URL}/users/updateUser`, {
+          method: 'PUT',
+          headers: { 'Authorization': `Bearer ${this.token}` },
+          body: formData,
+        });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.msg || 'Update failed');
+        this._saveUser({ ...data, token: this.token });
+        return true;
+      } catch (e) {
+        this.error = e.message;
+        return false;
+      } finally {
+        this.loading = false;
+      }
+    },
     logout() {
       this.user = null;
       this.token = null;

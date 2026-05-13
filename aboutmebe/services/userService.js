@@ -32,6 +32,22 @@ export default class UserService {
             throw new Error(error);
         }
     };
+    static async updateUser(req) {
+        try {
+            const user = await User.findOne({ where: { id: req.user.id } });
+            if (!user) return null;
+            const { firstName, lastName, phone } = req.body;
+            if (firstName) user.firstName = firstName;
+            if (lastName) user.lastName = lastName;
+            if (phone) user.phone = phone;
+            if (req.file) user.avatar = req.file.path;
+            await user.save();
+            return user;
+        } catch (error) {
+            throw new Error(error);
+        }
+    }
+
     static async login({email, password}) {
         try {
             const user = await User.findOne({ where: { email: email } });

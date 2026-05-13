@@ -17,6 +17,11 @@
       <v-col cols="12" md="10" class="d-flex justify-center">
         <AkizerAbout />
       </v-col>
+      <v-col cols="12">
+        <div class="professional-card glass-card ma-4">
+          <Reviews />
+        </div>
+      </v-col>
     </v-row>
   </div>
 </template>
@@ -25,6 +30,7 @@
 import { useHead } from '@vueuse/head';
 import Welcome from '@/components/Welcome.vue';
 import AkizerAbout from '@/components/AkizerAbout.vue';
+import Reviews from '@/components/Reviews.vue';
 
 // Добавляем мета-теги для SEO
 useHead({

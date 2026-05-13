@@ -28,7 +28,7 @@ const upload = multer({ storage });
 router.post('/signUp', upload.single('avatar'), UserController.createUser);
 router.post('/login', UserController.login);
 // router.get('/getUser', auth, UserController.getUser);
-// router.put('/updateUser', auth, UserController.updateUser);
+router.put('/updateUser', upload.single('avatar'), auth, UserController.updateUser);
 // router.delete('/deleteUser', auth, UserController.deleteUser);
 
 export default router;

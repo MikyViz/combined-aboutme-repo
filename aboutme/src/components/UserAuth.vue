@@ -1,13 +1,7 @@
 <template>
   <div>
     <!-- Logged in state -->
-    <div v-if="auth.isLoggedIn" class="d-flex align-center ga-3">
-      <v-avatar size="36" :image="auth.user?.avatar || undefined">
-        <v-icon v-if="!auth.user?.avatar">mdi-account</v-icon>
-      </v-avatar>
-      <span class="professional-text">{{ auth.fullName }}</span>
-      <v-btn variant="text" size="small" @click="auth.logout()">Logout</v-btn>
-    </div>
+    <UserProfile v-if="auth.isLoggedIn" />
 
     <!-- Not logged in -->
     <v-btn v-else variant="outlined" size="small" @click="dialog = true">
@@ -59,6 +53,7 @@
 <script setup>
 import { ref, reactive } from 'vue';
 import { useAuthStore } from '@/stores/auth';
+import UserProfile from '@/components/UserProfile.vue';
 
 const auth = useAuthStore();
 const dialog = ref(false);
