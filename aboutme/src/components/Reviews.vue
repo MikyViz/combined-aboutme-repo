@@ -61,6 +61,11 @@ import UserAuth from '@/components/UserAuth.vue';
 
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8081';
 
+async function safeJson(res) {
+  const text = await res.text();
+  try { return JSON.parse(text); } catch { return []; }
+}
+
 const auth = useAuthStore();
 const reviews = ref([]);
 const loading = ref(false);
@@ -72,7 +77,7 @@ async function fetchReviews() {
   loading.value = true;
   try {
     const res = await fetch(`${API_URL}/review/all`);
-    reviews.value = await res.json();
+    reviews.value = await safeJson(res);
   } catch (e) {
     console.error(e);
   } finally {
@@ -93,7 +98,7 @@ async function submitReview() {
       },
       body: JSON.stringify({ content: newContent.value }),
     });
-    const data = await res.json();
+    const data = await safeJson(res);
     if (!res.ok) throw new Error(data.msg || 'Failed to submit');
     newContent.value = '';
     await fetchReviews();

@@ -2,6 +2,15 @@ import { defineStore } from 'pinia';
 
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8081';
 
+async function safeJson(res) {
+  const text = await res.text();
+  try {
+    return JSON.parse(text);
+  } catch {
+    throw new Error(`Server error (${res.status}). The service may be waking up, try again in a moment.`);
+  }
+}
+
 export const useAuthStore = defineStore('auth', {
   state: () => ({
     user: JSON.parse(localStorage.getItem('user') || 'null'),
@@ -22,7 +31,7 @@ export const useAuthStore = defineStore('auth', {
           method: 'POST',
           body: formData,
         });
-        const data = await res.json();
+        const data = await safeJson(res);
         if (!res.ok) throw new Error(data.msg || 'Sign up failed');
         this._saveUser(data);
         return true;
@@ -42,7 +51,7 @@ export const useAuthStore = defineStore('auth', {
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ email, password }),
         });
-        const data = await res.json();
+        const data = await safeJson(res);
         if (!res.ok) throw new Error(data.msg || 'Login failed');
         this._saveUser(data);
         return true;
@@ -62,7 +71,7 @@ export const useAuthStore = defineStore('auth', {
           headers: { 'Authorization': `Bearer ${this.token}` },
           body: formData,
         });
-        const data = await res.json();
+        const data = await safeJson(res);
         if (!res.ok) throw new Error(data.msg || 'Update failed');
         this._saveUser({ ...data, token: this.token });
         return true;
