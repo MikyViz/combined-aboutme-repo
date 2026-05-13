@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia';
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8081';
+const API_URL = (import.meta.env.VITE_API_URL || 'http://localhost:8081').replace(/\/$/, '');
 
 async function safeJson(res) {
   const text = await res.text();
