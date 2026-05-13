@@ -4,8 +4,9 @@
     <v-menu v-model="menu" :close-on-content-click="false" offset="8">
       <template #activator="{ props }">
         <v-btn icon v-bind="props" variant="text">
-          <v-avatar size="36" :image="auth.user?.avatar || undefined">
-            <v-icon v-if="!auth.user?.avatar">mdi-account-circle</v-icon>
+          <v-avatar size="36">
+            <v-img v-if="auth.user?.avatar" :src="auth.user.avatar" />
+            <v-icon v-else size="32">mdi-account-circle</v-icon>
           </v-avatar>
         </v-btn>
       </template>
@@ -13,8 +14,9 @@
       <v-card min-width="280" class="glass-card">
         <v-card-text class="pb-0">
           <div class="d-flex align-center ga-3 mb-3">
-            <v-avatar size="48" :image="auth.user?.avatar || undefined">
-              <v-icon v-if="!auth.user?.avatar" size="32">mdi-account</v-icon>
+            <v-avatar size="48">
+              <v-img v-if="auth.user?.avatar" :src="auth.user.avatar" />
+              <v-icon v-else size="36">mdi-account</v-icon>
             </v-avatar>
             <div>
               <div class="professional-text font-weight-medium">{{ auth.fullName }}</div>

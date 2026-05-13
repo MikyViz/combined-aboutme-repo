@@ -1,7 +1,8 @@
 <template>
   <div>
-    <!-- Logged in state -->
-    <UserProfile v-if="auth.isLoggedIn" />
+    <div v-if="auth.isLoggedIn">
+      <UserProfile />
+    </div>
 
     <!-- Not logged in -->
     <v-btn v-else variant="outlined" size="small" @click="dialog = true">
