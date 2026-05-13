@@ -7,7 +7,10 @@ async function safeJson(res) {
   try {
     return JSON.parse(text);
   } catch {
-    throw new Error(`Server error (${res.status}). The service may be waking up, try again in a moment.`);
+    if (res.status === 502 || res.status === 503 || res.status === 504) {
+      throw new Error('Server is starting up, please try again in a moment.');
+    }
+    throw new Error(`Request failed (${res.status}). Please try again.`);
   }
 }
 
