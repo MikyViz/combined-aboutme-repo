@@ -32,4 +32,16 @@ export default class ReviewService {
             throw new Error(error);
         }
     };
+
+    static async updateReview(req) {
+        try {
+            const review = await Review.findOne({ where: { reviewId: req.params.id } });
+            if (!review || review.UserId !== req.user.id) return null;
+            review.content = req.body.content;
+            await review.save();
+            return review;
+        } catch (error) {
+            throw new Error(error);
+        }
+    };
 };

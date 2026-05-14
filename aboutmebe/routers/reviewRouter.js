@@ -5,5 +5,6 @@ const router = express.Router();
 
 router.post('/add', auth, ReviewController.addReview);
 router.get('/all', ReviewController.getAllReviews);
+router.put('/update/:id', auth, ReviewController.updateReview);
 
 export default router;

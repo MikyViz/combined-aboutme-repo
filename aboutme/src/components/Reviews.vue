@@ -37,10 +37,11 @@
       class="glass-card mb-3 pa-4"
     >
       <div class="d-flex align-center ga-3 mb-2">
-        <v-avatar size="40" :image="review.User?.avatar || undefined">
-          <v-icon v-if="!review.User?.avatar">mdi-account</v-icon>
+        <v-avatar size="40">
+          <v-img v-if="review.User?.avatar" :src="review.User.avatar" />
+          <v-icon v-else>mdi-account</v-icon>
         </v-avatar>
-        <div>
+        <div class="flex-grow-1">
           <div class="professional-text font-weight-medium">
             {{ review.User?.firstName }} {{ review.User?.lastName }}
           </div>
@@ -48,8 +49,25 @@
             {{ formatDate(review.createdAt) }}
           </div>
         </div>
+        <v-btn
+          v-if="auth.user?.id === review.UserId"
+          icon size="small" variant="text"
+          @click="startEdit(review)"
+        >
+          <v-icon size="18">mdi-pencil</v-icon>
+        </v-btn>
       </div>
-      <p class="professional-text">{{ review.content }}</p>
+
+      <!-- Edit mode -->
+      <div v-if="editingId === review.reviewId">
+        <v-textarea v-model="editContent" rows="2" auto-grow density="compact" class="mb-2" />
+        <v-alert v-if="editError" type="error" variant="tonal" density="compact" class="mb-2">{{ editError }}</v-alert>
+        <div class="d-flex ga-2">
+          <v-btn size="small" color="primary" :loading="editSubmitting" @click="saveEdit(review.reviewId)">Save</v-btn>
+          <v-btn size="small" variant="text" @click="cancelEdit">Cancel</v-btn>
+        </div>
+      </div>
+      <p v-else class="professional-text">{{ review.content }}</p>
     </v-card>
   </v-container>
 </template>
@@ -72,6 +90,10 @@ const loading = ref(false);
 const newContent = ref('');
 const submitting = ref(false);
 const submitError = ref('');
+const editingId = ref(null);
+const editContent = ref('');
+const editSubmitting = ref(false);
+const editError = ref('');
 
 async function fetchReviews() {
   loading.value = true;
@@ -111,6 +133,40 @@ async function submitReview() {
 
 function formatDate(dateStr) {
   return new Date(dateStr).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' });
+}
+
+function startEdit(review) {
+  editingId.value = review.reviewId;
+  editContent.value = review.content;
+  editError.value = '';
+}
+
+function cancelEdit() {
+  editingId.value = null;
+  editContent.value = '';
+}
+
+async function saveEdit(reviewId) {
+  editSubmitting.value = true;
+  editError.value = '';
+  try {
+    const res = await fetch(`${API_URL}/review/update/${reviewId}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${auth.token}`,
+      },
+      body: JSON.stringify({ content: editContent.value }),
+    });
+    const data = await safeJson(res);
+    if (!res.ok) throw new Error(data.msg || 'Failed to update');
+    cancelEdit();
+    await fetchReviews();
+  } catch (e) {
+    editError.value = e.message;
+  } finally {
+    editSubmitting.value = false;
+  }
 }
 
 onMounted(fetchReviews);
