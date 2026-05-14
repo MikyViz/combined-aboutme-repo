@@ -10,7 +10,7 @@
     },
     "homepage": {
       "aboutMeTitle": "Professional Profile",
-      "aboutMeText": "My name is Michael David Vizenovsky, a Full-Stack Developer currently employed at <strong>Hybiz</strong> (since February 8, 2026).<br />I completed professional training at the PROG Institute <a href=\"https://www.prog.co.il/\" target=\"_blank\">https://www.prog.co.il/</a>, where I was mentored by leading Israeli developers Israel Dahan and Rahamim Hania.<br />I specialize in building end-to-end web solutions using modern JavaScript frameworks, Node.js, and database technologies.",
+      "aboutMeText": "My name is Michael David Vizenovsky, I'm Full-Stack Developer.<br />I completed professional training at the PROG Institute <a href=\"https://www.prog.co.il/\" target=\"_blank\">https://www.prog.co.il/</a>, where I was mentored by leading Israeli developers Israel Dahan and Rahamim Hania.<br />I specialize in building end-to-end web solutions using modern JavaScript frameworks, Node.js, and database technologies.",
       "moosebroTitle": "Professional Alias",
       "moosebroText": "Known in the development community as \"MOOSEBRO\" - contributing to open-source projects and commercial applications"
     },
@@ -19,8 +19,8 @@
       "description": "FullStack Developer with experience in creating modern, responsive web applications.",
       "navigation": "Navigation",
       "home": "Home",
-      "about": "About",
-      "projects": "Projects",
+      "about": "Skills & Expertise",
+      "projects": "Portfolio",
       "contacts": "Contacts",
       "techStack": "Technology stack",
       "rights": "All rights reserved.",
@@ -120,6 +120,10 @@
         "title": "Frontend Projects",
         "sectionTitle": "FrontEnd Projects"
       },
+      "hybiz": {
+        "name": "Hybiz",
+        "description": "Comprehensive business management platform for small and medium enterprises. Features include CRM, inventory management, invoicing, and analytics. Built with Vue.js for a responsive frontend and Laravel for a robust backend."
+      },
       "mikuderech": {
         "name": "Mikuderech",
         "description": "Advanced web application for monitoring and controlling public transportation. Real-time tracking, route management, and comprehensive analytics dashboard. Built with modern frontend technologies for seamless user experience."
@@ -181,7 +185,7 @@
     },
     "homepage": {
       "aboutMeTitle": "Профессиональный профиль",
-      "aboutMeText": "Меня зовут Михаэль Давид Виценовский, я Full-Stack разработчик, в настоящее время работаю в компании <strong>Hybiz</strong> (с 8 февраля 2026 г.).<br />Профессиональную подготовку прошел в институте PROG <a href=\"https://www.prog.co.il/\" target=\"_blank\">https://www.prog.co.il/</a>, где моими наставниками были ведущие израильские разработчики Исраэль Даан и Рахамим Хания.<br />Специализируюсь на создании комплексных веб-решений с использованием современных JavaScript фреймворков, Node.js и баз данных.",
+      "aboutMeText": "Меня зовут Михаэль Давид Виценовский, я Full-Stack разработчик.<br />Профессиональную подготовку прошел в институте PROG <a href=\"https://www.prog.co.il/\" target=\"_blank\">https://www.prog.co.il/</a>, где моими наставниками были ведущие израильские разработчики Исраэль Даан и Рахамим Хания.<br />Специализируюсь на создании комплексных веб-решений с использованием современных JavaScript фреймворков, Node.js и баз данных.",
       "moosebroTitle": "Профессиональный псевдоним",
       "moosebroText": "Известен в сообществе разработчиков под ником \"MOOSEBRO\" - вношу вклад в open-source проекты и коммерческие приложения"
     },
@@ -278,6 +282,10 @@
         "title": "Frontend Проекты",
         "sectionTitle": "FrontEnd Проекты"
       },
+      "hybiz": {
+        "name": "Hybiz",
+        "description": "Комплексная платформа управления бизнесом для малых и средних предприятий. Функции включают CRM, управление запасами, выставление счетов и аналитику. Построена с использованием Vue.js для отзывчивого фронтенда и Laravel для надежного бэкенда."
+      },
       "mikuderech": {
         "name": "Mikuderech",
         "description": "Продвинутое веб-приложение для мониторинга и управления общественным транспортом. Отслеживание в реальном времени, управление маршрутами и комплексная аналитическая панель. Создано с использованием современных фронтенд технологий для безупречного пользовательского опыта."
@@ -354,7 +362,7 @@
     },
     "homepage": {
       "aboutMeTitle": "פרופיל מקצועי",
-      "aboutMeText": "(2026 בפברואר 8-מ) <strong>Hybiz</strong> בחברת Full-Stack שמי מיכאל דוד ויצנובסקי, מפתח המועסק כיום <br />PROG הכשרה מקצועית עברתי במכון  <a href=\"https://www.prog.co.il/\" target=\"_blank\">https://www.prog.co.il/</a> שבו הדריכו אותי מפתחים מובילים בישראל - ישראל דהן ורחמים חניה<br />ומסדי נתונים Node.js ,JavaScript מתמחה בבניית פתרונות אינטרנט מקיפים תוך שימוש בפריימוורקים מודרניים של",
+      "aboutMeText": "  Full-Stack שמי מיכאל דוד ויצנובסקי, מפתח  <br />PROG הכשרה מקצועית עברתי במכון  <a href=\"https://www.prog.co.il/\" target=\"_blank\">https://www.prog.co.il/</a> שבו הדריכו אותי מפתחים מובילים בישראל - ישראל דהן ורחמים חניה<br />ומסדי נתונים Node.js ,JavaScript מתמחה בבניית פתרונות אינטרנט מקיפים תוך שימוש בפריימוורקים מודרניים של",
       "moosebroTitle": "כינוי מקצועי",
       "moosebroText": "תורם לפרויקטים של קוד פתוח ואפליקציות מסחריות - \"MOOSEBRO\" ידוע בקהילת המפתחים בכינוי"
     },
@@ -452,6 +460,10 @@
       "page": {
         "title": "Frontend פרויקטים",
         "sectionTitle": "פרויקטי FrontEnd"
+      },
+      "hybiz": {
+        "name": "Hybiz",
+        "description": "פלטפורמת ניהול עסק מקיפה לעסקים קטנים ובינוניים. כוללת CRM, ניהול מלאי, חשבוניות וניתוח נתונים. בנויה עם Vue.js לפרונטאנד רספונסיבי ו-Laravel לבקאנד חזק."
       },
       "mikuderech": {
         "name": "מערכת בקרת תחבורה ציבורית",

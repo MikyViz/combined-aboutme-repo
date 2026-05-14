@@ -132,6 +132,16 @@ const imgFiles = import.meta.glob("../assets/projects/**/*.{png,jpg,jpeg,gif}");
 
 const allProjects = ref([
   {
+    nameKey: "projects.hybiz.name",
+    descKey: "projects.hybiz.description",
+    git: '',
+    folder: "hybiz",
+    site: "https://hybiz.co.il/",
+    imgs: [],
+    icon: "mdi-briefcase",
+    roles: ["Frontend", "Backend", "API", "Database"],
+  },
+  {
     nameKey: "projects.mikuderech.name",
     descKey: "projects.mikuderech.description",
     git: "https://phpstack-1063351-5511176.cloudwaysapps.com/auth",
