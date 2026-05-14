@@ -56,6 +56,13 @@
         >
           <v-icon size="18">mdi-pencil</v-icon>
         </v-btn>
+        <v-btn
+          v-if="auth.user?.id === review.UserId"
+          icon size="small" variant="text" color="error"
+          @click="deleteReview(review.reviewId)"
+        >
+          <v-icon size="18">mdi-delete</v-icon>
+        </v-btn>
       </div>
 
       <!-- Edit mode -->
@@ -133,6 +140,18 @@ async function submitReview() {
 
 function formatDate(dateStr) {
   return new Date(dateStr).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' });
+}
+
+async function deleteReview(reviewId) {
+  try {
+    const res = await fetch(`${API_URL}/review/delete/${reviewId}`, {
+      method: 'DELETE',
+      headers: { 'Authorization': `Bearer ${auth.token}` },
+    });
+    if (res.ok) await fetchReviews();
+  } catch (e) {
+    console.error(e);
+  }
 }
 
 function startEdit(review) {

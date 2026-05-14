@@ -44,4 +44,15 @@ export default class ReviewService {
             throw new Error(error);
         }
     };
+
+    static async deleteReview(req) {
+        try {
+            const review = await Review.findOne({ where: { reviewId: req.params.id } });
+            if (!review || review.UserId !== req.user.id) return null;
+            await review.destroy();
+            return true;
+        } catch (error) {
+            throw new Error(error);
+        }
+    };
 };

@@ -41,4 +41,14 @@ export default class ReviewController {
             res.status(500).json({ msg: error.message });
         };
     };
+
+    static async deleteReview(req, res) {
+        try {
+            const ok = await ReviewService.deleteReview(req);
+            if (!ok) return res.status(403).json({ msg: 'Not allowed' });
+            res.status(200).json({ msg: 'Deleted' });
+        } catch (error) {
+            res.status(500).json({ msg: error.message });
+        };
+    };
 };

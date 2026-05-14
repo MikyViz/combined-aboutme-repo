@@ -6,5 +6,6 @@ const router = express.Router();
 router.post('/add', auth, ReviewController.addReview);
 router.get('/all', ReviewController.getAllReviews);
 router.put('/update/:id', auth, ReviewController.updateReview);
+router.delete('/delete/:id', auth, ReviewController.deleteReview);
 
 export default router;
