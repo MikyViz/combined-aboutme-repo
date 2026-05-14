@@ -158,6 +158,16 @@
         "title": "Backend Projects",
         "sectionTitle": "BackEnd & DB behind the scenes"
       }
+    },
+    "reviews": {
+      "title": "Reviews",
+      "placeholder": "Your review",
+      "submit": "Submit",
+      "save": "Save",
+      "cancel": "Cancel",
+      "leaveAs": "Leave a review as",
+      "noReviews": "No reviews yet. Be the first!",
+      "loginPrompt": "to leave a review"
     }
   },
   "ru": {
@@ -306,6 +316,16 @@
         "title": "Backend Проекты",
         "sectionTitle": "BackEnd и БД за кулисами"
       }
+    },
+    "reviews": {
+      "title": "Отзывы",
+      "placeholder": "Ваш отзыв",
+      "submit": "Отправить",
+      "save": "Сохранить",
+      "cancel": "Отмена",
+      "leaveAs": "Оставить отзыв как",
+      "noReviews": "Отзывов пока нет. Будьте первым!",
+      "loginPrompt": "чтобы оставить отзыв"
     },
     "footer": {
       "title": "Михаель Давид Виценовский",
@@ -471,6 +491,16 @@
         "title": "Backend פרויקטים",
         "sectionTitle": "BackEnd ומסדי נתונים מאחורי הקלעים"
       }
+    },
+    "reviews": {
+      "title": "ביקורות",
+      "placeholder": "הביקורת שלך",
+      "submit": "שליחה",
+      "save": "שמירה",
+      "cancel": "ביטול",
+      "leaveAs": "השאר ביקורת בתור",
+      "noReviews": "אין ביקורות עדיין. היה הראשון!",
+      "loginPrompt": "כדי להשאיר ביקורת"
     },
     "footer": {
       "title": "מיכאל דוד ויצנובסקי",

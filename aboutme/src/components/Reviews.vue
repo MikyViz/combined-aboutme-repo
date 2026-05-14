@@ -1,13 +1,13 @@
 <template>
   <v-container class="pa-4">
-    <h2 class="professional-title text-h5 mb-4">Reviews</h2>
+    <h2 class="professional-title text-h5 mb-4">{{ t('reviews.title') }}</h2>
 
     <!-- Add review (only when logged in) -->
     <v-card v-if="auth.isLoggedIn" class="glass-card mb-6 pa-4">
-      <p class="professional-text mb-2">Leave a review as <strong>{{ auth.fullName }}</strong></p>
+      <p class="professional-text mb-2">{{ t('reviews.leaveAs') }} <strong>{{ auth.fullName }}</strong></p>
       <v-textarea
         v-model="newContent"
-        label="Your review"
+        :label="t('reviews.placeholder')"
         rows="3"
         auto-grow
         :disabled="submitting"
@@ -15,11 +15,11 @@
       <v-alert v-if="submitError" type="error" variant="tonal" density="compact" class="mb-2">
         {{ submitError }}
       </v-alert>
-      <v-btn color="primary" :loading="submitting" @click="submitReview">Submit</v-btn>
+      <v-btn color="primary" :loading="submitting" @click="submitReview">{{ t('reviews.submit') }}</v-btn>
     </v-card>
 
     <v-alert v-else type="info" variant="tonal" density="compact" class="mb-6">
-      <UserAuth /> &nbsp; to leave a review
+      <UserAuth /> &nbsp; {{ t('reviews.loginPrompt') }}
     </v-alert>
 
     <!-- Reviews list -->
@@ -28,7 +28,7 @@
     </div>
 
     <div v-else-if="reviews.length === 0" class="professional-text text-center py-6">
-      No reviews yet. Be the first!
+      {{ t('reviews.noReviews') }}
     </div>
 
     <v-card
@@ -70,8 +70,8 @@
         <v-textarea v-model="editContent" rows="2" auto-grow density="compact" class="mb-2" />
         <v-alert v-if="editError" type="error" variant="tonal" density="compact" class="mb-2">{{ editError }}</v-alert>
         <div class="d-flex ga-2">
-          <v-btn size="small" color="primary" :loading="editSubmitting" @click="saveEdit(review.reviewId)">Save</v-btn>
-          <v-btn size="small" variant="text" @click="cancelEdit">Cancel</v-btn>
+          <v-btn size="small" color="primary" :loading="editSubmitting" @click="saveEdit(review.reviewId)">{{ t('reviews.save') }}</v-btn>
+          <v-btn size="small" variant="text" @click="cancelEdit">{{ t('reviews.cancel') }}</v-btn>
         </div>
       </div>
       <p v-else class="professional-text">{{ review.content }}</p>
@@ -83,6 +83,7 @@
 import { ref, onMounted } from 'vue';
 import { useAuthStore } from '@/stores/auth';
 import UserAuth from '@/components/UserAuth.vue';
+import { t } from '@/i18n';
 
 const API_URL = (import.meta.env.VITE_API_URL || 'http://localhost:8081').replace(/\/$/, '');
 
