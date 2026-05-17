@@ -45,7 +45,8 @@
             <v-text-field v-model="form.firstName" label="First Name" class="mb-2" />
             <v-text-field v-model="form.lastName" label="Last Name" class="mb-2" />
             <v-text-field v-model="form.phone" label="Phone" class="mb-2" />
-            <v-file-input v-model="form.avatarFile" label="New Avatar" accept="image/*" prepend-icon="mdi-camera" class="mb-2" />
+            <v-text-field v-model="form.avatarUrl" label="Avatar URL" prepend-icon="mdi-link" placeholder="https://..." class="mb-2" :disabled="!!form.avatarFile" />
+            <v-file-input v-model="form.avatarFile" label="Upload Avatar" accept="image/*" prepend-icon="mdi-camera" class="mb-2" :disabled="!!form.avatarUrl" @update:model-value="form.avatarUrl = ''" />
             <v-btn type="submit" block color="primary" :loading="auth.loading">Save</v-btn>
           </v-form>
         </v-card-text>
@@ -66,13 +67,14 @@ const auth = useAuthStore();
 const menu = ref(false);
 const editDialog = ref(false);
 
-const form = reactive({ firstName: '', lastName: '', phone: '', avatarFile: null });
+const form = reactive({ firstName: '', lastName: '', phone: '', avatarFile: null, avatarUrl: '' });
 
 function openEdit() {
   form.firstName = auth.user?.firstName || '';
   form.lastName = auth.user?.lastName || '';
   form.phone = auth.user?.phone || '';
   form.avatarFile = null;
+  form.avatarUrl = '';
   menu.value = false;
   editDialog.value = true;
 }
@@ -83,6 +85,7 @@ async function handleUpdate() {
   if (form.lastName) formData.append('lastName', form.lastName);
   if (form.phone) formData.append('phone', form.phone);
   if (form.avatarFile) formData.append('avatar', form.avatarFile);
+  if (form.avatarUrl) formData.append('avatarUrl', form.avatarUrl);
 
   const ok = await auth.updateUser(formData);
   if (ok) editDialog.value = false;

@@ -41,6 +41,7 @@ export default class UserService {
             if (lastName) user.lastName = lastName;
             if (phone) user.phone = phone;
             if (req.file) user.avatar = req.file.path;
+            else if (req.body.avatarUrl) user.avatar = req.body.avatarUrl;
             await user.save();
             return user;
         } catch (error) {
