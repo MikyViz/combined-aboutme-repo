@@ -38,6 +38,16 @@ export default defineConfig({
       polyfill: false,
     },
   },
+  css: {
+    preprocessorOptions: {
+      sass: {
+        silenceDeprecations: ['if-function'],
+      },
+      scss: {
+        silenceDeprecations: ['if-function'],
+      },
+    },
+  },
   optimizeDeps: {
     exclude: ['vue-colorful']
   },

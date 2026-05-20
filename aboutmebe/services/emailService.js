@@ -78,3 +78,36 @@ export const sendContactEmail = async ({ name, email, subject, message }) => {
     throw error;
   }
 };
+
+export const sendReviewNotificationEmail = async ({ authorName, authorEmail, content }) => {
+  try {
+    const transporter = await createTransporter();
+
+    const htmlContent = `
+      <h2>Новый отзыв на сайте</h2>
+      <p><strong>Автор:</strong> ${authorName} (${authorEmail})</p>
+      <p><strong>Отзыв:</strong></p>
+      <div style="background-color: #f5f5f5; padding: 15px; border-radius: 5px;">
+        ${String(content).replace(/\n/g, '<br>')}
+      </div>
+    `;
+
+    const mailOptions = {
+      from: process.env.EMAIL_FROM || process.env.EMAIL_USER || '"Portfolio" <portfolio@example.com>',
+      to: process.env.EMAIL_TO || process.env.EMAIL_USER || 'vizenovsky@gmail.com',
+      subject: `Новый отзыв от ${authorName}`,
+      html: htmlContent,
+      replyTo: authorEmail,
+    };
+
+    const info = await transporter.sendMail(mailOptions);
+    console.log('Review notification sent:', info.messageId);
+    if (process.env.NODE_ENV !== 'production') {
+      console.log('Preview URL:', nodemailer.getTestMessageUrl(info));
+    }
+    return info;
+  } catch (error) {
+    console.error('Error sending review notification:', error);
+    // не бросаем ошибку — уведомление не должно ломать создание отзыва
+  }
+};

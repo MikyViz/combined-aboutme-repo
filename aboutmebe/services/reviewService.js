@@ -1,5 +1,6 @@
 import Review from '../dataBase/models/ReviewModel.js';
 import User from '../dataBase/models/UserModel.js';
+import { sendReviewNotificationEmail } from './emailService.js';
 
 export default class ReviewService {
 
@@ -11,7 +12,15 @@ export default class ReviewService {
 
             if (review) {
                 review.UserId = req.user.id;
-                review.save();
+                await review.save();
+
+                // Уведомление на почту — не ломаем создание отзыва если письмо не ушло
+                sendReviewNotificationEmail({
+                    authorName: `${req.user.firstName || ''} ${req.user.lastName || ''}`.trim() || 'Anonymous',
+                    authorEmail: req.user.email || '',
+                    content: review.content,
+                });
+
                 return review
             }
 
