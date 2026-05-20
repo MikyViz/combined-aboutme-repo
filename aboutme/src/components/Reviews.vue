@@ -67,14 +67,14 @@
 
       <!-- Edit mode -->
       <div v-if="editingId === review.reviewId">
-        <v-textarea v-model="editContent" rows="2" auto-grow density="compact" class="mb-2" />
+        <v-textarea v-model="editContent" rows="2" auto-grow density="compact" class="mb-2" :dir="textDir(editContent)" />
         <v-alert v-if="editError" type="error" variant="tonal" density="compact" class="mb-2">{{ editError }}</v-alert>
         <div class="d-flex ga-2">
           <v-btn size="small" color="primary" :loading="editSubmitting" @click="saveEdit(review.reviewId)">{{ t('reviews.save') }}</v-btn>
           <v-btn size="small" variant="text" @click="cancelEdit">{{ t('reviews.cancel') }}</v-btn>
         </div>
       </div>
-      <p v-else class="professional-text">{{ review.content }}</p>
+      <p v-else class="professional-text" :dir="textDir(review.content)">{{ review.content }}</p>
     </v-card>
   </v-container>
 </template>
@@ -90,6 +90,13 @@ const API_URL = (import.meta.env.VITE_API_URL || 'http://localhost:8081').replac
 async function safeJson(res) {
   const text = await res.text();
   try { return JSON.parse(text); } catch { return []; }
+}
+
+function textDir(text) {
+  // Ивритские символы: Unicode блок \u0590–\u05FF
+  const hebrewChars = (text?.match(/[\u0590-\u05FF]/g) || []).length;
+  const totalLetters = (text?.match(/[a-zA-Z\u0590-\u05FF\u0400-\u04FF]/g) || []).length;
+  return totalLetters > 0 && hebrewChars / totalLetters > 0.3 ? 'rtl' : 'ltr';
 }
 
 const auth = useAuthStore();
