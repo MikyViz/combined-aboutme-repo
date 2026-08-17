@@ -138,6 +138,7 @@
 import { ref, onMounted, computed } from 'vue';
 import { t } from '@/i18n';
 import PlaceholderImg from '@/assets/Placeholder.png';
+import TodoMailerPrivacyPolicy from '@/assets/projects/todoMailer/privacy-policy.html?url';
 
 // Import images
 const imgFiles = import.meta.glob("../assets/projects/**/*.{png,jpg,jpeg,gif}");
@@ -236,7 +237,7 @@ const allProjects = ref([
     nameKey: "projects.todoMailer.name",
     descKey: "projects.todoMailer.description",
     git: "https://github.com/MikyViz/todomailer",
-    privacy: "https://mikyviz.github.io/todomailer/extension/privacy-policy.html",
+    privacy: TodoMailerPrivacyPolicy,
     folder: "todoMailer",
     imgs: [],
     icon: "mdi-email-check-outline",
