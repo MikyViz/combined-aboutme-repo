@@ -223,7 +223,7 @@ const allProjects = ref([
   {
     nameKey: "projects.todoMailer.name",
     descKey: "projects.todoMailer.description",
-    git: "",
+    git: "https://github.com/MikyViz/todomailer",
     folder: "todoMailer",
     imgs: [],
     icon: "mdi-email-check-outline",
