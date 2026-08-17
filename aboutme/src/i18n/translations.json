@@ -155,6 +155,10 @@
       "keymapConverter": {
         "name": "Keymap Converter",
         "description": "Universal VS Code and Chrome extension for converting text between keyboard layouts. Supports Russian, English, and Hebrew layouts. No more typing in the wrong layout! Available on VS Code Marketplace."
+      },
+      "todoMailer": {
+        "name": "Todo Mailer",
+        "description": "Browser extension that lets users save todo items and send them to their own Gmail account. Uses Google OAuth only to send email on behalf of the signed-in user. Currently in setup and publishing stage."
       }
     },
     "backendProjects": {
@@ -317,6 +321,10 @@
       "keymapConverter": {
         "name": "Keymap Converter",
         "description": "Универсальное расширение VS Code  и Chrome для конвертации текста между раскладками клавиатуры. Поддерживает русскую, английскую и ивритскую раскладки. Больше никакого набора текста в неправильной раскладке! Доступно в VS Code Marketplace."
+      },
+      "todoMailer": {
+        "name": "Todo Mailer",
+        "description": "Браузерное расширение, позволяющее сохранять задачи и отправлять их на свой аккаунт Gmail. Использует Google OAuth исключительно для отправки писем от имени авторизованного пользователя. На стадии настройки и публикации."
       }
     },
     "backendProjects": {
@@ -496,6 +504,10 @@
       "keymapConverter": {
         "name": "Keymap Converter",
         "description": "הרחבת VS Code ו-Chrome אוניברסלית להמרת טקסט בין פריסות מקלדת. תומך בפריסות רוסית, אנגלית ועברית. לא עוד הקלדה בפריסה הלא נכונה! זמין ב-VS Code Marketplace."
+      },
+      "todoMailer": {
+        "name": "Todo Mailer",
+        "description": "הרחבת דפדפן המאפשרת לשמור פריטי מטלות ולשלוח אותם לחשבון Gmail האישי. משתמשת ב-Google OAuth אך ורק לשליחת מייל בשם המשתמש המחובר. נמצאת כעת בשלב הגדרה ופרסום."
       }
     },
     "backendProjects": {

@@ -220,6 +220,15 @@ const allProjects = ref([
     icon: "mdi-keyboard-variant",
     roles: ["Frontend", "Extension Dev"],
   },
+  {
+    nameKey: "projects.todoMailer.name",
+    descKey: "projects.todoMailer.description",
+    git: "",
+    folder: "todoMailer",
+    imgs: [],
+    icon: "mdi-email-check-outline",
+    roles: ["Extension Dev"],
+  },
 ]);
 
 // Role color mapping
