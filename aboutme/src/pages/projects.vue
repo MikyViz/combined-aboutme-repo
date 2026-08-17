@@ -72,6 +72,18 @@
                 NPM
               </v-chip>
               <v-btn
+                v-if="project.privacy"
+                :href="project.privacy"
+                target="_blank"
+                clickable
+                color="secondary"
+                variant="outlined"
+                class="skill-pill ml-2"
+                size="small"
+              >
+                Privacy
+              </v-btn>
+              <v-btn
                 v-for="(siteLink, siteIndex) in Array.isArray(project.site) 
                   ? project.site 
                   : project.site 
@@ -224,6 +236,7 @@ const allProjects = ref([
     nameKey: "projects.todoMailer.name",
     descKey: "projects.todoMailer.description",
     git: "https://github.com/MikyViz/todomailer",
+    privacy: "https://mikyviz.github.io/todomailer/extension/privacy-policy.html",
     folder: "todoMailer",
     imgs: [],
     icon: "mdi-email-check-outline",
