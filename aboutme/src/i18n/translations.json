@@ -158,7 +158,7 @@
       },
       "todoMailer": {
         "name": "Todo Mailer",
-        "description": "Browser extension that lets users save todo items and send them to their own Gmail account. Uses Google OAuth only to send email on behalf of the signed-in user. Currently in setup and publishing stage."
+        "description": "Todo Mailer is a simple reminder note extension that sends your tasks by email so they don't get lost in browser tabs and pop-ups."
       }
     },
     "backendProjects": {
@@ -324,7 +324,7 @@
       },
       "todoMailer": {
         "name": "Todo Mailer",
-        "description": "Браузерное расширение, позволяющее сохранять задачи и отправлять их на свой аккаунт Gmail. Использует Google OAuth исключительно для отправки писем от имени авторизованного пользователя. На стадии настройки и публикации."
+        "description": "Todo Mailer — это простое расширение для создания напоминаний, которое отправляет ваши задачи по электронной почте, чтобы они не терялись во вкладках браузера и всплывающих окнах."
       }
     },
     "backendProjects": {
@@ -507,7 +507,7 @@
       },
       "todoMailer": {
         "name": "Todo Mailer",
-        "description": "הרחבת דפדפן המאפשרת לשמור פריטי מטלות ולשלוח אותם לחשבון Gmail האישי. משתמשת ב-Google OAuth אך ורק לשליחת מייל בשם המשתמש המחובר. נמצאת כעת בשלב הגדרה ופרסום."
+        "description": "Todo Mailer — זהו תוסף תזכורת פשוט ששולח את המשימות שלך בדואר אלקטרוני כדי שלא יאבדו בכרטיסיות דפדפן וחלונות קופצים."
       }
     },
     "backendProjects": {

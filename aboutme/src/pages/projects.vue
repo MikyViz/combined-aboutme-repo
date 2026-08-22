@@ -157,9 +157,8 @@ const allProjects = ref([
   {
     nameKey: "projects.mikuderech.name",
     descKey: "projects.mikuderech.description",
-    git: "https://phpstack-1063351-5511176.cloudwaysapps.com/auth",
     folder: "transport-control",
-    site: ["https://phpstack-1063351-5511176.cloudwaysapps.com/auth"],
+    site: ["https://mikuderech.co.il/"],
     imgs: [],
     icon: "mdi-bus",
     roles: ["Frontend"],
@@ -169,7 +168,7 @@ const allProjects = ref([
     descKey: "projects.mikuderechRequest.description",
     git: "",
     folder: "mikuderechRequest",
-    site: ["https://p.mikuderech.co.il/"],
+    site: ["https://pniot.mikuderech.co.il/auth/phone"],
     imgs: [],
     icon: "mdi-bus-stop-covered",
     roles: ["Frontend", "Backend", "API"],
@@ -239,6 +238,10 @@ const allProjects = ref([
     git: "https://github.com/MikyViz/todomailer",
     privacy: TodoMailerPrivacyPolicy,
     folder: "todoMailer",
+    site: [
+      "https://chromewebstore.google.com/detail/todo-mailer/plaffhoficbhgkkpgpjaioibmphfceec?authuser=0&hl=ru&pli=1",
+      "https://addons.mozilla.org/en-US/firefox/addon/todo-mailer/"
+    ],
     imgs: [],
     icon: "mdi-email-check-outline",
     roles: ["Extension Dev"],
