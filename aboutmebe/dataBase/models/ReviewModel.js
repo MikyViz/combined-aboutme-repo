@@ -13,7 +13,7 @@ const Review = sequelize.define("Review", {
     content: {
         type: DataTypes.STRING,
         allowNull: false,
-        len: [1, 600],
+        len: [1, 1000],
     },
     createdAt: {
         type: DataTypes.DATE
