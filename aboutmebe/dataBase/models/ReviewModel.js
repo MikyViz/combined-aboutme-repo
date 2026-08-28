@@ -11,9 +11,11 @@ const Review = sequelize.define("Review", {
         defaultValue: () => uuidv4(),
     },
     content: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING(1000),
         allowNull: false,
-        len: [1, 1000],
+        validate: {
+            len: [1, 1000],
+        },
     },
     createdAt: {
         type: DataTypes.DATE
