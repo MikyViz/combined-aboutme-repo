@@ -61,7 +61,6 @@
 </template>
 
 <script setup>
-import { Analytics } from "@vercel/analytics/next";
 import { ref, watch, computed } from "vue";
 import { useTheme } from "vuetify";
 import router from "./router";
@@ -74,7 +73,6 @@ import { t, currentLocale } from '@/i18n';
 
 // const simchalesConfetti = new JSConfetti2();
 // simchalesConfetti.addConfetti();
-Analytics();
 
 const drawer = ref(false);
 const secondaryNav = ref(false);
