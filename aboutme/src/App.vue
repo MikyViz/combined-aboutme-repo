@@ -57,6 +57,7 @@
       <!-- Добавляем футер -->
       <AppFooter />
     </v-main>
+    <Analytics />
   </v-app>
 </template>
 
@@ -74,8 +75,6 @@ import { t, currentLocale } from '@/i18n';
 
 // const simchalesConfetti = new JSConfetti2();
 // simchalesConfetti.addConfetti();
-
-Analytics();
 
 const drawer = ref(false);
 const secondaryNav = ref(false);
