@@ -31,7 +31,6 @@ import { createHead } from '@vueuse/head'
 // EmailJS конфигурация
 import { emailjsConfig } from './config/emailjs'
 
-import { inject } from '@vercel/analytics';
 inject();
 
 // Инициализация EmailJS с жестко закодированными значениями из конфиг файла
@@ -52,13 +51,13 @@ registerPlugins(app)
 app.config.performance = true
 
 // Добавляем аналитику в режиме production
-if (process.env.NODE_ENV === 'production') {
-  try {
-    inject();
-  } catch (error) {
-    console.warn('Analytics injection failed:', error);
-  }
-}
+// if (process.env.NODE_ENV === 'production') {
+//   try {
+//     inject();
+//   } catch (error) {
+//     console.warn('Analytics injection failed:', error);
+//   }
+// }
 
 app.use(createPinia())
 app.use(head)
